@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% load i18n %}
+
+{% block content %}
+<form action="" method='post'>{% csrf_token %}
+    {{ from_addr_form.as_table }}
+    {{ to_addr_form.as_table }}
+    {{ item_form.as_table }}
+    {{ package_form.as_table }}
+    {{ order_form.as_table }}
+    <input type="submit" text="{% trans 'Submit' %}"></input>
+</form>
+{% endblock %}

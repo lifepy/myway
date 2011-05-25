@@ -1,0 +1,17 @@
+{% load tags %}
+{% load i18n %}
+
+{% url myway.views.index as index %}
+{% url myway.views.about as about %}
+
+<div id="hlogo">
+    <a href="#">{% trans "My Way" %}</a>
+</div>
+<div id="hmenu">
+    <div class="nav">
+        <ul>
+            <li {% active request index %}><a href="/index/">{% trans "Home" %}</a></li>
+            <li {% active request about %}><a href="/about/">{% trans "About us" %}</a></li>
+        </ul>
+    </div>
+</div>

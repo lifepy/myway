@@ -1,0 +1,8 @@
+{% if has_account %}
+    has account
+{% else %} {% if expired %}
+    expired
+{% else %}
+    success
+{% endif %}
+{% endif %}

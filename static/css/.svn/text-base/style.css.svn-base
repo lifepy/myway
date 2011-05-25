@@ -1,0 +1,336 @@
+/*
+ * 
+ * Theme Name: Haba simple
+ * Theme URI: http://habamax.ru/blog/
+ * Description: Simple theme
+ * Version: 0.7
+ * Author: Maxim Kim (habamax at gmail.com)
+ * Tags: simple, variable width, one column, widgets
+ *
+ * Edited by Han Zhang (zhanghan dot simon at gmail.com)
+ *  + added Google Font [Cabin Sketch]
+ * 
+ */
+@font-face {
+	font-family: "WQY Micro Hei";
+	src: url("http://dl.dropbox.com/u/4648623/font/wqy-microhei.ttc");
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 100%;
+    line-height: 1.3;
+    margin: 0 0;
+    padding: 0;
+    background-color: #fff;
+}
+
+pre {
+    font-size: 100%;
+    border-left: 1px solid #ccc;
+    margin-left: 1em;
+    padding-left: 0.5em;
+    line-height: 1.1;
+}
+
+kbd {
+    padding:2px 4px;
+    white-space:nowrap;
+    color:#000;
+    background:#eee;
+    border-width:1px 3px 3px 1px;
+    border-style:solid;
+    border-color:#ccc #aaa #888 #bbb;
+}
+
+img {border: none;}
+
+a {color: #0047ab; text-decoration: none;}
+a img {border: none; padding: 0.1em;}
+a:visited {color: #800080;}
+a:hover {text-decoration: underline;}
+
+.wrapper {margin:0 auto; padding:0; text-align:left; width: 960px;}
+
+.fixed_wide {
+    width: 760px;
+    float: left;
+}
+
+.content {
+    margin: 0px;
+    padding: 0;
+}
+
+.content h1, .content h2, .content h3, .content h4, .content h5, .content h6 {
+    font-family: Trebuchet MS, serif; margin-top: 0.5em; margin-bottom: 0; clear: both;}
+.content h1 {font-family:'Orbitron';font-size: 2.0em; color: #a77070;}
+.content h2 {font-size: 1.6em; color: #779977;}
+.content h3 {font-size: 1.2em; color: #555577;}
+.content h4 {font-size: 1.2em; color: #222244;}
+.content h5 {font-size: 1.1em; color: #222244;}
+.content h6 {font-size: 1.1em; color: #222244;}
+.content p, .content pre, .content table, .content ul, .content ol, .content dl {margin-top: 1em; margin-bottom: 1em;}
+.content ul ul, .content ul ol, .content ol ol, .content ol ul {margin-top: 0.5em; margin-bottom: 0.5em;}
+.content li {margin: 0.3em auto;}
+.content ul {margin-left: 2em; padding-left: 0.5em;}
+.content dt {font-weight: bold;}
+.content img {border: none;}
+.content pre {border-left: 1px solid #ccc; margin-left: 2em; padding-left: 0.5em;}
+.content td {border: 1px solid #ccc; padding: 0.3em;}
+.content hr {border: none; border-top: 1px solid #ccc; width: 100%;}
+.content blockquote {padding: 0pt 5pt; background-color: #f6f5eb;}
+.content del {color:#777777;text-decoration:none;font-weight:normal}
+
+#header{width:960px;margin-top:20px;margin-bottom:10px;padding-bottom:50px; border-bottom: 3px solid #779977;}
+#hlogo{width:250px;height:35px;float:left;}
+#hlogo a{font-size:35px;color:#777777;font-weight:bold;font-family:'Irish Grover', serif;vertical-align:bottom; text-decoration:none;}
+
+#footer{width:960px;margin-top:20px;font-size:70%;color:#779977;float:left;text-align:center}
+
+/* Menu {{{ */
+#hmenu{width:710px;float:left;padding:5px 0 10px 0;}
+.nav{float:left;font-size:125%;}
+.nav ul{margin:0;}
+.nav li{background:#777777;display:block;float:left;margin-right:7px;}
+.nav li.on{background:#779977;}
+.nav li.on a{color:#fff;}
+.nav li:hover{background-color:#779977;}
+.nav a{color:#fff;display:block;font-weight:bold;padding:4px 12px 4px 12px;text-decoration:none;}
+
+.nav2{float:left;font-size:80%;}
+.nav2 ul{margin:0;}
+.nav2 li{display:block;float:left;margin-right:7px;}
+.nav2 a{color:#777;display:block;padding:15px 5px 4px 5px;text-decoration:none;}
+.nav2 a:hover{text-decoration:underline;}
+/* Menu }}} */
+
+.code { font-family: monospace; font-size: 100%; background-color:#eee; color: #000000; padding: 1em 0.5em;}
+code { font-family: monospace; font-size: 100%; background-color:#f5f5f5; color: #000000;}
+
+
+#sidebar { 
+    font-size: 80%;
+    background: #fff;
+    margin-top: 1em;
+    margin-left: 0;
+    padding-left: 0;
+    width: 190px;
+    float: right;
+    border-left: 1px dashed #ccc;
+}
+#sidebar ul, #sidebar ul ol {margin: 0; padding: 0;}
+#sidebar ul li {list-style-type: none; list-style-image: none; margin-bottom: 15px;}
+#sidebar ul p, #sidebar ul select {margin: 5px 0 8px;}
+#sidebar ul ul, #sidebar ul ol {margin: 5px 0 0 10px;}
+#sidebar ul ul ul, #sidebar ul ol {margin: 0 0 0 10px;}
+#sidebar ul ol li {list-style: decimal outside;}
+#sidebar ul ul li, #sidebar ul ol li {margin: 3px 0 0; padding: 0;}
+#sidebar a { 
+    color:#777;
+}
+
+
+
+/* Begin Form Elements */
+.widget_search label {position:absolute; left:-1500px; visibility:hidden;}
+.widget_search input {width: 50px; padding: 0px;}
+.widget_search #searchsubmit {padding: 0px;}
+.widget_search input#s {
+    width: 100px;
+    background: #eee;
+    border: 1px solid #999;
+    color: #000;
+}
+.widget {
+    color: #779977;
+    font-weight: normal;
+    letter-spacing: 0;
+    margin: 0px auto 0px auto; 
+    padding-left: 10px;
+}
+.widget_tag_cloud {
+    line-height: 1.1;
+    /* background-color: #eee; */
+}
+.widget_tag_cloud a, .widget_tag_cloud a:visited {
+    color:#0047AB;
+    text-decoration: none;
+}
+.widget_tag_cloud a:hover {
+    background-color: #f0f0f0;
+    text-decoration: none;
+}
+
+/* Captions & aligment {{{ */
+.aligncenter,
+div.aligncenter {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+.alignleft {
+    float: left;
+    margin-right: 10pt;
+}
+.alignright {
+    float: right;
+    margin-left: 10pt;
+}
+.wp-caption {
+    border: 1px solid #ddd;
+    text-align: center;
+    background-color: #f3f3f3;
+    padding-top: 4px;
+    margin: 10px;
+    -moz-border-radius: 3px;
+    -khtml-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
+}
+.wp-caption img {
+    margin: 0;
+    padding: 0;
+    border: 0 none;
+}
+.wp-caption p.wp-caption-text {
+    font-size: 11px;
+    line-height: 17px;
+    padding: 0 4px 5px;
+    margin: 0;
+}
+/* End captions & aligment }}} */
+
+/* Comments */
+.thread-even {
+    background-color: #F5F5DC;
+}
+.thread-odd {
+    background-color : #fff;
+}
+.says{
+    display:none;
+}
+.depth-1 {
+}
+.reply {
+    font-size: 80%;
+}
+
+.commentlist {
+    font-size: 100%;
+    padding-left: 0em;
+    padding-bottom: 0.5em;
+    list-style-type: none;
+}
+.commentlist ul {
+    list-style-type: none;
+    padding-left: 1em;
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+}
+.commentlist li {
+    padding-left: 0.5em;
+    border-left: 1px dashed #ccc;
+}
+.commentlist li .avatar { 
+    float: right;
+    border: 1px solid #eee;
+    padding: 2px;
+    background: #fff;
+}
+.commentlist cite, .commentlist cite a {
+    font-weight: bold;
+    font-style: normal;
+    font-size: 1.1em;
+}
+.commentlist p {
+    font-weight: normal;
+    line-height: 1.5em;
+    text-transform: none;
+}
+#commentform p {
+}
+.commentmetadata {
+    font-weight: normal;
+    font-size: 80%;
+    line-height: 1.2;
+}
+.commentmetadata a {
+    color: #808080;
+}
+#commentform #author, #commentform #email, #commentform #url, #commentform textarea {
+    background: #fff;
+    border: 1px solid #ccc;
+    padding: .2em;
+}
+#commentform textarea {
+    width: 100%;
+}
+/* Comment ends */
+
+
+/* classes used by the_meta() */
+ul.post-meta {
+    list-style: none;
+}
+
+ul.post-meta span.post-meta-key {
+    font-weight: bold;
+}
+
+.credit {
+    clear: both;
+    width: 100%;
+    color: #000;
+    font-size: 0.7em;
+    margin: 10px 0 0 0;
+    padding: 3px;
+    text-align: center;
+}
+
+.credit a:link, .credit a:hover, .credit a:visited {
+    color: #0047ab;
+}
+
+.post {
+    padding-top: 0em;
+    padding-bottom: 1em;
+    margin-bottom: 1em;
+    border-bottom: 1px dashed #ccc;
+}
+
+.feedback {
+    font-size: 80%;
+    color: #ccc;
+    clear: both;
+    padding-bottom: 1em;
+    margin-bottom: 0em;
+}
+
+.meta { font-size: 80%; line-height: 1.2; color: #999;}
+.meta li, ul.post-meta li { display: inline; }
+.meta ul { display: inline; list-style: none; margin: 0; padding: 0; }
+.meta, .meta a, .meta a:visited, .meta a:hover, .meta a:visited:hover {
+    color: #777;
+}
+
+.storytitle { margin: 0; padding: 0; }
+.storytitle a {
+    color: #a77070;
+}
+.storytitle a:visited { color: #a77070; }
+
+
+
+
+.todo {font-weight: bold; background-color: #f0ece8; color: #a03020;}
+.strike {text-decoration: line-through; color: #777777;}
+.justleft {text-align: left;}
+.justright {text-align: right;}
+.justcenter {text-align: center;}
+
+
+/**
+Added by Han Zhang
+*/

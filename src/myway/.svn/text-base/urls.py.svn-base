@@ -1,0 +1,26 @@
+from django.conf.urls.defaults import *
+from django.contrib.auth import views as auth_views
+from django.contrib import admin
+admin.autodiscover()
+
+
+urlpatterns = patterns('',
+    # Static
+    (r'res/(?P<path>.*)$', 'django.views.static.serve', {'document_root': 'resource'}),
+    
+    # Public
+    url(r'index/$', 'myway.views.index', name="index_url"),
+    url(r'about/$', 'myway.views.about', name="about_url"),
+
+    # Admin
+    (r'^admin/', include(admin.site.urls)),
+    (r'^admin/doc/', include('django.contrib.admindocs.urls')),
+
+    # Auth
+    (r'^login$', auth_views.login, {"template_name":"account/login.html", "redirect_field_name":"home/"}),
+    (r'^logout/*$', auth_views.logout),
+    
+    # Modules
+    (r'my/', include('myway.my.urls')),
+    (r'account/', include('myway.account.urls')),
+)

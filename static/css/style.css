@@ -83,13 +83,13 @@ a:hover {text-decoration: underline;}
 .content del {color:#777777;text-decoration:none;font-weight:normal}
 
 #header{width:960px;margin-top:20px;margin-bottom:10px;padding-bottom:50px; border-bottom: 3px solid #779977;}
-#hlogo{width:200px;height:35px;float:left;}
+#hlogo{width:180px;height:35px;float:left;}
 #hlogo a{font-size:35px;color:#777777;font-weight:bold;font-family:'Irish Grover', serif;vertical-align:bottom; text-decoration:none;}
 
 #footer{width:960px;margin-top:20px;font-size:70%;color:#779977;float:left;text-align:center}
 
 /* Menu {{{ */
-#hmenu{width:760px;float:left;padding:5px 0 10px 0;}
+#hmenu{width:780px;float:left;padding:5px 0 10px 0;}
 .nav{float:left;font-size:125%;}
 .nav ul{margin:0;}
 .nav li{background:#777777;display:block;float:left;margin-right:7px;}
@@ -103,11 +103,29 @@ a:hover {text-decoration: underline;}
 .nav2 li{display:block;float:left;margin-right:7px;}
 .nav2 a{color:#777;display:block;padding:15px 5px 4px 5px;text-decoration:none;}
 .nav2 a:hover{text-decoration:underline;}
+
+.topsearch{float:right}
+input.search-icon {
+background: transparent url(/static/img/text-box-search.png) no-repeat;
+width: 18px !important;
+height: 18px !important;
+border: none;
+margin: 0;
+padding: 0;
+position: relative;
+top: 7px;
+right: 25px;
+border: none;
+    padding: 0;
+    margin: 0 !important;
+cursor: pointer;
+z-index: 20; }
+.search-icon:hover { background-position: -18px 0; }
+input.text{padding:5px;width:280px;margin:0;float:left;border:1px solid #999;font-size:1em;}
 /* Menu }}} */
 
 .code { font-family: monospace; font-size: 100%; background-color:#eee; color: #000000; padding: 1em 0.5em;}
 code { font-family: monospace; font-size: 100%; background-color:#f5f5f5; color: #000000;}
-
 #map_canvas{width:960px;height:320px;margin-top:5px;}
 
 

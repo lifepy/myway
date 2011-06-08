@@ -381,14 +381,14 @@
 			// max post size is in bytes (note: all file size values are in bytes)
 			max_post_size: (1536 * 1024),
 			file_limit: -1,
-			button_up:'add-file.png',
-			button_over:'add-file.png',
-			button_down:'add-file.png'		
+			button_up:'/static/img/uploader/add-file.png',
+			button_over:'/static/img/uploader/add-file.png',
+			button_down:'/static/img/uploader/add-file.png'		
 		},
 		progressBarColor: '#000000',
 		attachScrollSpeed: 1000,		
-		removeIcon: 'trash-icon.png',
-		genericFileIcon: 'file-icon.png',
+		removeIcon: '/static/img/uploader/trash-icon.png',
+		genericFileIcon: '/static/img/uploader/file-icon.png',
 		maxPostSizeMessage: 'Attachments exceed maximum size limit.',
 		maxFileMessage: 'File limit hit, try removing a file first.',
 		duplicateFileMessage: 'This file has already been attached.',

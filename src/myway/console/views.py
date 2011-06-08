@@ -15,9 +15,11 @@ def upload_file(request):
     c = {}
     c.update(csrf(request))
     if request.method == 'POST':
-        form = UploadFileForm(request.POST, request.FILES)
+        form = UploadFileForm(request.POST)
         if form.is_valid():
-            handle_uploaded_file(request.FILES['Filedata'])
+            for i in range(0,len(request.FILES)):
+                file = request.FILES["Filedata[%d]" %i]
+                handle_uploaded_file(file)
             return render_to_response('debug/success.html')
     else:
         form = UploadFileForm()

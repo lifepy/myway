@@ -10,27 +10,28 @@
 	</head>
 	<body>
 	
-	<form id="singularDemo" enctype="multipart/form-data" action="." method="post"> {% csrf_token %}
+	<form id="multipleDemo" enctype="multipart/form-data" action="." method="post"> {% csrf_token %}
+	
 	<label for="title">Title</label><br />
 	<input id="title" type="input" name="title" />
 	<br style="clear: left;" />
 	
-	<label>Image</label> <div id="single"></div>
+	<div id="multiple"></div>
 	
-	<br style="clear: left;" />
+	<br style="clear: left;" /><br />
 	
 	</form>
 	<a style="cursor:pointer;" onClick="document.getElementById('agileUploaderSWF').submit();">Submit</a>
 	
 	<script type="text/javascript">
-		$('#single').agileUploaderSingle({
-			formId: 'singularDemo',
-			progressBarColor: '#00ff00',
+		$('#multiple').agileUploader({
+			formId: 'multipleDemo',
 			flashVars: {
-			firebug: false,
-				form_action: '.'
-			}	
-		});
+				firebug: false,
+				form_action: '.',
+				file_limit: 3
+			}
+		});	
 	</script>
 	
 	</body>

@@ -22,7 +22,7 @@ MANAGERS = ADMINS
 
 DATABASES = {
     'default': {
-        'ENGINE': 'mysql', # Add 'postgresql_psycopg2', 'postgresql', 'mysql', 'sqlite3' or 'oracle'.
+        'ENGINE': 'django.db.backends.mysql', # Add 'postgresql_psycopg2', 'postgresql', 'mysql', 'sqlite3' or 'oracle'.
         'NAME': 'mywaydb', # Or path to database file if using sqlite3.
         'USER': 'myuser', # Not used with sqlite3.
         'PASSWORD': 'mypass', # Not used with sqlite3.
@@ -103,7 +103,6 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.admin',
     'account',
-    'my',
     'tags',
     # Uncomment the next line to enable admin documentation:
     # 'django.contrib.admindocs',

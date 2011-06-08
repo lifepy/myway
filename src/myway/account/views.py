@@ -28,7 +28,7 @@ def register(request):
             sender_email = "nonreplay@localhost"
             email_subject = "Your new %s account confirmation" % domain_name
             email_body = "Hello, %s and thanks for signing up for an langtou.info account!\n\nTo activate your account, click this link within 48 hours:\n\nhttp://localhost:8000/account/confirm/%s" % (user.username, profile.activation_key)
-            print email_body
+            # print email_body
             send_mail(email_subject, email_body, sender_email, [user.email])
 
             return render_to_response('register.html', {'created':True}, context_instance=RequestContext(request))

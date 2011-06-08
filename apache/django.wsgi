@@ -1,18 +1,20 @@
 import os, sys
+from os.path import join, pardir, abspath, dirname
 
 #Calculate the path based on the location of the WSGI script.
-apache_configuration= os.path.dirname(__file__)
-project = os.path.dirname(apache_configuration)
-workspace = os.path.dirname(project)
+apache_configuration= dirname(__file__)
+project_dir = join(apache_configuration, pardir)
 
-path = os.path.join(workspace, 'myway', 'src')
-if path not in sys.path:
-    sys.path.append(path)
+src_dir = os.path.join(project_dir, 'src')
+tags_dir = os.path.join(src_dir, 'myway')
 
-path = os.path.join(path, 'myway')
-if path not in sys.path:
-    sys.path.append(path)
-# sys.path.append(workspace) 
+# append source dir
+if src_dir not in sys.path:
+    sys.path.append(src_dir)
+
+# append tag dir
+if tags_dir not in sys.path:
+    sys.path.append(tags_dir)
 
 os.environ['DJANGO_SETTINGS_MODULE'] = 'myway.settings'
 

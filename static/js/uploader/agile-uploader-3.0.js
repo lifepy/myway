@@ -99,6 +99,7 @@
 		if(typeof(opts.submitRedirect) == 'string') {
 			window.location = opts.submitRedirect;
 		} else {			
+			document.getElementById('agileUploaderSWF').removeAllFiles();
 			$('#agileUploaderFileList').empty();
 		}
 	}

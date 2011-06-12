@@ -5,18 +5,18 @@ from os.path import join, pardir, abspath, dirname
 apache_configuration= dirname(__file__)
 project_dir = join(apache_configuration, pardir)
 
-src_dir = os.path.join(project_dir, 'src')
-tags_dir = os.path.join(src_dir, 'myway')
+#tags_dir = os.path.join(src_dir, 'myway')
 
 # append source dir
-if src_dir not in sys.path:
-    sys.path.append(src_dir)
+if project_dir not in sys.path:
+    sys.path.append(project_dir)
 
 # append tag dir
-if tags_dir not in sys.path:
-    sys.path.append(tags_dir)
+#if tags_dir not in sys.path:
+#    sys.path.append(tags_dir)
 
-os.environ['DJANGO_SETTINGS_MODULE'] = 'myway.settings'
+os.environ['DJANGO_SETTINGS_MODULE'] = 'settings'
+os.environ['SCRIPT_NAME'] = '/myway/'
 
 import django.core.handlers.wsgi
 application = django.core.handlers.wsgi.WSGIHandler()

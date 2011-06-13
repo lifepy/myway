@@ -1,0 +1,26 @@
+{% load tags %}
+{% load i18n %}
+{% url index-url as index %}
+{% url plan-url as plan %}
+{% url blog-url as blog %}
+{% url about-url as about %}
+
+<div id="hlogo">
+	<a href="#">{% trans "My Way" %}</a>
+</div>
+<div id="hmenu">
+	<div class="nav">
+		<ul>
+			<li {% active request index %}><a href="/">{% trans "Home" %}</a> </li>
+            <li {% active request plan %}><a href='/plan/'>{% trans "Plan"%}</a> </li>
+			<li {% active request blog %}><a href='/blog/'>{% trans "Blog"%} </a> </li>
+			<li {% active request about %}><a href="/about/">{% trans "About" %}</a> </li>
+		</ul>
+	</div>
+	<div class="topsearch">
+		<input type="text" class="text" value="Where do you want to go?" onfocus="this.value='';"/>
+		<span>
+		<input type="image" class="search-icon" height="18"/>
+		</span>
+	</div>
+</div>

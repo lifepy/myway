@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        {% block htmlhead %}{% endblock %}
+    </head>
+    <body>
+        <div class="wrapper">
+        <div>
+        <div id="header">
+            {% block header %}{% endblock %}
+        </div>
+
+        <div class="content fixed_wide">
+            {% block content %}{% endblock %}
+        </div>
+
+        <div id="sidebar">
+            {% block sidebar %}{% endblock %}
+        </div>
+        </div>
+
+        <div id="footer">
+            {% block footer %}
+            Copyright(c) 2011 simon.zg. All rights reserved<br/>
+            <br/>
+            
+            {% endblock %}
+        </div>
+        </div>
+
+    </body>
+</html>

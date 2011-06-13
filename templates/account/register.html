@@ -1,0 +1,21 @@
+{% load i18n %}
+{% if has_account %}
+    {% trans "You are logged in!" %}
+{% else %} {% if created %}
+    {% trans "Your account has been created and confirmation email has been sent to your email" %} 
+{% else %}
+<script language='text/javascript'>
+    $('#register_link').click(function(){
+        alert('a');
+        $('register_form').submit();
+    });
+</script>
+    <form action="" method="post" id='register_form'> {% csrf_token %}
+        <div>
+        {{ form.as_p }}
+        <input type="submit" value="{% trans 'Submit' %}"/>
+        </div>
+    </form>
+    <a href='#' id='register_link'>Submit</a>
+{% endif %}
+{% endif %}

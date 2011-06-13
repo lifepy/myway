@@ -9,7 +9,6 @@ from django.core.context_processors import csrf
 encodings = ['utf-8', 'gb2312', 'gbk']
 def handle_uploaded_file(f):
     name = ''
-    print "FILE NAME:", type(f.name)
     for encoding in encodings:
         try:
              name = f.name.encode(encoding)

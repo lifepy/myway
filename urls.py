@@ -36,6 +36,7 @@ urlpatterns = patterns('',
     (r'^admin/doc/', include('django.contrib.admindocs.urls')),
 
     # Share
-    (r'^share/$', direct_to_template, {'template':'share.html'}),
+    (r'^share/$', views.share, {'relative_path':''}),
+    (r'^share/(.+)/$', views.share),
 
 )

@@ -2,30 +2,35 @@
 	<head>
 		<script src="/static/js/jquery-1.5.min.js" type="text/javascript"></script>
         <script type="text/javascript">
+            var inputElem = "<p><input type='file'/><a href='#' id='remove-file'>x</a></p>"
             $(document).ready(function(){
-
                 count = 0;
                 $("#add-file").click(function(){
                     var div = $('#input-container')
-                    var inputField = div.children(':first').clone()
-                    div.prepend(inputField)
+                    div.prepend(inputElem)
+                    $("#remove-file").click(function(event){
+                        var clicked = $(this);
+                        clicked.parent().remove();
+                    });
                 });
-                $("#remove-file").click(function(){
-                    $('#share-form').prepend('<p><input type="file"/>');
-                });
+
             });
         </script>
 		<title>Share File Upload</title>
 	</head>
 	<body>
 	
-	<form enctype="multipart/form-data" action="." method="post" id="share-form"> {% csrf_token %}
+	<form enctype="multipart/form-data" action="." method="post" id="share-form"> 
         <div id='input-container'>
-            <p><input type="file"/><a href='#' id='remove-file'>x</a></p>
+            <p><a href="#" id='add-file'>add another</a></p>
+            <p><input type="submit" value="Submit"/></p>
         </div>
-        <a href="#" id='add-file'>add another</a><br/>
-		<input type="submit" value="Submit"/>
 	</form>
+    <div>
+    {% for filename,isdir in file_list %}
+    <p><a href='{{filename}}'>{{ filename }}</a></p>
+    {% endfor %}
+    </div>
 	
 	</body>
 </html>

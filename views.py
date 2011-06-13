@@ -1,8 +1,14 @@
+import os
+from os.path import join, isdir, basename
+
+
 from django.shortcuts import render_to_response
-from django.http import HttpResponseRedirect
+from django.http import HttpResponseRedirect, HttpResponse
 from django.template import RequestContext
+from django.views.decorators.csrf import csrf_exempt
 
 from django.contrib.auth.forms import AuthenticationForm
+from settings import SHARE_DIR
 
 def index(request):
     if request.user.is_authenticated():
@@ -26,3 +32,29 @@ def test(request):
 
 def home(request):
     return render_to_response('home.html', context_instance=RequestContext(request))
+
+@csrf_exempt
+def share(request, relative_path):
+    page_url = 'share.html'
+    file_list = []
+
+    cur_dir = join(SHARE_DIR , relative_path)
+    print cur_dir
+    if isdir(cur_dir):
+        # continue to follow:
+        for filename in os.listdir(cur_dir):
+            if isdir(join(SHARE_DIR, filename)):
+                file_list.append( (filename, True) )
+            else:
+                file_list.append( (filename, False) )
+    else:
+        response = HttpResponse(mimetype='application/force-download')
+        response['Content-Disposition'] = 'attachment; filename=%s' %basename(relative_path)
+        response['X-Sendfile'] = cur_dir
+        return response
+
+    if request.method == 'POST':
+        for i in request.FILES:
+            print i.name
+
+    return render_to_response(page_url, {'file_list':file_list})

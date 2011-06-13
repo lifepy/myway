@@ -109,3 +109,5 @@ INSTALLED_APPS = (
 )
 
 STATIC_DOC_ROOT = rel('static')
+
+from settings_local import *

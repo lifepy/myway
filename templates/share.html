@@ -2,16 +2,18 @@
 	<head>
 		<script src="/static/js/jquery-1.5.min.js" type="text/javascript"></script>
         <script type="text/javascript">
-            var inputElem = "<p><input type='file'/><a href='#' id='remove-file'>x</a></p>"
+            var inputElem = "<p><input type='file' name='fakename'/><a href='#' id='remove-file'>x</a></p>"
             $(document).ready(function(){
                 count = 0;
                 $("#add-file").click(function(){
                     var div = $('#input-container')
-                    div.prepend(inputElem)
+                    var anotherInput = inputElem.replace('fakename','file'+count)
+                    div.prepend(anotherInput)
                     $("#remove-file").click(function(event){
                         var clicked = $(this);
                         clicked.parent().remove();
                     });
+                    count++;
                 });
 
             });

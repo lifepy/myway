@@ -1,6 +1,5 @@
 from os.path import join
-from django.http import HttpResponseRedirect
-from django.shortcuts import render_to_response
+from django.http import HttpResponseRedirect from django.shortcuts import render_to_response
 
 from forms import UploadFileForm
 from forms import UploadShareForm
@@ -44,6 +43,9 @@ def upload_share(request):
     if request.method == 'POST':
         form = UploadShareForm(request.POST,request.FILES)
         if form.is_valid():
+            # consider to use this:
+            # for fname in request.FILES:
+            #     handle_uploaded_file(request.FILES[fname])
             handle_uploaded_file(request.FILES["file"])
             if len(request.FILES) > 1:
                 for i in range(1,len(request.FILES)):

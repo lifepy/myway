@@ -6,8 +6,20 @@ from forms import UploadFileForm
 from forms import UploadShareForm
 from django.core.context_processors import csrf
 
+encodings = ['utf-8', 'gb2312', 'gbk']
 def handle_uploaded_file(f):
-    destination = open(join('/opt/www/upload',f.name), 'wb+')
+    name = ''
+    print "FILE NAME:", type(f.name)
+    for encoding in encodings:
+        try:
+             name = f.name.encode(encoding)
+        except:
+             print "Encoding with %s failed." % encoding
+        else:
+             break
+    if name == '':
+        raise NotImplemented
+    destination = open(join('/opt/www/upload',name), 'wb+')
     for chunk in f.chunks():
         destination.write(chunk)
     destination.close()

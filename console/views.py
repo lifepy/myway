@@ -1,5 +1,5 @@
 from os.path import join
-from django.http import HttpResponseRedirect from django.shortcuts import render_to_response
+from django.shortcuts import render_to_response
 
 from forms import UploadFileForm
 from forms import UploadShareForm
@@ -10,11 +10,11 @@ def handle_uploaded_file(f):
     name = ''
     for encoding in encodings:
         try:
-             name = f.name.encode(encoding)
+            name = f.name.encode(encoding)
         except:
-             print "Encoding with %s failed." % encoding
+            print "Encoding with %s failed." % encoding
         else:
-             break
+            break
     if name == '':
         raise NotImplemented
     destination = open(join('/opt/www/upload',name), 'wb+')

@@ -1,6 +1,6 @@
 {% load i18n %}
 
-<form action="." method='post' id='login_form'>{% csrf_token %}
+<form action="/login/" method='post' id='login_form'>{% csrf_token %}
     {{ form.as_p }}
     <input type="submit"></input>
     <a href='/account/register'>{% trans "Register" %}</a>

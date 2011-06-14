@@ -1,6 +1,5 @@
 import os
-from os.path import join, isdir, basename
-
+from os.path import join, isdir, basename, dirname
 
 from django.shortcuts import render_to_response
 from django.http import HttpResponseRedirect, HttpResponse
@@ -36,7 +35,7 @@ def home(request):
 @csrf_exempt
 def share(request, relative_path):
     page_url = 'share.html'
-    file_list = []
+    file_list = [dirname(relative_path), ]
 
     cur_dir = join(SHARE_DIR , relative_path)
     print cur_dir
@@ -63,5 +62,6 @@ def share(request, relative_path):
             for chunk in f.chunks():
                 destination.write(chunk)
             destination.close()
+        return HttpResponseRedirect('/share/'+relative_path)
 
     return render_to_response(page_url, {'file_list':file_list})

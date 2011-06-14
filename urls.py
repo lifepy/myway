@@ -10,8 +10,9 @@ import views
 urlpatterns = patterns('',
     # Logged in Home
     (r'^home/$', views.home),
-    # Auth
-    (r'^login/$', auth_views.login, {"template_name":"account/login.html", "redirect_field_name":"/"}),
+    # Log in/out
+    (r'^login/$', auth_views.login, {"template_name":"account/login.html", "redirect_field_name":"/home"}),
+    (r'^logout/$', auth_views.logout, {"template_name":'account/logged_out.html'}),
     
     # Modules
     (r'account/', include('account.urls')),

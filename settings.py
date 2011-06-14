@@ -104,6 +104,7 @@ INSTALLED_APPS = (
     'django.contrib.admin',
     # my apps
     'account',
+    'console',
     'tags',
 
 )

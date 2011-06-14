@@ -23,4 +23,9 @@
 		<input type="image" class="search-icon" height="18"/>
 		</span>
 	</div>
+    {% if user.is_authenticated %}
+    <div>
+        <a href='/logout'>Log Out</a>
+    </div>
+    {% endif %}
 </div>

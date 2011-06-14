@@ -25,7 +25,7 @@
 	</div>
     {% if user.is_authenticated %}
     <div>
-        <a href='/logout'>Log Out</a>
+        {{user.username}} <a href='/logout'>Log Out</a>
     </div>
     {% endif %}
 </div>

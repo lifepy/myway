@@ -1,9 +1,12 @@
 from os.path import join
-from django.shortcuts import render_to_response
 
 from forms import UploadFileForm
 from forms import UploadShareForm
 from django.core.context_processors import csrf
+from django.shortcuts import render_to_response
+import logging
+
+logger = logging.getLogger('console.views')
 
 encodings = ['utf-8', 'gb2312', 'gbk']
 def handle_uploaded_file(f):
@@ -12,7 +15,7 @@ def handle_uploaded_file(f):
         try:
             name = f.name.encode(encoding)
         except:
-            print "Encoding with %s failed." % encoding
+            logger.error("Encoding with %s failed." % encoding)
         else:
             break
     if name == '':

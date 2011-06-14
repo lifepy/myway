@@ -19,8 +19,6 @@ def about(request):
     return render_to_response('about.html', context_instance=RequestContext(request))
 
 def plan(request, city):
-    print "city=%s"%city
-    print bool(city)
     return render_to_response('plan.html', context_instance=RequestContext(request))
 
 def blog(request):
@@ -38,7 +36,6 @@ def share(request, relative_path):
     file_list = [dirname(relative_path), ]
 
     cur_dir = join(SHARE_DIR , relative_path)
-    print cur_dir
     if isdir(cur_dir):
         # if target is dir, go deep
         for filename in os.listdir(cur_dir):

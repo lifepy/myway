@@ -1,3 +1,4 @@
+# coding=utf-8
 import datetime
 from django.shortcuts import render_to_response, get_object_or_404
 from django.utils.translation import ugettext as _
@@ -26,9 +27,9 @@ def register(request):
 
             # Send email with confirmation link
             domain_name = "langtou.me"
-            sender_email = "noreply@myway.com"
-            email_subject = "Your new %s account confirmation" % domain_name
-            email_body = _("Howdy, %s,\n\nThank you so much for signing up at langtou.me. We focus on providing you an intuitive way to plan and share your trips, Have fun!\n\nTo activate your account, click this link within 48 hours:\n\nhttp://localhost:8000/account/confirm/%s\n\nHappiness only real when shared.\n\nBest wishes,\nMyWay Team.") % (user.username, profile.activation_key)
+            sender_email = "noreply@langtou.me"
+            email_subject = "Your account at %s" % domain_name
+            email_body = _("Howdy, %s,\n\nThank you so much for signing up at langtou.me. We focus on providing you an intuitive way to plan and share your trips, Have fun!\n\nTo activate your account, click this link within 48 hours:\n\nhttp://langtou.me/account/confirm/%s\n\nHappiness only real when shared.\n\nBest wishes,\nMyWay Team.") % (user.username, profile.activation_key)
             # print email_body
             send_mail(email_subject, email_body, sender_email, [user.email])
 

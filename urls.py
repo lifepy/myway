@@ -1,11 +1,12 @@
 from django.conf.urls.defaults import *
 from django.contrib.auth import views as auth_views
 from django.views.generic.simple import direct_to_template
-from settings import rel
 from django.contrib import admin
 admin.autodiscover()
 
+from settings import rel
 import views 
+import upload_views
 
 urlpatterns = patterns('',
     # Logged in Home
@@ -14,6 +15,12 @@ urlpatterns = patterns('',
     (r'^login/$', auth_views.login, {"template_name":"account/login.html", "redirect_field_name":"/home"}),
     (r'^logout/$', auth_views.logout, {"template_name":'account/logged_out.html'}),
     
+    # Upload
+    (r'^upload/file', upload_views.upload_single_file),
+    (r'^upload/files$', upload_views.upload_multiple_files),
+    (r'uploadify/', include('uploadify.urls')),
+    (r'test/$', direct_to_template, {'template':'test.html'}),
+
     # Modules
     (r'account/', include('account.urls')),
     (r'console/', include('console.urls')),

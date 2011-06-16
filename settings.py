@@ -7,29 +7,13 @@ TEMPLATE_DEBUG = DEBUG
 from os.path import dirname, join
 rel = lambda * x: join(dirname(__file__) , *x)
 AUTH_PROFILE_MODULE = 'account.UserProfile'
+from settings_local import *
 
 TEMPLATE_CONTEXT_PROCESSORS = (
     'django.contrib.auth.context_processors.auth',
     'django.core.context_processors.request',
 )
 # ---------------------------------------
-
-ADMINS = (
-    # ('Your Name', 'your_email@domain.com'),
-)
-
-MANAGERS = ADMINS
-
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.mysql', # Add 'postgresql_psycopg2', 'postgresql', 'mysql', 'sqlite3' or 'oracle'.
-        'NAME': 'mywaydb', # Or path to database file if using sqlite3.
-        'USER': 'myuser', # Not used with sqlite3.
-        'PASSWORD': 'mypass', # Not used with sqlite3.
-        'HOST': 'localhost', # Set to empty string for localhost. Not used with sqlite3.
-        'PORT': '3306', # Set to empty string for default. Not used with sqlite3.
-    }
-}
 
 # Local time zone for this installation. Choices can be found here:
 # http://en.wikipedia.org/wiki/List_of_tz_zones_by_name
@@ -54,10 +38,6 @@ USE_I18N = True
 # calendars according to the current locale
 USE_L10N = True
 
-# Absolute filesystem path to the directory that will hold user-uploaded files.
-# Example: "/home/media/media.lawrence.com/"
-MEDIA_ROOT = rel('media')
-
 # URL that handles the media served from MEDIA_ROOT. Make sure to use a
 # trailing slash if there is a path component (optional in other cases).
 # Examples: "http://media.lawrence.com", "http://example.com/media/"
@@ -66,7 +46,7 @@ MEDIA_URL = '/media/'
 # URL prefix for admin media -- CSS, JavaScript and images. Make sure to use a
 # trailing slash.
 # Examples: "http://foo.com/media/", "/media/".
-ADMIN_MEDIA_PREFIX = '/media/'
+# ADMIN_MEDIA_PREFIX = '/media/'
 
 # Make this unique, and don't share it with anybody.
 SECRET_KEY = '3izojq@p1x5m+l*75!z3ih&+4eys8)ng2eogomdk+djipo=enz'
@@ -106,9 +86,7 @@ INSTALLED_APPS = (
     'account',
     'console',
     'tags',
-
+    'uploadify',
 )
 
 STATIC_DOC_ROOT = rel('static')
-
-from settings_local import *

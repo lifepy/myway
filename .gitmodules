@@ -1,0 +1,3 @@
+[submodule "django-uploadify"]
+	path = django-uploadify
+	url = git@github.com:lifepy/django-uploadify.git

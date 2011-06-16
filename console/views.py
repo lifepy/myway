@@ -1,14 +1,16 @@
+# coding=utf-8
 from os.path import join
+
+from django.core.context_processors import csrf
+from django.shortcuts import render_to_response
 
 from forms import UploadFileForm
 from forms import UploadShareForm
-from django.core.context_processors import csrf
-from django.shortcuts import render_to_response
-import logging
-from django.http import HttpResponse
-from django.utils import simplejson
 
+import logging
 logger = logging.getLogger('console.views')
+
+from query_json.views import city_dict
 
 encodings = ['utf-8', 'gb2312', 'gbk']
 def handle_uploaded_file(f):
@@ -28,38 +30,18 @@ def handle_uploaded_file(f):
     destination.close()
 
 def upload_file(request):
-    '''
-    set province list
-    '''
-    proList = []
-    proList.append("jiangsu")
-    proList.append("zhejiang")
     c = {}
     c.update(csrf(request))
     if request.method == 'POST':
         form = UploadFileForm(request.POST)
         if form.is_valid():
-            for i in range(0,len(request.FILES)):
-                file = request.FILES["Filedata[%d]" %i]
-                handle_uploaded_file(file)
+            for fname in request.FILES:
+                handle_uploaded_file(request.FILES[fname])
             return render_to_response('debug/success.html')
     else:
         form = UploadFileForm()
     c.update({'form':form})
-    return render_to_response('upload.html', {"proList" : proList})
-
-def get_cities_by_province(request):
-    province = request.GET["province"]
-    cities = []
-    if province == "jiangsu":
-        cities.append("wuxi")
-        cities.append("changzhou")
-    if province == "zhejiang":
-        cities.append("hangzhou")
-        cities.append("ningbo")
-    # need json cityList
-    citiesJson = simplejson.dumps({"cities":cities})
-    return HttpResponse(citiesJson)
+    return render_to_response('upload.html', {"province_list" : city_dict.keys()})
 
 def upload_share(request):
     c = {}
@@ -68,13 +50,13 @@ def upload_share(request):
         form = UploadShareForm(request.POST,request.FILES)
         if form.is_valid():
             # consider to use this:
-            # for fname in request.FILES:
-            #     handle_uploaded_file(request.FILES[fname])
-            handle_uploaded_file(request.FILES["file"])
-            if len(request.FILES) > 1:
-                for i in range(1,len(request.FILES)):
-                    file = request.FILES["file%d" %i]
-                    handle_uploaded_file(file)
+            for fname in request.FILES:
+                handle_uploaded_file(request.FILES[fname])
+            # handle_uploaded_file(request.FILES["file"])
+            # if len(request.FILES) > 1:
+                # for i in range(1,len(request.FILES)):
+                    # file = request.FILES["file%d" %i]
+                    # handle_uploaded_file(file)
             return render_to_response('debug/success.html')
     else:
         form = UploadShareForm()

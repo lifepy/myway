@@ -18,6 +18,9 @@ urlpatterns = patterns('',
     (r'account/', include('account.urls')),
     (r'console/', include('console.urls')),
 
+    # Query returns JSON
+    (r'json/', include('query_json.urls')),
+
     # For DEBUG Only
     (r'success/', direct_to_template, {'template':'debug/success.html'}),
     (r'fail/', direct_to_template, {'template':'debug/fail.html'}),

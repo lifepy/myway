@@ -6,7 +6,7 @@ _uploadphoto = new function() {
 	this.selProvince = function(province) {
 		$.ajax({
 			type: "GET",
-			url: "/console/getCitiesByProvince",
+			url: "/json/cities/in/"+province+'/',
 			dataType: "json",
 			data: {
 				province:province

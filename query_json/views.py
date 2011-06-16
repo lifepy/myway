@@ -15,7 +15,8 @@ area_dict = {
 
 def get_city_list(request, province):
     # province = request.GET["province"]
-    city_list = city_dict[province.encode('utf-8')] 
+    key_dict = dict([(pinyin, (pname, pinyin),) for pname, pinyin in city_dict.keys()])
+    city_list = city_dict[key_dict[province]]
     ret = simplejson.dumps({"cities":city_list})
     return HttpResponse(ret)
 

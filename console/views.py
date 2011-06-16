@@ -3,13 +3,11 @@ from os.path import join
 
 from django.core.context_processors import csrf
 from django.shortcuts import render_to_response
-
-from forms import UploadFileForm
-from forms import UploadShareForm
-
 import logging
 logger = logging.getLogger('console.views')
 
+from forms import UploadFileForm
+from forms import UploadShareForm
 from query_json.views import city_dict
 
 encodings = ['utf-8', 'gb2312', 'gbk']

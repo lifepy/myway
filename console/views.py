@@ -5,6 +5,7 @@ from forms import UploadShareForm
 from django.core.context_processors import csrf
 from django.shortcuts import render_to_response
 import logging
+from django.http import HttpResponse
 
 logger = logging.getLogger('console.views')
 
@@ -26,6 +27,12 @@ def handle_uploaded_file(f):
     destination.close()
 
 def upload_file(request):
+    '''
+    set province list
+    '''
+    proList = []
+    proList.append("jiangsu")
+    proList.append("zhejiang")
     c = {}
     c.update(csrf(request))
     if request.method == 'POST':
@@ -38,7 +45,14 @@ def upload_file(request):
     else:
         form = UploadFileForm()
     c.update({'form':form})
-    return render_to_response('upload.html', c)
+    return render_to_response('upload.html', {"proList" : proList})
+
+def get_cities_by_province(request):
+    cities = []
+    cities.append("wuxi")
+    cities.append("changzhou")
+    # need json cityList
+    return HttpResponse({"data":cities})
 
 def upload_share(request):
     c = {}

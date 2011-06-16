@@ -6,13 +6,26 @@
 		
 		<script src="/static/js/uploader/agile-uploader-3.0.js" type="text/javascript"></script>
 		<link type="text/css" rel="stylesheet" href="/static/css/uploader/agile-uploader.css" />
+		
+		<script src="/static/js/uploadphoto/uploadphoto.js" type="text/javascript"></script>
+		
 		<title>Upload Console</title>
 	</head>
 	<body>
 	
 	<form id="multipleDemo" enctype="multipart/form-data" action="." method="post"> {% csrf_token %}
 	
-	<label for="title">Title</label><br />
+	<label for="province">Province</label>
+	<select id="province" name="province" onchange="_uploadphoto.selProvince(this.value);">
+		{% for pro in proList %}
+		<option value="{{ pro }}">{{ pro }}</option>
+		{% endfor %}
+	</select>
+	<select id="city" name="city" onchange="_uploadphoto.selCity(this.value);">
+	</select>
+	<br />
+	
+	<label for="title">Title</label>
 	<input id="title" type="input" name="title" />
 	<br style="clear: left;" />
 	

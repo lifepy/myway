@@ -12,16 +12,17 @@ _uploadphoto = new function() {
 				province:province
 			},
 			success: function(data) {
-				_uploadphoto.showCities(data);
-			},
+				_uploadphoto.showCities(data.cities);
+			}
 		});
 	}
 	
-	this.showCities = function(data) {
-		var option;
-		data.forEach(function(city){
-			option = "<option value='" + city + "'>" + city + "</option>";
+	this.showCities = function(cities) {
+		$("#city").empty();
+		for (var i = 0; i < cities.length; i++) {
+			var city = cities[i];
+			var option = "<option value='" + city + "'>" + city + "</option>";
 			$("#city").append(option);
-		})
+		}
 	}
 }

@@ -1,0 +1,68 @@
+<script type="text/javascript" src="{{ uploadify_path }}swfobject.js"></script>
+<script type="text/javascript" src="{{ uploadify_path }}jquery.uploadify.js"></script>
+<div id='uploadify'>
+    <input id="fileInput" name="fileInput" type="file" />
+    <div id="uploaded-queue" class="uploadifyQueue"></div>
+    <div id="status-message"></div>
+
+<style type="text/css">
+#upload-queue { border:1px sold #FFFFFF}
+#uploadify .uploadifyQueueItem {
+  background-color: #FFFFFF;
+  border: none;
+  border-bottom: 1px solid #E5E5E5;
+  font: 11px Verdana, Geneva, sans-serif;
+  height: 30px;
+  margin-top: 0;
+  padding: 10px;
+  width: 400px;
+}
+#uploadify .uploadifyError {
+  background-color: #FDE5DD !important;
+  border: none !important;
+  border-bottom: 1px solid #FBCBBC !important;
+}
+#uploadify .uploadifyQueueItem .cancel {
+  float: right;
+}
+#uploadify .uploadifyQueue .completed {
+  color: #555555;
+}
+</style>
+<script type="text/javascript">// <![CDATA[
+    $(document).ready(function() {
+    $('#fileInput').uploadify({
+        'uploader'  : '{{ uploadify_path }}uploadify.swf',
+        'script'    : '{% url uploadify_upload %}',
+        'cancelImg' : '{{ uploadify_path }}cancel.png',
+        'auto'      : true,
+        'folder'    : '{{ upload_path }}',
+        'multi'     : true,
+        'queueId'   : 'upload-queue',
+        'queueSizeLimit'  : 3,
+        'simUploadLimit'  : 3,
+        'removeCompleted' : false,
+        'onSelectOnce'    : function(event,data) {
+            $('#status-message').text(data.filesSelected + ' files have been added to the queue.');
+        },
+        'onAllComplete'   : function(event,data) {
+            $('#status-message').text(data.filesUploaded + ' files uploaded, ' + data.errors + ' errors.');
+        }
+        //'onAllComplete' : allComplete
+        });
+    });
+
+    /*
+    function allComplete(event, data) {
+        $('#uploadify').load('{{ upload_complete_url }}', {
+            'filesUploaded': data.filesUploaded,
+            'errorCount': data.errors,
+            'allBytesLoaded': data.allBytesLoaded,
+            'speed': data.speed
+        });
+        // Raise custom event
+        $('#uploadify').trigger('allUploadsComplete', data);
+    }
+    */
+// ]]></script>
+</div>

@@ -8,6 +8,7 @@ from os.path import dirname, join
 rel = lambda * x: join(dirname(__file__) , *x)
 AUTH_PROFILE_MODULE = 'account.UserProfile'
 from settings_local import *
+STATIC_URL = '/static/'
 
 TEMPLATE_CONTEXT_PROCESSORS = (
     'django.contrib.auth.context_processors.auth',

@@ -1,0 +1,56 @@
+<html>
+	<head>
+		<script type="text/javascript" src="/static/jquery/jquery-1.5.min.js" ></script>
+        <link href="/static/jquery/uploadify/uploadify.css" type="text/css" rel="stylesheet" />
+        <!-- Uplodify -->
+        <script type="text/javascript" src="/static/jquery/uploadify/swfobject.js"></script>
+        <script type="text/javascript" src="/static/jquery/uploadify/jquery.uploadify.v2.1.4.min.js"></script>
+        <script type="text/javascript">
+            $(document).ready(function() {
+);
+});
+</script>
+        <script type="text/javascript">
+            var inputElem = "<p><input type='file' name='fakename' id='file-upload'/><a href='#' id='remove-file'>x</a></p>"
+            $(document).ready(function(){
+                count = 0;
+                    $('#file-upload').uploadify({
+                       'uploader'  : '/static/jquery/uploadify/uploadify.swf',
+                       'script'    : '/upload/file',
+                       'cancelImg' : '/static/jquery/uploadify/cancel.png',
+                       'folder'    : '/opt/www/share',
+                       'auto'      : true
+                    });
+                $("#add-file").click(function(){
+                    var div = $('#input-container')
+                    var anotherInput = inputElem.replace('fakename','file'+count)
+                    div.prepend(anotherInput)
+                    $("#remove-file").click(function(event){
+                        var clicked = $(this);
+                        clicked.parent().remove();
+                    });
+                    count++;
+
+                });
+
+            });
+            
+        </script>
+		<title>Share File Upload</title>
+	</head>
+	<body>
+	
+	<form enctype="multipart/form-data" action="." method="post" id="share-form"> 
+        <div id='input-container'>
+            <p><input type='file' name='fakename' id='file-upload'/></p>
+            <!--<p><a href="#" id='add-file'>add another</a><input type="submit" value="Upload"/></p>-->
+        </div>
+	</form>
+    <div>
+    {% for filename,isdir in file_list %}
+    <p><a href='{{filename}}'>{{ filename }}</a></p>
+    {% endfor %}
+    </div>
+	
+	</body>
+</html>

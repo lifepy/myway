@@ -36,6 +36,7 @@ def share(request, relative_path):
     file_list = [dirname(relative_path), ]
 
     cur_dir = join(SHARE_DIR , relative_path)
+    print cur_dir
     if isdir(cur_dir):
         # if target is dir, go deep
         for filename in os.listdir(cur_dir):
@@ -61,4 +62,5 @@ def share(request, relative_path):
             destination.close()
         return HttpResponseRedirect('/share/'+relative_path)
 
+    print file_list
     return render_to_response(page_url, {'file_list':file_list})

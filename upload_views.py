@@ -4,9 +4,11 @@ from os.path import join
 from django.core.context_processors import csrf
 from django.shortcuts import render_to_response
 from django.http import HttpResponse
+from uploadify.views import upload_received
 
 import logging
 logger = logging.getLogger('console.views')
+
 
 encodings = ['utf-8', 'gb2312', 'gbk']
 
@@ -27,12 +29,10 @@ def handle_uploaded_file(f):
     destination.close()
 
 def upload_single_file(request):
-    print 'asdf'
     if request.method == 'POST':
         print request.FILES
         for fname in request.FILES['Filedata']:
             handle_uploaded_file(request.FILES[fname])
-            print fname
     return HttpResponse('/ok')
 
 def upload_multiple_files(request):
@@ -53,3 +53,10 @@ def upload_share(request):
     c.update({'form':form})
     return render_to_response('uploadshare.html', c)
 '''
+
+def upload_received_handler(sender, data, **kwargs):
+    print 'HERE'
+    if data.file:
+        print data.file
+
+upload_received.connect(upload_received_handler, dispatch_uid='upload_views.upload_received_handler')

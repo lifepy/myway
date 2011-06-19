@@ -8,7 +8,7 @@ logger = logging.getLogger('console.views')
 
 from forms import UploadFileForm
 from forms import UploadShareForm
-from query_json.views import city_dict
+from query_json.db import province_list
 
 encodings = ['utf-8', 'gb2312', 'gbk']
 def handle_uploaded_file(f):
@@ -39,7 +39,8 @@ def upload_file(request):
     else:
         form = UploadFileForm()
     c.update({'form':form})
-    return render_to_response('upload.html', {"province_list" : city_dict.keys()})
+    plist = [ (p['name'], p['id']) for p in province_list]
+    return render_to_response('upload.html', {"province_list" : plist})
 
 def upload_share(request):
     c = {}

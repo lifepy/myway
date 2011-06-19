@@ -17,8 +17,8 @@
 	
 	<label for="province">Province</label>
 	<select id="province" name="province" onchange="_uploadphoto.selProvince(this.value);">
-		{% for pname,pval in province_list %}
-		<option value="{{ pval }}">{{ pname }}</option>
+		{% for pname,pid in province_list %}
+		<option value="{{ pid }}">{{ pname }}</option>
 		{% endfor %}
 	</select>
 	<select id="city" name="city" onchange="_uploadphoto.selCity(this.value);">

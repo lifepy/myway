@@ -3,16 +3,16 @@
 // author victor.you
 
 _uploadphoto = new function() {
-	this.selProvince = function(province) {
+	this.selProvince = function(province_id) {
 		$.ajax({
 			type: "GET",
-			url: "/json/cities/in/"+province+'/',
+			url: "/json/subareas/in/"+province_id+'/',
 			dataType: "json",
 			data: {
-				province:province
+				province:province_id
 			},
-			success: function(data) {
-				_uploadphoto.showCities(data.cities);
+			success: function(cities) {
+				_uploadphoto.showCities(cities);
 			}
 		});
 	}
@@ -21,7 +21,7 @@ _uploadphoto = new function() {
 		$("#city").empty();
 		for (var i = 0; i < cities.length; i++) {
 			var city = cities[i];
-			var option = "<option value='" + city + "'>" + city + "</option>";
+			var option = "<option value='" + city['id'] + "'>" + city['name'] + "</option>";
 			$("#city").append(option);
 		}
 	}

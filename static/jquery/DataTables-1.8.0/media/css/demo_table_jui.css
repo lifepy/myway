@@ -512,10 +512,10 @@ tr.even.gradeU td.sorting_3 {
 /*
  * Row highlighting example
  */
-.ex_highlight #example tbody tr.even:hover, #example tbody tr.even td.highlighted {
+#fileList tbody tr.even:hover, #fileList tbody tr.even td.highlighted {
 	background-color: #ECFFB3;
 }
 
-.ex_highlight #example tbody tr.odd:hover, #example tbody tr.odd td.highlighted {
+#fileList tbody tr.odd:hover, #fileList tbody tr.odd td.highlighted {
 	background-color: #E6FF99;
 }

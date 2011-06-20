@@ -4,6 +4,7 @@
         <link rel="stylesheet" type="text/css" href="/static/jquery/DataTables-1.8.0/media/css/share_page.css">
         <link rel="stylesheet" type="text/css" href="/static/jquery/DataTables-1.8.0/media/css/demo_table_jui.css">
         <link rel="stylesheet" type="text/css" href="/static/jquery/DataTables-1.8.0/examples/examples_support/themes/smoothness/jquery-ui-1.8.4.custom.css">
+        <!--<link rel="stylesheet" type="text/css" href="/static/jquery/jquery-ui/css/hot-sneaks/jquery-ui.css">-->
 
 		<script type="text/javascript" src="/static/jquery/jquery-1.5.min.js" ></script>
 		<script type="text/javascript" src="/static/jquery/DataTables-1.8.0/media/js/jquery.dataTables.min.js" ></script>
@@ -49,16 +50,27 @@
                         'bProcessing':true,
                         'sAjaxSource':'/json/aaData/files/in/'+ relative_path,
                         "bJQueryUI": true,
-                        "sPaginationType": "full_numbers"
+                        "sPaginationType": "full_numbers",
+                        'bSortClasses':false,
                     });
                 } else {
                     fileDataTable.fnReloadAjax();
                 }
 
+                $('td', fileDataTable.fnGetNodes()).hover( function() {
+                        alert('hover');
+                    var iCol = $('td').index(this) % 5;
+                    var nTrs = fileDataTable.fnGetNodes();
+                    $('td:nth-child('+(iCol+1)+')', nTrs).addClass( 'hld' );
+                    }, function() {
+                    $('td.hld', fileDataTable.fnGetNodes()).removeClass('hld');
+                } );
+
+                alert('updated');
+
             }
             $(document).ready(function(){
                 updateFileList();
-
             });
         </script>
     </head>

@@ -47,8 +47,12 @@
         },
         'onAllComplete'   : function(event,data) {
             $('#status-message').text(data.filesUploaded + ' files uploaded, ' + data.errors + ' errors.');
-        }
-        //'onAllComplete' : allComplete
+            onUploadComplete(event, data);
+        },
+        // Only for DEBUG
+        //'onError'         : function(event, ID, fileObj, errorObj) {
+        //    alert(errorObj.info);
+        //}
         });
     });
 

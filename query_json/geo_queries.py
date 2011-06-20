@@ -8,6 +8,7 @@ logger = logging.getLogger('console.views')
 from query_json.db import children_of
 
 '''
+NOT USED
 def get_city_list(request, province):
     # province = request.GET["province"]
     children_of(province) 

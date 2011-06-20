@@ -7,6 +7,7 @@ admin.autodiscover()
 from settings import rel
 import views 
 import upload_views
+import share_views
 
 urlpatterns = patterns('',
     # Logged in Home
@@ -47,7 +48,7 @@ urlpatterns = patterns('',
     (r'^admin/doc/', include('django.contrib.admindocs.urls')),
 
     # Share
-    (r'^share/$', views.share, {'relative_path':''}),
-    (r'^share/(.+)/$', views.share),
+    (r'^share/$', share_views.share, {'relative_path':''}),
+    (r'^share/(.+)/$', share_views.share),
 
 )

@@ -18,8 +18,9 @@ DATABASES = {
     }
 }
 
-SHARE_DIR='/opt/www/share'
-UPLOAD_DIR='/opt/www/upload'
+WWW_ROOT = '/opt/www'
+SHARE_DIR = WWW_ROOT+'/share'
+UPLOAD_DIR = WWW_ROOT+'/upload'
 
 LOGIN_REDIRECT_URL='/home'
 LOGIN_URL='/login'

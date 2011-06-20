@@ -1,13 +1,90 @@
 {% load uploadify_tags %}
 <html>
     <head>
+        <link rel="stylesheet" type="text/css" href="/static/jquery/DataTables-1.8.0/media/css/share_page.css">
+        <link rel="stylesheet" type="text/css" href="/static/jquery/DataTables-1.8.0/media/css/demo_table_jui.css">
+        <link rel="stylesheet" type="text/css" href="/static/jquery/DataTables-1.8.0/examples/examples_support/themes/smoothness/jquery-ui-1.8.4.custom.css">
+
 		<script type="text/javascript" src="/static/jquery/jquery-1.5.min.js" ></script>
+		<script type="text/javascript" src="/static/jquery/DataTables-1.8.0/media/js/jquery.dataTables.min.js" ></script>
+        <script type="text/javascript">
+            var fileDataTable;
+            function onUploadComplete(event, data){ updateFileList(); }
+
+            function updateFileList(){
+                //$('#fileListBody').fnClearTable( 0 );
+                //$('#fileListBody').fnDraw();
+
+                //$('#fileListBody').remove();
+                //$('#fileList').append('<tbody id="fileListBody"><tbody>');
+                //$('#fileList').replaceWith('<div id="fileList"></div>');
+                var url = window.location.href.replace('http://','');
+                var relative_path = url.split('/');
+                relative_path.shift();
+                relative_path = relative_path.join('/');//.splice(1,0);
+                
+                /*
+                $.ajax({
+                    type: "GET",
+                    url: "/json/files/in/"+relative_path+'/',
+                    dataType: "json",
+                success: function(files) {
+                    for (var i = 0; i < files.length; i++) {
+                        var file = files[i];
+                        var href = '/'+ relative_path + file['name'];
+                        var fileTd = "<td><a href='" + href + "'>" + file['name']+ "</a></td>";
+                        var sizeTd = "<td>"+file['size']+"</td>";
+                        var creationTimeTd = "<td>"+file['creation_time']+"</td>";
+                        
+                        var line = "<tr class='odd gradeA'>"+ fileTd + sizeTd + creationTimeTd +"</tr>";
+                        $("#fileListBody").append(line);
+                    }
+                    }
+                    });
+                */
+
+                if (typeof fileDataTable == 'undefined'){
+                fileDataTable = $('#fileList').dataTable({
+                        'bProcessing':true,
+                        'sAjaxSource':'/json/aaData/files/in/'+ relative_path,
+                        "bJQueryUI": true,
+                        "sPaginationType": "full_numbers"
+                });
+                } else {
+                    alert('reload');
+                    fileDataTable.fnReloadAjax();
+                   /* 
+                    fileDataTable = $('#fileList').dataTable({
+                        'bRetrieve':true,
+                    });
+                    */
+                }
+
+            }
+
+            $(document).ready(function(){
+                updateFileList();
+            });
+        </script>
     </head>
-    {% multi_file_upload '/uploadify/upload' %}
-    <div>
-    {% for filename,isdir in file_list %}
-    <p><a href='{{filename}}'>{{ filename }}</a></p>
-    {% endfor %}
+    <div id="fileDataTable">
+
+    <div id='container'>
+    {% multi_file_upload '/uploadify/upload/' %}
+        <div id="demo">
+        <table id="fileList" cellpadding="0" cellspacing="0" border="0" class="display">
+            <thead>
+                <tr>
+                    <th>File Name</th>
+                    <th>Size</th>
+                    <th>Creation Time</th>
+                </tr>
+            </thead>
+            <tbody id="fileListBody">
+            </tbody>
+        </table>
+        </div>
+    </div>
     </div>
 	
 	</body>

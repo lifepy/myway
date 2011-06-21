@@ -25,4 +25,34 @@ _uploadphoto = new function() {
 			$("#city").append(option);
 		}
 	}
+	
+	this.selCity = function(city_id) {
+		$.ajax({
+			type: "GET",
+			url: "/json/subareas/in/" + city_id + '/',
+			dataType: "json",
+			data: {
+				city:city_id
+			},
+			success: function(zones) {
+				_uploadphoto.showZones(zones);
+			}
+		});
+	}
+	
+	this.showZones = function(zones) {
+		$("#zone").empty();
+		for (var i = 0; i < zones.length; i++) {
+			var zone = zones[i];
+			var option = "<option value='" + zone['id'] + "'>" + zone['name'] + "</option>";
+			$("#zone").append(option);
+		}
+	}
+	
+	this.init = function() {
+		$("#province")[0].options[10].selected = true;
+		this.selProvince($("#province").val());
+	}
 }
+
+$(function() {_uploadphoto.init()});

@@ -21,12 +21,16 @@
 		<option value="{{ pid }}">{{ pname }}</option>
 		{% endfor %}
 	</select>
+	<label for="city">City</label>
 	<select id="city" name="city" onchange="_uploadphoto.selCity(this.value);">
+	</select>
+	<label for="zone">Zone</label>
+	<select id="zone" name="zone">
 	</select>
 	<br />
 	
-	<label for="title">Title</label>
-	<input id="title" type="input" name="title" />
+	<label for="title">Spot</label>
+	<input id="title" type="input" name="title" onpropertychange="" oninput=""/>
 	<br style="clear: left;" />
 	
 	<div id="multiple"></div>

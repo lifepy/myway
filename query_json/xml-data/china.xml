@@ -3,8 +3,8 @@
   <municipality ename="beijing" layer="1" name="北京市" pid="0" cname="北京" fname="北京市" id="1">
     <district ename="dongchengqu" layer="2" name="东城区" pid="1" cname="东城区" fname="北京市东城区" id="61"/>
     <district ename="xichengqu" layer="2" name="西城区" pid="1" cname="西城区" fname="北京市西城区" id="62"/>
-    <district ename="chongwenqu" layer="2" name="崇文区" pid="1" cname="崇文区" fname="北京市崇文区" id="63"/>
-    <district ename="xuanwuqu" layer="2" name="宣武区" pid="1" cname="宣武区" fname="北京市宣武区" id="64"/>
+    <district ename="chongwenqu" layer="2" name="崇文区" pid="1" cname="崇文区" fname="北京市崇文区" id="*63"/>
+    <district ename="xuanwuqu" layer="2" name="宣武区" pid="1" cname="宣武区" fname="北京市宣武区" id="*64"/>
     <district ename="zhaoyangqu" layer="2" name="朝阳区" pid="1" cname="朝阳区" fname="北京市朝阳区" id="65"/>
     <district ename="fengtaiqu" layer="2" name="丰台区" pid="1" cname="丰台区" fname="北京市丰台区" id="66"/>
     <district ename="shijingshanqu" layer="2" name="石景山区" pid="1" cname="石景山区" fname="北京市石景山区" id="67"/>
@@ -20,9 +20,85 @@
     <county ename="yanqingxian" layer="2" name="延庆县" pid="1" cname="延庆县" fname="北京市延庆县" id="77"/>
     <county ename="miyunxian" layer="2" name="密云县" pid="1" cname="密云县" fname="北京市密云县" id="78"/>
   </municipality>
-  <municipality ename="tianjin" layer="1" name="天津市" pid="0" cname="天津" fname="天津市" id="2"/>
-  <municipality ename="shanghai" layer="1" name="上海市" pid="0" cname="上海" fname="上海市" id="3"/>
-  <municipality ename="zhongqing" layer="1" name="重庆市" pid="0" cname="重庆" fname="重庆市" id="4"/>
+  <municipality ename="tianjin" layer="1" name="天津市" pid="0" cname="天津" fname="天津市" id="2">
+    <district ename="hepingqu" layer="2" name="和平区" pid="2" cname="和平区" fname="天津市和平区" id="741"/>
+    <district ename="hedongqu" layer="2" name="河东区" pid="2" cname="河东区" fname="天津市河东区" id="742"/>
+    <district ename="hexiqu" layer="2" name="河西区" pid="2" cname="河西区" fname="天津市河西区" id="743"/>
+    <district ename="nankaiqu" layer="2" name="南开区" pid="2" cname="南开区" fname="天津市南开区" id="744"/>
+    <district ename="hebeiqu" layer="2" name="河北区" pid="2" cname="河北区" fname="天津市河北区" id="745"/>
+    <district ename="hongqiaoqu" layer="2" name="红桥区" pid="2" cname="红桥区" fname="天津市红桥区" id="746"/>
+    <district ename="dongliqu" layer="2" name="东丽区" pid="2" cname="东丽区" fname="天津市东丽区" id="747"/>
+    <district ename="xiqingqu" layer="2" name="西青区" pid="2" cname="西青区" fname="天津市西青区" id="748"/>
+    <district ename="jinnanqu" layer="2" name="津南区" pid="2" cname="津南区" fname="天津市津南区" id="749"/>
+    <district ename="beichenqu" layer="2" name="北辰区" pid="2" cname="北辰区" fname="天津市北辰区" id="750"/>
+    <district ename="wuqingqu" layer="2" name="武清区" pid="2" cname="武清区" fname="天津市武清区" id="751"/>
+    <district ename="baochiqu" layer="2" name="宝坻区" pid="2" cname="宝坻区" fname="天津市宝坻区" id="752"/>
+    <district ename="binhaixinqu" layer="2" name="滨海新区" pid="2" cname="滨海新区" fname="天津市滨海新区" id="753"/>
+    <county ename="ninghexian" layer="2" name="宁河县" pid="2" cname="宁河县" fname="天津市宁河县" id="754"/>
+    <county ename="jinghaixian" layer="2" name="静海县" pid="2" cname="静海县" fname="天津市静海县" id="755"/>
+    <county ename="jixian" layer="2" name="蓟县" pid="2" cname="蓟县" fname="天津市蓟县" id="756"/>
+  </municipality>
+  <municipality ename="shanghai" layer="1" name="上海市" pid="0" cname="上海" fname="上海市" id="3">
+    <district ename="huangpuqu" layer="2" name="黄浦区" pid="3" cname="黄浦区" fname="上海市黄浦区" id="761"/>
+    <district ename="xuhuiqu" layer="2" name="徐汇区" pid="3" cname="徐汇区" fname="上海市徐汇区" id="762"/>
+    <district ename="changningqu" layer="2" name="长宁区" pid="3" cname="长宁区" fname="上海市长宁区" id="763"/>
+    <district ename="jinganqu" layer="2" name="静安区" pid="3" cname="静安区" fname="上海市静安区" id="764"/>
+    <district ename="putuoqu" layer="2" name="普陀区" pid="3" cname="普陀区" fname="上海市普陀区" id="765"/>
+    <district ename="zhabeiqu" layer="2" name="闸北区" pid="3" cname="闸北区" fname="上海市闸北区" id="766"/>
+    <district ename="hongkouqu" layer="2" name="虹口区" pid="3" cname="虹口区" fname="上海市虹口区" id="767"/>
+    <district ename="yangpuqu" layer="2" name="杨浦区" pid="3" cname="杨浦区" fname="上海市杨浦区" id="768"/>
+    <district ename="minxingqu" layer="2" name="闵行区" pid="3" cname="闵行区" fname="上海市闵行区" id="769"/>
+    <district ename="baoshanqu" layer="2" name="宝山区" pid="3" cname="宝山区" fname="上海市宝山区" id="770"/>
+    <district ename="jiadingqu" layer="2" name="嘉定区" pid="3" cname="嘉定区" fname="上海市嘉定区" id="771"/>
+    <district ename="pudongxinqu" layer="2" name="浦东新区" pid="3" cname="浦东新区" fname="上海市浦东新区" id="772"/>
+    <district ename="jinshanqu" layer="2" name="金山区" pid="3" cname="金山区" fname="上海市金山区" id="773"/>
+    <district ename="songjiangqu" layer="2" name="松江区" pid="3" cname="松江区" fname="上海市松江区" id="774"/>
+    <district ename="qingpuqu" layer="2" name="青浦区" pid="3" cname="青浦区" fname="上海市青浦区" id="775"/>
+    <district ename="fengxianqu" layer="2" name="奉贤区" pid="3" cname="奉贤区" fname="上海市奉贤区" id="776"/>
+    <county ename="chongmingxian" layer="2" name="崇明县" pid="3" cname="崇明县" fname="上海市崇明县" id="777"/>
+  </municipality>
+  <municipality ename="zhongqing" layer="1" name="重庆市" pid="0" cname="重庆" fname="重庆市" id="4">
+    <district ename="yuzhongqu" layer="2" name="渝中区" pid="4" cname="渝中区" fname="重庆市渝中区" id="781"/>
+    <city ename="dadukou" layer="2" name="大渡口" pid="4" cname="大渡口" fname="重庆市大渡口" id="782"/>
+    <district ename="jiangbeiqu" layer="2" name="江北区" pid="4" cname="江北区" fname="重庆市江北区" id="783"/>
+    <city ename="shapingba" layer="2" name="沙坪坝" pid="4" cname="沙坪坝" fname="重庆市沙坪坝" id="784"/>
+    <city ename="jiulongpo" layer="2" name="九龙坡" pid="4" cname="九龙坡" fname="重庆市九龙坡" id="785"/>
+    <district ename="nananqu" layer="2" name="南岸区" pid="4" cname="南岸区" fname="重庆市南岸区" id="786"/>
+    <district ename="beibeiqu" layer="2" name="北碚区" pid="4" cname="北碚区" fname="重庆市北碚区" id="787"/>
+    <district ename="wanshengqu" layer="2" name="万盛区" pid="4" cname="万盛区" fname="重庆市万盛区" id="788"/>
+    <district ename="shuangqiaoqu" layer="2" name="双桥区" pid="4" cname="双桥区" fname="重庆市双桥区" id="789"/>
+    <district ename="yubeiqu" layer="2" name="渝北区" pid="4" cname="渝北区" fname="重庆市渝北区" id="790"/>
+    <district ename="bananqu" layer="2" name="巴南区" pid="4" cname="巴南区" fname="重庆市巴南区" id="791"/>
+    <district ename="wanzhouqu" layer="2" name="万州区" pid="4" cname="万州区" fname="重庆市万州区" id="792"/>
+    <district ename="fulingqu" layer="2" name="涪陵区" pid="4" cname="涪陵区" fname="重庆市涪陵区" id="793"/>
+    <district ename="qianjiangqu" layer="2" name="黔江区" pid="4" cname="黔江区" fname="重庆市黔江区" id="794"/>
+    <district ename="changshouqu" layer="2" name="长寿区" pid="4" cname="长寿区" fname="重庆市长寿区" id="795"/>
+    <district ename="jiangjinqu" layer="2" name="江津区" pid="4" cname="江津区" fname="重庆市江津区" id="796"/>
+    <district ename="hechuanqu" layer="2" name="合川区" pid="4" cname="合川区" fname="重庆市合川区" id="797"/>
+    <district ename="yongchuanqu" layer="2" name="永川区" pid="4" cname="永川区" fname="重庆市永川区" id="798"/>
+    <district ename="nanchuanqu" layer="2" name="南川区" pid="4" cname="南川区" fname="重庆市南川区" id="799"/>
+    <county ename="qijiangxian" layer="2" name="綦江县" pid="4" cname="綦江县" fname="重庆市綦江县" id="800"/>
+    <county ename="tongnanxian" layer="2" name="潼南县" pid="4" cname="潼南县" fname="重庆市潼南县" id="801"/>
+    <county ename="tongliangxian" layer="2" name="铜梁县" pid="4" cname="铜梁县" fname="重庆市铜梁县" id="802"/>
+    <county ename="dazuxian" layer="2" name="大足县" pid="4" cname="大足县" fname="重庆市大足县" id="803"/>
+    <county ename="rongchangxian" layer="2" name="荣昌县" pid="4" cname="荣昌县" fname="重庆市荣昌县" id="804"/>
+    <county ename="bishanxian" layer="2" name="璧山县" pid="4" cname="璧山县" fname="重庆市璧山县" id="805"/>
+    <county ename="dianjiangxian" layer="2" name="垫江县" pid="4" cname="垫江县" fname="重庆市垫江县" id="806"/>
+    <county ename="wulongxian" layer="2" name="武隆县" pid="4" cname="武隆县" fname="重庆市武隆县" id="807"/>
+    <county ename="fengduxian" layer="2" name="丰都县" pid="4" cname="丰都县" fname="重庆市丰都县" id="808"/>
+    <county ename="chengkouxian" layer="2" name="城口县" pid="4" cname="城口县" fname="重庆市城口县" id="809"/>
+    <county ename="liangpingxian" layer="2" name="梁平县" pid="4" cname="梁平县" fname="重庆市梁平县" id="810"/>
+    <county ename="kaixian" layer="2" name="开县" pid="4" cname="开县" fname="重庆市开县" id="811"/>
+    <county ename="wuxixian" layer="2" name="巫溪县" pid="4" cname="巫溪县" fname="重庆市巫溪县" id="812"/>
+    <county ename="wushanxian" layer="2" name="巫山县" pid="4" cname="巫山县" fname="重庆市巫山县" id="813"/>
+    <county ename="fengjiexian" layer="2" name="奉节县" pid="4" cname="奉节县" fname="重庆市奉节县" id="814"/>
+    <county ename="yunyangxian" layer="2" name="云阳县" pid="4" cname="云阳县" fname="重庆市云阳县" id="815"/>
+    <county ename="zhongxian" layer="2" name="忠县" pid="4" cname="忠县" fname="重庆市忠县" id="816"/>
+    <county ename="shizhu" layer="2" name="石柱土家族自治县" pid="4" cname="石柱" fname="重庆市石柱土家族自治县" id="817"/>
+    <county ename="pengshui" layer="2" name="彭水苗族土家族自治县" pid="4" cname="彭水" fname="重庆市彭水苗族土家族自治县" id="818"/>
+    <county ename="youyang" layer="2" name="酉阳土家族苗族自治县" pid="4" cname="酉阳" fname="重庆市酉阳土家族苗族自治县" id="819"/>
+    <county ename="xiushan" layer="2" name="秀山土家族苗族自治县" pid="4" cname="秀山" fname="重庆市秀山土家族苗族自治县" id="820"/>
+  </municipality>
   <province ename="hebei" layer="1" name="河北省" pid="0" cname="河北" fname="河北省" id="5">
     <city ename="shijiazhuang" layer="2" name="石家庄市" pid="5" cname="石家庄" fname="河北省石家庄市" id="101"/>
     <city ename="tangshan" layer="2" name="唐山市" pid="5" cname="唐山" fname="河北省唐山市" id="102"/>
@@ -117,32 +193,251 @@
     <district ename="daxinganling" layer="2" name="大兴安岭地区" pid="10" cname="大兴安岭" fname="黑龙江省大兴安岭地区" id="233"/>
   </province>
   <province ename="jiangsu" layer="1" name="江苏省" pid="0" cname="江苏" fname="江苏省" id="11">
-    <city ename="nanjing" layer="2" name="南京市" pid="11" cname="南京" fname="江苏省南京市" id="241"/>
-    <city ename="wuxi" layer="2" name="无锡市" pid="11" cname="无锡" fname="江苏省无锡市" id="242"/>
-    <city ename="xuzhou" layer="2" name="徐州市" pid="11" cname="徐州" fname="江苏省徐州市" id="243"/>
-    <city ename="changzhou" layer="2" name="常州市" pid="11" cname="常州" fname="江苏省常州市" id="244"/>
-    <city ename="suzhou" layer="2" name="苏州市" pid="11" cname="苏州" fname="江苏省苏州市" id="245"/>
-    <city ename="nantong" layer="2" name="南通市" pid="11" cname="南通" fname="江苏省南通市" id="246"/>
-    <city ename="lianyungang" layer="2" name="连云港市" pid="11" cname="连云港" fname="江苏省连云港市" id="247"/>
-    <city ename="huaian" layer="2" name="淮安市" pid="11" cname="淮安" fname="江苏省淮安市" id="248"/>
-    <city ename="yancheng" layer="2" name="盐城市" pid="11" cname="盐城" fname="江苏省盐城市" id="249"/>
-    <city ename="yangzhou" layer="2" name="扬州市" pid="11" cname="扬州" fname="江苏省扬州市" id="250"/>
-    <city ename="zhenjiang" layer="2" name="镇江市" pid="11" cname="镇江" fname="江苏省镇江市" id="251"/>
-    <city ename="taizhou" layer="2" name="泰州市" pid="11" cname="泰州" fname="江苏省泰州市" id="252"/>
-    <city ename="suqian" layer="2" name="宿迁市" pid="11" cname="宿迁" fname="江苏省宿迁市" id="253"/>
+    <city ename="nanjing" layer="2" name="南京市" pid="11" cname="南京" fname="江苏省南京市" id="241">
+      <district ename="xuanwuqu" layer="3" name="玄武区" pid="241" cname="玄武区" fname="南京市玄武区" id="831"/>
+      <district ename="baixiaqu" layer="3" name="白下区" pid="241" cname="白下区" fname="南京市白下区" id="832"/>
+      <district ename="qinhuaiqu" layer="3" name="秦淮区" pid="241" cname="秦淮区" fname="南京市秦淮区" id="833"/>
+      <district ename="jianyequ" layer="3" name="建邺区" pid="241" cname="建邺区" fname="南京市建邺区" id="834"/>
+      <district ename="gulouqu" layer="3" name="鼓楼区" pid="241" cname="鼓楼区" fname="南京市鼓楼区" id="835"/>
+      <district ename="xiaguanqu" layer="3" name="下关区" pid="241" cname="下关区" fname="南京市下关区" id="836"/>
+      <district ename="pukouqu" layer="3" name="浦口区" pid="241" cname="浦口区" fname="南京市浦口区" id="837"/>
+      <district ename="qixiaqu" layer="3" name="栖霞区" pid="241" cname="栖霞区" fname="南京市栖霞区" id="838"/>
+      <district ename="yuhuataiqu" layer="3" name="雨花台区" pid="241" cname="雨花台区" fname="南京市雨花台区" id="839"/>
+      <district ename="jiangningqu" layer="3" name="江宁区" pid="241" cname="江宁区" fname="南京市江宁区" id="840"/>
+      <district ename="liuhequ" layer="3" name="六合区" pid="241" cname="六合区" fname="南京市六合区" id="841"/>
+      <county ename="lishuixian" layer="3" name="溧水县" pid="241" cname="溧水县" fname="南京市溧水县" id="842"/>
+      <county ename="gaochunxian" layer="3" name="高淳县" pid="241" cname="高淳县" fname="南京市高淳县" id="843"/>
+    </city>
+    <city ename="wuxi" layer="2" name="无锡市" pid="11" cname="无锡" fname="江苏省无锡市" id="242">
+      <district ename="chonganqu" layer="3" name="崇安区" pid="242" cname="崇安区" fname="无锡市崇安区" id="851"/>
+      <district ename="nanchangqu" layer="3" name="南长区" pid="242" cname="南长区" fname="无锡市南长区" id="852"/>
+      <district ename="beitangqu" layer="3" name="北塘区" pid="242" cname="北塘区" fname="无锡市北塘区" id="853"/>
+      <district ename="xishanqu" layer="3" name="锡山区" pid="242" cname="锡山区" fname="无锡市锡山区" id="854"/>
+      <district ename="huishanqu" layer="3" name="惠山区" pid="242" cname="惠山区" fname="无锡市惠山区" id="855"/>
+      <district ename="binhuqu" layer="3" name="滨湖区" pid="242" cname="滨湖区" fname="无锡市滨湖区" id="856"/>
+      <city ename="jiangyin" layer="3" name="江阴市" pid="242" cname="江阴" fname="无锡市江阴市" id="857"/>
+      <city ename="yixing" layer="3" name="宜兴市" pid="242" cname="宜兴" fname="无锡市宜兴市" id="858"/>
+    </city>
+    <city ename="xuzhou" layer="2" name="徐州市" pid="11" cname="徐州" fname="江苏省徐州市" id="243">
+      <district ename="gulouqu" layer="3" name="鼓楼区" pid="243" cname="鼓楼区" fname="徐州市鼓楼区" id="861"/>
+      <district ename="yunlongqu" layer="3" name="云龙区" pid="243" cname="云龙区" fname="徐州市云龙区" id="862"/>
+      <district ename="jiawangqu" layer="3" name="贾汪区" pid="243" cname="贾汪区" fname="徐州市贾汪区" id="863"/>
+      <district ename="quanshanqu" layer="3" name="泉山区" pid="243" cname="泉山区" fname="徐州市泉山区" id="864"/>
+      <district ename="tongshanqu" layer="3" name="铜山区" pid="243" cname="铜山区" fname="徐州市铜山区" id="865"/>
+      <city ename="xinyi" layer="3" name="新沂市" pid="243" cname="新沂" fname="徐州市新沂市" id="866"/>
+      <city ename="peizhou" layer="3" name="邳州市" pid="243" cname="邳州" fname="徐州市邳州市" id="867"/>
+      <county ename="fengxian" layer="3" name="丰县" pid="243" cname="丰县" fname="徐州市丰县" id="868"/>
+      <county ename="peixian" layer="3" name="沛县" pid="243" cname="沛县" fname="徐州市沛县" id="869"/>
+      <county ename="suiningxian" layer="3" name="睢宁县" pid="243" cname="睢宁县" fname="徐州市睢宁县" id="870"/>
+    </city>
+    <city ename="changzhou" layer="2" name="常州市" pid="11" cname="常州" fname="江苏省常州市" id="244">
+      <district ename="tianningqu" layer="3" name="天宁区" pid="244" cname="天宁区" fname="常州市天宁区" id="881"/>
+      <district ename="zhonglouqu" layer="3" name="钟楼区" pid="244" cname="钟楼区" fname="常州市钟楼区" id="882"/>
+      <district ename="qishuyanqu" layer="3" name="戚墅堰区" pid="244" cname="戚墅堰区" fname="常州市戚墅堰区" id="883"/>
+      <district ename="xinbeiqu" layer="3" name="新北区" pid="244" cname="新北区" fname="常州市新北区" id="884"/>
+      <district ename="wujinqu" layer="3" name="武进区" pid="244" cname="武进区" fname="常州市武进区" id="885"/>
+      <city ename="liyang" layer="3" name="溧阳市" pid="244" cname="溧阳" fname="常州市溧阳市" id="886"/>
+      <city ename="jintan" layer="3" name="金坛市" pid="244" cname="金坛" fname="常州市金坛市" id="887"/>
+    </city>
+    <city ename="suzhou" layer="2" name="苏州市" pid="11" cname="苏州" fname="江苏省苏州市" id="245">
+      <district ename="canglangqu" layer="3" name="沧浪区" pid="245" cname="沧浪区" fname="苏州市沧浪区" id="891"/>
+      <district ename="pingjiangqu" layer="3" name="平江区" pid="245" cname="平江区" fname="苏州市平江区" id="892"/>
+      <district ename="jinchangqu" layer="3" name="金阊区" pid="245" cname="金阊区" fname="苏州市金阊区" id="893"/>
+      <district ename="huqiuqu" layer="3" name="虎丘区" pid="245" cname="虎丘区" fname="苏州市虎丘区" id="894"/>
+      <district ename="wuzhongqu" layer="3" name="吴中区" pid="245" cname="吴中区" fname="苏州市吴中区" id="895"/>
+      <district ename="xiangchengqu" layer="3" name="相城区" pid="245" cname="相城区" fname="苏州市相城区" id="896"/>
+      <city ename="changshu" layer="3" name="常熟市" pid="245" cname="常熟" fname="苏州市常熟市" id="897"/>
+      <city ename="zhangjiagang" layer="3" name="张家港市" pid="245" cname="张家港" fname="苏州市张家港市" id="898"/>
+      <city ename="kunshan" layer="3" name="昆山市" pid="245" cname="昆山" fname="苏州市昆山市" id="899"/>
+      <city ename="wujiang" layer="3" name="吴江市" pid="245" cname="吴江" fname="苏州市吴江市" id="900"/>
+      <city ename="taicang" layer="3" name="太仓市" pid="245" cname="太仓" fname="苏州市太仓市" id="901"/>
+    </city>
+    <city ename="nantong" layer="2" name="南通市" pid="11" cname="南通" fname="江苏省南通市" id="246">
+      <district ename="chongchuanqu" layer="3" name="崇川区" pid="246" cname="崇川区" fname="南通市崇川区" id="911"/>
+      <district ename="gangzhaqu" layer="3" name="港闸区" pid="246" cname="港闸区" fname="南通市港闸区" id="912"/>
+      <district ename="tongzhouqu" layer="3" name="通州区" pid="246" cname="通州区" fname="南通市通州区" id="913"/>
+      <city ename="qidong" layer="3" name="启东市" pid="246" cname="启东" fname="南通市启东市" id="914"/>
+      <city ename="rugao" layer="3" name="如皋市" pid="246" cname="如皋" fname="南通市如皋市" id="915"/>
+      <city ename="haimen" layer="3" name="海门市" pid="246" cname="海门" fname="南通市海门市" id="916"/>
+      <county ename="haianxian" layer="3" name="海安县" pid="246" cname="海安县" fname="南通市海安县" id="917"/>
+      <county ename="rudongxian" layer="3" name="如东县" pid="246" cname="如东县" fname="南通市如东县" id="918"/>
+    </city>
+    <city ename="lianyungang" layer="2" name="连云港市" pid="11" cname="连云港" fname="江苏省连云港市" id="247">
+      <district ename="lianyunqu" layer="3" name="连云区" pid="247" cname="连云区" fname="连云港市连云区" id="921"/>
+      <district ename="xinpuqu" layer="3" name="新浦区" pid="247" cname="新浦区" fname="连云港市新浦区" id="922"/>
+      <district ename="haizhouqu" layer="3" name="海州区" pid="247" cname="海州区" fname="连云港市海州区" id="923"/>
+      <county ename="ganyuxian" layer="3" name="赣榆县" pid="247" cname="赣榆县" fname="连云港市赣榆县" id="924"/>
+      <county ename="donghaixian" layer="3" name="东海县" pid="247" cname="东海县" fname="连云港市东海县" id="925"/>
+      <county ename="guanyunxian" layer="3" name="灌云县" pid="247" cname="灌云县" fname="连云港市灌云县" id="926"/>
+      <county ename="guannanxian" layer="3" name="灌南县" pid="247" cname="灌南县" fname="连云港市灌南县" id="927"/>
+    </city>
+    <city ename="huaian" layer="2" name="淮安市" pid="11" cname="淮安" fname="江苏省淮安市" id="248">
+      <district ename="qinghequ" layer="3" name="清河区" pid="248" cname="清河区" fname="淮安市清河区" id="931"/>
+      <district ename="chuzhouqu" layer="3" name="楚州区" pid="248" cname="楚州区" fname="淮安市楚州区" id="932"/>
+      <district ename="huaiyinqu" layer="3" name="淮阴区" pid="248" cname="淮阴区" fname="淮安市淮阴区" id="933"/>
+      <district ename="qingpuqu" layer="3" name="清浦区" pid="248" cname="清浦区" fname="淮安市清浦区" id="934"/>
+      <county ename="lianshuixian" layer="3" name="涟水县" pid="248" cname="涟水县" fname="淮安市涟水县" id="935"/>
+      <county ename="hongzexian" layer="3" name="洪泽县" pid="248" cname="洪泽县" fname="淮安市洪泽县" id="936"/>
+      <county ename="xuchixian" layer="3" name="盱眙县" pid="248" cname="盱眙县" fname="淮安市盱眙县" id="937"/>
+      <county ename="jinhuxian" layer="3" name="金湖县" pid="248" cname="金湖县" fname="淮安市金湖县" id="938"/>
+    </city>
+    <city ename="yancheng" layer="2" name="盐城市" pid="11" cname="盐城" fname="江苏省盐城市" id="249">
+      <district ename="tinghuqu" layer="3" name="亭湖区" pid="249" cname="亭湖区" fname="盐城市亭湖区" id="941"/>
+      <district ename="yanduqu" layer="3" name="盐都区" pid="249" cname="盐都区" fname="盐城市盐都区" id="942"/>
+      <city ename="dongtai" layer="3" name="东台市" pid="249" cname="东台" fname="盐城市东台市" id="943"/>
+      <city ename="dafeng" layer="3" name="大丰市" pid="249" cname="大丰" fname="盐城市大丰市" id="944"/>
+      <county ename="xiangshuixian" layer="3" name="响水县" pid="249" cname="响水县" fname="盐城市响水县" id="945"/>
+      <county ename="binhaixian" layer="3" name="滨海县" pid="249" cname="滨海县" fname="盐城市滨海县" id="946"/>
+      <county ename="funingxian" layer="3" name="阜宁县" pid="249" cname="阜宁县" fname="盐城市阜宁县" id="947"/>
+      <county ename="sheyangxian" layer="3" name="射阳县" pid="249" cname="射阳县" fname="盐城市射阳县" id="948"/>
+      <county ename="jianhuxian" layer="3" name="建湖县" pid="249" cname="建湖县" fname="盐城市建湖县" id="949"/>
+    </city>
+    <city ename="yangzhou" layer="2" name="扬州市" pid="11" cname="扬州" fname="江苏省扬州市" id="250">
+      <district ename="yanlingqu" layer="3" name="广陵区" pid="250" cname="广陵区" fname="扬州市广陵区" id="961"/>
+      <district ename="hanjiangqu" layer="3" name="邗江区" pid="250" cname="邗江区" fname="扬州市邗江区" id="962"/>
+      <district ename="weiyangqu" layer="3" name="维扬区" pid="250" cname="维扬区" fname="扬州市维扬区" id="963"/>
+      <city ename="yizheng" layer="3" name="仪征市" pid="250" cname="仪征" fname="扬州市仪征市" id="964"/>
+      <city ename="gaoyou" layer="3" name="高邮市" pid="250" cname="高邮" fname="扬州市高邮市" id="965"/>
+      <city ename="jiangdu" layer="3" name="江都市" pid="250" cname="江都" fname="扬州市江都市" id="966"/>
+      <county ename="baoyingxian" layer="3" name="宝应县" pid="250" cname="宝应县" fname="扬州市宝应县" id="967"/>
+    </city>
+    <city ename="zhenjiang" layer="2" name="镇江市" pid="11" cname="镇江" fname="江苏省镇江市" id="251">
+      <district ename="jingkouqu" layer="3" name="京口区" pid="251" cname="京口区" fname="镇江市京口区" id="971"/>
+      <district ename="runzhouqu" layer="3" name="润州区" pid="251" cname="润州区" fname="镇江市润州区" id="972"/>
+      <district ename="dantuqu" layer="3" name="丹徒区" pid="251" cname="丹徒区" fname="镇江市丹徒区" id="973"/>
+      <city ename="danyang" layer="3" name="丹阳市" pid="251" cname="丹阳" fname="镇江市丹阳市" id="974"/>
+      <city ename="yangzhong" layer="3" name="扬中市" pid="251" cname="扬中" fname="镇江市扬中市" id="975"/>
+      <city ename="jurong" layer="3" name="句容市" pid="251" cname="句容" fname="镇江市句容市" id="976"/>
+    </city>
+    <city ename="taizhou" layer="2" name="泰州市" pid="11" cname="泰州" fname="江苏省泰州市" id="252">
+      <district ename="hailingqu" layer="3" name="海陵区" pid="252" cname="海陵区" fname="泰州市海陵区" id="981"/>
+      <district ename="gaogangqu" layer="3" name="高港区" pid="252" cname="高港区" fname="泰州市高港区" id="982"/>
+      <city ename="xinghua" layer="3" name="兴化市" pid="252" cname="兴化" fname="泰州市兴化市" id="983"/>
+      <city ename="jingjiang" layer="3" name="靖江市" pid="252" cname="靖江" fname="泰州市靖江市" id="984"/>
+      <city ename="taixing" layer="3" name="泰兴市" pid="252" cname="泰兴" fname="泰州市泰兴市" id="985"/>
+      <city ename="jiangyan" layer="3" name="姜堰市" pid="252" cname="姜堰" fname="泰州市姜堰市" id="986"/>
+    </city>
+    <city ename="suqian" layer="2" name="宿迁市" pid="11" cname="宿迁" fname="江苏省宿迁市" id="253">
+      <district ename="suchengqu" layer="3" name="宿城区" pid="253" cname="宿城区" fname="宿迁市宿城区" id="991"/>
+      <district ename="suyuqu" layer="3" name="宿豫区" pid="253" cname="宿豫区" fname="宿迁市宿豫区" id="992"/>
+      <county ename="shuyangxian" layer="3" name="沭阳县" pid="253" cname="沭阳县" fname="宿迁市沭阳县" id="993"/>
+      <county ename="siyangxian" layer="3" name="泗阳县" pid="253" cname="泗阳县" fname="宿迁市泗阳县" id="994"/>
+      <county ename="sihongxian" layer="3" name="泗洪县" pid="253" cname="泗洪县" fname="宿迁市泗洪县" id="995"/>
+    </city>
   </province>
   <province ename="zhejiang" layer="1" name="浙江省" pid="0" cname="浙江" fname="浙江省" id="12">
-    <city ename="hangzhou" layer="2" name="杭州市" pid="12" cname="杭州" fname="浙江省杭州市" id="281"/>
-    <city ename="ningbo" layer="2" name="宁波市" pid="12" cname="宁波" fname="浙江省宁波市" id="282"/>
-    <city ename="wenzhou" layer="2" name="温州市" pid="12" cname="温州" fname="浙江省温州市" id="283"/>
-    <city ename="jiaxing" layer="2" name="嘉兴市" pid="12" cname="嘉兴" fname="浙江省嘉兴市" id="284"/>
-    <city ename="huzhou" layer="2" name="湖州市" pid="12" cname="湖州" fname="浙江省湖州市" id="285"/>
-    <city ename="shaoxing" layer="2" name="绍兴市" pid="12" cname="绍兴" fname="浙江省绍兴市" id="286"/>
-    <city ename="jinhua" layer="2" name="金华市" pid="12" cname="金华" fname="浙江省金华市" id="287"/>
-    <city ename="quzhou" layer="2" name="衢州市" pid="12" cname="衢州" fname="浙江省衢州市" id="288"/>
-    <city ename="zhoushan" layer="2" name="舟山市" pid="12" cname="舟山" fname="浙江省舟山市" id="289"/>
-    <city ename="taizhou" layer="2" name="台州市" pid="12" cname="台州" fname="浙江省台州市" id="290"/>
-    <city ename="lishui" layer="2" name="丽水市" pid="12" cname="丽水" fname="浙江省丽水市" id="291"/>
+    <city ename="hangzhou" layer="2" name="杭州市" pid="12" cname="杭州" fname="浙江省杭州市" id="281">
+      <district ename="shangchengqu" layer="3" name="上城区" pid="281" cname="上城区" fname="杭州市上城区" id="1001"/>
+      <district ename="xiachengqu" layer="3" name="下城区" pid="281" cname="下城区" fname="杭州市下城区" id="1002"/>
+      <district ename="jiangganqu" layer="3" name="江干区" pid="281" cname="江干区" fname="杭州市江干区" id="1003"/>
+      <district ename="gongshuqu" layer="3" name="拱墅区" pid="281" cname="拱墅区" fname="杭州市拱墅区" id="1004"/>
+      <district ename="xihuqu" layer="3" name="西湖区" pid="281" cname="西湖区" fname="杭州市西湖区" id="1005"/>
+      <district ename="binjiangqu" layer="3" name="滨江区" pid="281" cname="滨江区" fname="杭州市滨江区" id="1006"/>
+      <district ename="xiaoshanqu" layer="3" name="萧山区" pid="281" cname="萧山区" fname="杭州市萧山区" id="1007"/>
+      <district ename="yuhangqu" layer="3" name="余杭区" pid="281" cname="余杭区" fname="杭州市余杭区" id="1008"/>
+      <city ename="jiande" layer="3" name="建德市" pid="281" cname="建德" fname="杭州市建德市" id="1009"/>
+      <city ename="fuyang" layer="3" name="富阳市" pid="281" cname="富阳" fname="杭州市富阳市" id="1010"/>
+      <city ename="linan" layer="3" name="临安市" pid="281" cname="临安" fname="杭州市临安市" id="1011"/>
+      <county ename="tongluxian" layer="3" name="桐庐县" pid="281" cname="桐庐县" fname="杭州市桐庐县" id="1012"/>
+      <county ename="chunanxian" layer="3" name="淳安县" pid="281" cname="淳安县" fname="杭州市淳安县" id="1013"/>
+    </city>
+    <city ename="ningbo" layer="2" name="宁波市" pid="12" cname="宁波" fname="浙江省宁波市" id="282">
+      <district ename="haishuqu" layer="3" name="海曙区" pid="282" cname="海曙区" fname="宁波市海曙区" id="1021"/>
+      <district ename="jiangdongqu" layer="3" name="江东区" pid="282" cname="江东区" fname="宁波市江东区" id="1022"/>
+      <district ename="jiangbeiqu" layer="3" name="江北区" pid="282" cname="江北区" fname="宁波市江北区" id="1023"/>
+      <district ename="beilunqu" layer="3" name="北仑区" pid="282" cname="北仑区" fname="宁波市北仑区" id="1024"/>
+      <district ename="zhenhaiqu" layer="3" name="镇海区" pid="282" cname="镇海区" fname="宁波市镇海区" id="1025"/>
+      <district ename="yinzhouqu" layer="3" name="鄞州区" pid="282" cname="鄞州区" fname="宁波市鄞州区" id="1026"/>
+      <city ename="yuyao" layer="3" name="余姚市" pid="282" cname="余姚" fname="宁波市余姚市" id="1027"/>
+      <city ename="cixi" layer="3" name="慈溪市" pid="282" cname="慈溪" fname="宁波市慈溪市" id="1028"/>
+      <city ename="fenghua" layer="3" name="奉化市" pid="282" cname="奉化" fname="宁波市奉化市" id="1029"/>
+      <county ename="xiangshanxian" layer="3" name="象山县" pid="282" cname="象山县" fname="宁波市象山县" id="1030"/>
+      <county ename="ninghaixian" layer="3" name="宁海县" pid="282" cname="宁海县" fname="宁波市宁海县" id="1031"/>
+    </city>
+    <city ename="wenzhou" layer="2" name="温州市" pid="12" cname="温州" fname="浙江省温州市" id="283">
+      <district ename="luchengqu" layer="3" name="鹿城区" pid="283" cname="鹿城区" fname="温州市鹿城区" id="1041"/>
+      <district ename="longwanqu" layer="3" name="龙湾区" pid="283" cname="龙湾区" fname="温州市龙湾区" id="1042"/>
+      <district ename="ouhaiqu" layer="3" name="瓯海区" pid="283" cname="瓯海区" fname="温州市瓯海区" id="1043"/>
+      <city ename="ruian" layer="3" name="瑞安市" pid="283" cname="瑞安" fname="温州市瑞安市" id="1044"/>
+      <city ename="leqing" layer="3" name="乐清市" pid="283" cname="乐清" fname="温州市乐清市" id="1045"/>
+      <county ename="dongtouxian" layer="3" name="洞头县" pid="283" cname="洞头县" fname="温州市洞头县" id="1046"/>
+      <county ename="yongjiaxian" layer="3" name="永嘉县" pid="283" cname="永嘉县" fname="温州市永嘉县" id="1047"/>
+      <county ename="pingyangxian" layer="3" name="平阳县" pid="283" cname="平阳县" fname="温州市平阳县" id="1048"/>
+      <county ename="cangnanxian" layer="3" name="苍南县" pid="283" cname="苍南县" fname="温州市苍南县" id="1049"/>
+      <county ename="wenchengxian" layer="3" name="文成县" pid="283" cname="文成县" fname="温州市文成县" id="1050"/>
+      <county ename="taishunxian" layer="3" name="泰顺县" pid="283" cname="泰顺县" fname="温州市泰顺县" id="1051"/>
+    </city>
+    <city ename="jiaxing" layer="2" name="嘉兴市" pid="12" cname="嘉兴" fname="浙江省嘉兴市" id="284">
+      <district ename="nanhuqu" layer="3" name="南湖区" pid="284" cname="南湖区" fname="嘉兴市南湖区" id="1061"/>
+      <district ename="xiuzhouqu" layer="3" name="秀洲区" pid="284" cname="秀洲区" fname="嘉兴市秀洲区" id="1062"/>
+      <city ename="haining" layer="3" name="海宁市" pid="284" cname="海宁" fname="嘉兴市海宁市" id="1063"/>
+      <city ename="pinghu" layer="3" name="平湖市" pid="284" cname="平湖" fname="嘉兴市平湖市" id="1064"/>
+      <city ename="tongxiang" layer="3" name="桐乡市" pid="284" cname="桐乡" fname="嘉兴市桐乡市" id="1065"/>
+      <county ename="jiashanxian" layer="3" name="嘉善县" pid="284" cname="嘉善县" fname="嘉兴市嘉善县" id="1066"/>
+      <county ename="haiyanxian" layer="3" name="海盐县" pid="284" cname="海盐县" fname="嘉兴市海盐县" id="1067"/>
+    </city>
+    <city ename="huzhou" layer="2" name="湖州市" pid="12" cname="湖州" fname="浙江省湖州市" id="285">
+      <district ename="wuxingqu" layer="3" name="吴兴区" pid="285" cname="吴兴区" fname="湖州市吴兴区" id="1071"/>
+      <district ename="nanxunqu" layer="3" name="南浔区" pid="285" cname="南浔区" fname="湖州市南浔区" id="1072"/>
+      <county ename="deqingxian" layer="3" name="德清县" pid="285" cname="德清县" fname="湖州市德清县" id="1073"/>
+      <county ename="changxingxian" layer="3" name="长兴县" pid="285" cname="长兴县" fname="湖州市长兴县" id="1074"/>
+      <county ename="anjixian" layer="3" name="安吉县" pid="285" cname="安吉县" fname="湖州市安吉县" id="1075"/>
+    </city>
+    <city ename="shaoxing" layer="2" name="绍兴市" pid="12" cname="绍兴" fname="浙江省绍兴市" id="286">
+      <district ename="yuechengqu" layer="3" name="越城区" pid="286" cname="越城区" fname="绍兴市越城区" id="1081"/>
+      <city ename="zhuji" layer="3" name="诸暨市" pid="286" cname="诸暨" fname="绍兴市诸暨市" id="1082"/>
+      <city ename="shangyu" layer="3" name="上虞市" pid="286" cname="上虞" fname="绍兴市上虞市" id="1083"/>
+      <city ename="shengzhou" layer="3" name="嵊州市" pid="286" cname="嵊州" fname="绍兴市嵊州市" id="1084"/>
+      <county ename="shaoxingxian" layer="3" name="绍兴县" pid="286" cname="绍兴县" fname="绍兴市绍兴县" id="1085"/>
+      <county ename="xinchangxian" layer="3" name="新昌县" pid="286" cname="新昌县" fname="绍兴市新昌县" id="1086"/>
+    </city>
+    <city ename="jinhua" layer="2" name="金华市" pid="12" cname="金华" fname="浙江省金华市" id="287">
+      <district ename="wuchengqu" layer="3" name="婺城区" pid="287" cname="婺城区" fname="金华市婺城区" id="1091"/>
+      <district ename="jindongqu" layer="3" name="金东区" pid="287" cname="金东区" fname="金华市金东区" id="1092"/>
+      <city ename="lanxi" layer="3" name="兰溪市" pid="287" cname="兰溪" fname="金华市兰溪市" id="1093"/>
+      <city ename="yiwu" layer="3" name="义乌市" pid="287" cname="义乌" fname="金华市义乌市" id="1094"/>
+      <city ename="dongyang" layer="3" name="东阳市" pid="287" cname="东阳" fname="金华市东阳市" id="1095"/>
+      <city ename="yongkang" layer="3" name="永康市" pid="287" cname="永康" fname="金华市永康市" id="1096"/>
+      <county ename="wuyixian" layer="3" name="武义县" pid="287" cname="武义县" fname="金华市武义县" id="1097"/>
+      <county ename="pujiangxian" layer="3" name="浦江县" pid="287" cname="浦江县" fname="金华市浦江县" id="1098"/>
+      <county ename="pananxian" layer="3" name="磐安县" pid="287" cname="磐安县" fname="金华市磐安县" id="1099"/>
+    </city>
+    <city ename="quzhou" layer="2" name="衢州市" pid="12" cname="衢州" fname="浙江省衢州市" id="288">
+      <district ename="kechengqu" layer="3" name="柯城区" pid="288" cname="柯城区" fname="衢州市柯城区" id="1111"/>
+      <district ename="qujiangqu" layer="3" name="衢江区" pid="288" cname="衢江区" fname="衢州市衢江区" id="1112"/>
+      <city ename="jiangshan" layer="3" name="江山市" pid="288" cname="江山" fname="衢州市江山市" id="1113"/>
+      <county ename="changshanxian" layer="3" name="常山县" pid="288" cname="常山县" fname="衢州市常山县" id="1114"/>
+      <county ename="kaihuaxian" layer="3" name="开化县" pid="288" cname="开化县" fname="衢州市开化县" id="1115"/>
+      <county ename="longyouxian" layer="3" name="龙游县" pid="288" cname="龙游县" fname="衢州市龙游县" id="1116"/>
+    </city>
+    <city ename="zhoushan" layer="2" name="舟山市" pid="12" cname="舟山" fname="浙江省舟山市" id="289">
+      <district ename="dinghaiqu" layer="3" name="定海区" pid="289" cname="定海区" fname="舟山市定海区" id="1121"/>
+      <district ename="putuoqu" layer="3" name="普陀区" pid="289" cname="普陀区" fname="舟山市普陀区" id="1122"/>
+      <county ename="daishanxian" layer="3" name="岱山县" pid="289" cname="岱山县" fname="舟山市岱山县" id="1123"/>
+      <county ename="shengsixian" layer="3" name="嵊泗县" pid="289" cname="嵊泗县" fname="舟山市嵊泗县" id="1124"/>
+    </city>
+    <city ename="taizhou" layer="2" name="台州市" pid="12" cname="台州" fname="浙江省台州市" id="290">
+      <district ename="jiaojiangqu" layer="3" name="椒江区" pid="290" cname="椒江区" fname="台州市椒江区" id="1131"/>
+      <district ename="huangyanqu" layer="3" name="黄岩区" pid="290" cname="黄岩区" fname="台州市黄岩区" id="1132"/>
+      <district ename="luqiaoqu" layer="3" name="路桥区" pid="290" cname="路桥区" fname="台州市路桥区" id="1133"/>
+      <city ename="wenling" layer="3" name="温岭市" pid="290" cname="温岭" fname="台州市温岭市" id="1134"/>
+      <city ename="linhai" layer="3" name="临海市" pid="290" cname="临海" fname="台州市临海市" id="1135"/>
+      <county ename="yuhuanxian" layer="3" name="玉环县" pid="290" cname="玉环县" fname="台州市玉环县" id="1136"/>
+      <county ename="sanmenxian" layer="3" name="三门县" pid="290" cname="三门县" fname="台州市三门县" id="1137"/>
+      <county ename="tiantaixian" layer="3" name="天台县" pid="290" cname="天台县" fname="台州市天台县" id="1138"/>
+      <county ename="xianjuxian" layer="3" name="仙居县" pid="290" cname="仙居县" fname="台州市仙居县" id="1139"/>
+    </city>
+    <city ename="lishui" layer="2" name="丽水市" pid="12" cname="丽水" fname="浙江省丽水市" id="291">
+      <district ename="lianduqu" layer="3" name="莲都区" pid="291" cname="莲都区" fname="丽水市莲都区" id="1151"/>
+      <city ename="longquan" layer="3" name="龙泉市" pid="291" cname="龙泉" fname="丽水市龙泉市" id="1152"/>
+      <county ename="qingtianxian" layer="3" name="青田县" pid="291" cname="青田县" fname="丽水市青田县" id="1153"/>
+      <county ename="jinyunxian" layer="3" name="缙云县" pid="291" cname="缙云县" fname="丽水市缙云县" id="1154"/>
+      <county ename="suichangxian" layer="3" name="遂昌县" pid="291" cname="遂昌县" fname="丽水市遂昌县" id="1155"/>
+      <county ename="songyangxian" layer="3" name="松阳县" pid="291" cname="松阳县" fname="丽水市松阳县" id="1156"/>
+      <county ename="yunhexian" layer="3" name="云和县" pid="291" cname="云和县" fname="丽水市云和县" id="1157"/>
+      <county ename="qingyuanxian" layer="3" name="庆元县" pid="291" cname="庆元县" fname="丽水市庆元县" id="1158"/>
+      <county ename="jingningyuzu" layer="3" name="景宁畲族自治县" pid="291" cname="景宁畲族" fname="丽水市景宁畲族自治县" id="1159"/>
+    </city>
   </province>
   <province ename="anhui" layer="1" name="安徽省" pid="0" cname="安徽" fname="安徽省" id="13">
     <city ename="hefei" layer="2" name="合肥市" pid="13" cname="合肥" fname="安徽省合肥市" id="301"/>
@@ -460,6 +755,6 @@
     <city ename="bayannaoer" layer="2" name="巴彦淖尔市" pid="32" cname="巴彦淖尔" fname="内蒙古自治区巴彦淖尔市" id="728"/>
     <city ename="wulanchabu" layer="2" name="乌兰察布市" pid="32" cname="乌兰察布" fname="内蒙古自治区乌兰察布市" id="729"/>
   </province>
-  <province ename="macao" layer="1" name="澳门特别行政区" pid="0" cname="澳门" fname="澳门特别行政区" id="33"/>
-  <province ename="hongkong" layer="1" name="香港特别行政区" pid="0" cname="香港" fname="香港特别行政区" id="34"/>
+  <province ename="aomen" layer="1" name="澳门特别行政区" pid="0" cname="澳门" fname="澳门特别行政区" id="33"/>
+  <province ename="xianggang" layer="1" name="香港特别行政区" pid="0" cname="香港" fname="香港特别行政区" id="34"/>
 </country>

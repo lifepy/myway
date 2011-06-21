@@ -19,7 +19,13 @@ special_ename = {
     '澳门':'macao'
 }
 
-def get_tag_name(area_name):
+default_tag_name_dict = {
+    1:'province',
+    2:'city',
+    3:'district'
+}
+
+def get_tag_name(area_name, layer):
     if area_name in municipality_list:
         return 'municipality'
     if area_name in province_list:
@@ -33,6 +39,8 @@ def get_tag_name(area_name):
         return 'district'
     elif area_name.endswith('市'):
         return 'city'
+    else:
+        return default_tag_name_dict.get(layer, 'area')
 
 def createTreeElement(id, name, pid, layer, fullname):
     '''
@@ -41,28 +49,30 @@ def createTreeElement(id, name, pid, layer, fullname):
     fname: 全名，例如：北京市东城区
     ename: 英文名，例如：beijing
     '''
-    tag_name = get_tag_name(name.encode('utf-8'))
+    tag_name = get_tag_name(name.encode('utf-8'), int(layer))
 
-    cname = name.encode('utf-8')
+    cname = name
     # Remove all possible stop words
     for sw in stop_words:
-        if sw in cname:
-            cname = cname.replace(sw, "")
+        if sw.decode('utf-8') in cname:
+            cname = cname.replace(sw.decode('utf-8'), "")
 
     if cname not in special_ename.keys():
-        ename = translator.get_pinyin(cname)
+        ename = translator.get_pinyin(cname.encode('utf-8'))
     else:
         ename = special_ename[cname]
     
-    return etree.Element(tag_name, {
+    attribs = {
         'id':id,
         'name':name,
         'layer':layer,
         'fname':fullname,
         'ename':ename,
-        'cname':cname.decode('utf-8'),
+        'cname':cname,
         'pid':str(pid),
-    })
+    }
+    print tag_name
+    return etree.Element(tag_name, attribs)
 
 def parse_administrative_division_to_xml(filename, country="中国", ename="china"):
     if not os.path.exists(filename):
@@ -80,6 +90,7 @@ def parse_administrative_division_to_xml(filename, country="中国", ename="chin
             fullname = parent_elem.attrib['name']+name
         else:
             fullname = name
+        print id,name,pid,layer,fullname
         elem = createTreeElement(id, name, pid, layer, fullname)
         if int(pid)<=0:
             root.append(elem)

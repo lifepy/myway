@@ -24,6 +24,7 @@ _uploadphoto = new function() {
 			var option = "<option value='" + city['id'] + "'>" + city['name'] + "</option>";
 			$("#city").append(option);
 		}
+		this.selCity($("#city").val());
 	}
 	
 	this.selCity = function(city_id) {
@@ -47,6 +48,23 @@ _uploadphoto = new function() {
 			var option = "<option value='" + zone['id'] + "'>" + zone['name'] + "</option>";
 			$("#zone").append(option);
 		}
+		this.selZone($("#zone").val());
+	}
+	
+	this.selZone = function(area_id) {
+		$.ajax({
+			type: "GET",
+			url: "/json/getspots/" + area_id + '/',
+			dataType: "json",
+			data: {
+				area_id:area_id
+			},
+			success: function(spotList) {
+				// spot input box auto complete using autocomplete plugin
+				$("#spot").flushCache();
+				$("#spot").autocomplete(spotList,{minChars: 0});
+			}
+		});
 	}
 	
 	this.init = function() {

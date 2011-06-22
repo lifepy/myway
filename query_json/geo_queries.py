@@ -30,3 +30,13 @@ def get_area_list(request, parent_area_id):
 
     ret = simplejson.dumps(ret)
     return HttpResponse(ret)
+
+def get_spot_list(request, area_id):
+    ret = ["地区1","地区2"]
+    if (area_id == "851"):
+        ret = ["南禅寺","城中公园"]
+    if (area_id == "894"):
+        ret = ["虎丘","枫桥景区"]
+
+    ret = simplejson.dumps(ret)
+    return HttpResponse(ret)

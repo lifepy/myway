@@ -17,14 +17,15 @@ urlpatterns = patterns('',
     (r'^logout/$', auth_views.logout, {"template_name":'account/logged_out.html'}),
     
     # Upload
-    (r'^upload/file', upload_views.upload_single_file),
-    (r'^upload/files$', upload_views.upload_multiple_files),
+    (r'^upload/photo/fs/$', upload_views.upload_file), # store photo to file system
+    (r'^upload/photo/$', upload_views.upload_photo),
+    # (r'^upload/share/$', upload_views.upload_share), # deprecated!
     (r'uploadify/', include('uploadify.urls')),
     (r'test/$', direct_to_template, {'template':'test.html'}),
 
     # Modules
     (r'account/', include('account.urls')),
-    (r'console/', include('console.urls')),
+    #(r'console/', include('console.urls')), # deprecated!
 
     # Query returns JSON
     (r'json/', include('query_json.urls')),

@@ -49,9 +49,27 @@ connect('dianping',host='204.62.14.55', username='dianping',password='crawler')
 #r.save()
 #s = Shop(name="abc")
 #s.save()
-bset = set([])
-for s in Shop.objects(city__startswith='无锡'.decode('utf-8')):
-    b = s['bread_crumb'].split(u'\xbb')[0]
-    bset.add(b)
-for x in bset:
-    print x
+aset = set()
+bset = set()
+cset = set()
+dset = set()
+eset = set()
+fset = set()
+gset = set()
+
+sub_category_dict = {}
+city = '无锡'
+for br in Shop.objects(city__startswith=city.decode('utf-8')):
+    items = br['bread_crumb'].split(u'\xbb')
+    category = items[0].replace(city,'')
+    sub_category = items[1]
+    sub_category_set = sub_category_dict.get(category, set())
+    sub_category_dict.add(sub_category)
+    sub_category_dict[category] = sub_category_set
+    print category, sub_category
+    r = raw_input('press any key to continue')
+
+for k,v in sub_category_dict:
+    print "CATEGORY:", k
+    for sub_category in v:
+        print item,

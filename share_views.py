@@ -16,22 +16,22 @@ def share(request, relative_path):
     file_list = [ ]
 
     cur_dir = join(SHARE_DIR , relative_path)
-    print cur_dir
-    if isdir(cur_dir):
-        # if target is dir, go deep
-        for filename in os.listdir(cur_dir):
-            if isdir(join(SHARE_DIR, filename)):
-                file_list.append( (filename, True) )
-            else:
-                file_list.append( (filename, False) )
-    else:
-        # if target is a file, force a download
-        response = HttpResponse(mimetype='application/force-download')
-        filename = basename(relative_path)
-        response['Content-Disposition'] = 'attachment; filename='+filename
-        response['X-Sendfile-Encoding'] = 'url'
-        response['X-Sendfile'] = urllib2.quote(cur_dir)
-        return response
+    # print cur_dir
+    # if isdir(cur_dir):
+        # # if target is dir, go deep
+        # for filename in os.listdir(cur_dir):
+            # if isdir(join(SHARE_DIR, filename)):
+                # file_list.append( (filename, True) )
+            # else:
+                # file_list.append( (filename, False) )
+    # else:
+        # # if target is a file, force a download
+        # response = HttpResponse(mimetype='application/force-download')
+        # filename = basename(relative_path)
+        #response['Content-Disposition'] = 'attachment; filename='+filename
+        # response['X-Sendfile-Encoding'] = 'url'
+        # response['X-Sendfile'] = urllib2.quote(cur_dir)
+        # return response
 
     if request.method == 'POST':
         for fname in request.FILES:

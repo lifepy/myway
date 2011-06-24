@@ -49,6 +49,9 @@ class Place(Document):
     # Photo
     photos = ListField(ReferenceField('Photo'))
 
+    # from which site
+    _src = StringField(default='original', choices=['original','dianping.com','koubei.com','daodao.com'])
+
 class Hotel(Place):
     category = StringField(required=True, default="lodging")
 

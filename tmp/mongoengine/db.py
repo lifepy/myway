@@ -49,27 +49,36 @@ connect('dianping',host='204.62.14.55', username='dianping',password='crawler')
 #r.save()
 #s = Shop(name="abc")
 #s.save()
-aset = set()
-bset = set()
-cset = set()
-dset = set()
-eset = set()
-fset = set()
-gset = set()
-
 sub_category_dict = {}
 city = '无锡'
-for br in Shop.objects(city__startswith=city.decode('utf-8')):
-    items = br['bread_crumb'].split(u'\xbb')
-    category = items[0].replace(city,'')
+districts = [d.decode('utf-8') for d in ['惠山区','锡山区','滨湖区','崇安区','南长区','北塘区', '江阴市','宜兴市','新区']]
+count_not_found = 0
+count_found = 0
+for shop in Shop.objects(city__startswith=city.decode('utf-8')):
+    items = shop['bread_crumb'].split(u'\xbb')
+    '''
+    for item in items:
+        if item in districts:
+            #print shop.name, item
+            count_found += 1
+            break
+    else:
+        print shop.name, "NOT FOUND", shop.bread_crumb
+        count_not_found += 1
+        '''
+    category = items[0]
     sub_category = items[1]
     sub_category_set = sub_category_dict.get(category, set())
-    sub_category_dict.add(sub_category)
+    sub_category_set.add(sub_category)
     sub_category_dict[category] = sub_category_set
-    print category, sub_category
-    r = raw_input('press any key to continue')
-
-for k,v in sub_category_dict:
+    #print category, sub_category
+    #r = raw_input('press any key to continue')
+'''
+print "FOUND:", count_found
+print "NOT FOUND:", count_not_found
+'''
+for k,v in sub_category_dict.items():
     print "CATEGORY:", k
     for sub_category in v:
-        print item,
+        print sub_category,
+    print ''

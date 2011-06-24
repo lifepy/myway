@@ -26,6 +26,8 @@ default_tag_name_dict = {
 }
 
 def get_tag_name(area_name, layer):
+    ''' Get tag name based on area_name and layer. If nothing specific found
+    in area_name, default tag_name based on layer will be returned.'''
     if area_name in municipality_list:
         return 'municipality'
     if area_name in province_list:
@@ -44,9 +46,10 @@ def get_tag_name(area_name, layer):
 
 def createTreeElement(id, name, pid, layer, fullname):
     '''
+    create a tree element for administrative division xml
     name:  名称，例如：北京市
     cname: 通常名，例如：北京
-    fname: 全名，例如：北京市东城区
+    fname: 全名，例如：北京市,东城区
     ename: 英文名，例如：beijing
     '''
     tag_name = get_tag_name(name.encode('utf-8'), int(layer))
@@ -71,10 +74,10 @@ def createTreeElement(id, name, pid, layer, fullname):
         'cname':cname,
         'pid':str(pid),
     }
-    print tag_name
     return etree.Element(tag_name, attribs)
 
 def parse_administrative_division_to_xml(filename, country="中国", ename="china"):
+    ''' parse raw data into formatted xml '''
     if not os.path.exists(filename):
         raise IOError('can not access file "%s"'%filename)
     root = etree.Element('country', {'ename':ename, 'name':country.decode('utf-8')})
@@ -87,7 +90,7 @@ def parse_administrative_division_to_xml(filename, country="中国", ename="chin
         print "LINE:",id,name,pid,layer
         if int(pid)>0:
             parent_elem = root.xpath('//*[@id='+pid+']')[0]
-            fullname = parent_elem.attrib['name']+name
+            fullname = parent_elem.attrib['fname']+','+name
         else:
             fullname = name
         print id,name,pid,layer,fullname

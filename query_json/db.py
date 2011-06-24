@@ -8,7 +8,7 @@ DATA_DIR='xml-data'
 china_cities = etree.parse(join(dirname(__file__), DATA_DIR, 'china.xml'))
 province_list = [p.attrib for p in china_cities.xpath('//*[@layer=1]')]
 
-def node_of(id):
+def attrs_of(id):
     elem = china_cities.xpath('//*[@id='+id+']')[0]
     return elem.attrib
 
@@ -18,5 +18,10 @@ def children_of(id):
         ret.append(elem.attrib)
     return ret
         
+def city_by_name(name):
+
+    elem = china_cities.xpath('//*[@name="'+name+'"]')[0]
+    return elem.attrib
+
 # for p in children_of('12'):
     # print p['name'],p['id'],p['layer']

@@ -26,7 +26,6 @@ def store_to_fs(file, target_dir):
 
 def store_photo_to_db(file, author, description, content_type):
     ''' Store uploaded photo into GridFS (mongoDB) '''
-    print "FILENAME: ", file.name
     if file.name == '':
         raise ValueError
     photo = Photo(author=author, description=description)
@@ -51,7 +50,9 @@ def upload_photo(request):
         return render_to_response('upload.html', c)
     if request.method == 'POST':
         for fname in request.FILES:
-            store_photo_to_db(request.FILES[fname], 'simon', 'change me!', 'image/jpeg')
+            file = request.FILES[fname]
+            # TODO: add field so that user could add description for picture
+            store_photo_to_db(file, 'simon', 'change me!', file.content_type)
         return render_to_response('debug/success.html')
 
 def upload_file(request):

@@ -5,7 +5,8 @@ from django.utils import simplejson
 import logging
 logger = logging.getLogger('console.views')
 
-from query_json.db import children_of
+from query_json.db import children_of, attrs_of
+from mongo_models import *
 
 '''
 NOT USED
@@ -22,10 +23,11 @@ def get_area_list(request, parent_area_id):
     children = children_of(parent_area_id) 
     ret = []
     for c in children:
-        subarea = {}
-        subarea['name'] = c['name']
-        subarea['ename'] = c['ename']
-        subarea['id'] = c['id']
+        subarea = {
+            'id':c['id'],
+            'name': c['name'],
+            'ename':c['ename'],
+        }
         ret.append(subarea)
 
     ret = simplejson.dumps(ret)
@@ -37,6 +39,19 @@ def get_spot_list(request, area_id):
         ret = ["南禅寺","城中公园"]
     if (area_id == "894"):
         ret = ["虎丘","枫桥景区"]
+
+    ret = simplejson.dumps(ret)
+    return HttpResponse(ret)
+
+def get_restraunt_list(request, area_id):
+    area = attrs_of(area_id)
+    min_locality_tag = area['fname'].split(',')[-1]
+    print min_locality_tag
+    
+    restraunts = Restraunt.objects(locality_tags=min_locality_tag).all()
+    for r in restraunts:
+        print r
+    ret = [r.name for r in restraunts]
 
     ret = simplejson.dumps(ret)
     return HttpResponse(ret)

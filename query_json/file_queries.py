@@ -56,10 +56,12 @@ def get_file_list_for_data_table(request, base_dir_alias, relative_path):
     path = join(base_dir, relative_path)
     file_list = list_dir(path)
 
-    aaData = []
+    if relative_path.strip() == '':
+        aaData = []
+    else:
+        aaData = [["<a href='../'>../</a>", "",""],]
     for file_info in file_list:
         name = file_info['name']
-        print "NAME:", name
         if file_info['isdir']:
             name += '/'
         path = file_info['path'].decode('utf-8')

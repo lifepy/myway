@@ -39,15 +39,11 @@ def upload_and_download(request, relative_path):
                 f = request.FILES[fname]
                 name = f.name.encode('utf-8')
                 print "Upload '%s' to '%s'" % (name, cur_dir)
-                print "Gonna open "+join(cur_dir, name)
                 destination = open(join(cur_dir, name), 'wb+')
-                print "can open file"
                 for chunk in f.chunks():
                     destination.write(chunk)
-                print "can read file"
                 destination.close()
             except Exception as e:
-                print "EXCEPTION"
                 print e
         print "SUCCESS"
         return HttpResponse('True')

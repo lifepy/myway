@@ -18,7 +18,6 @@ def multi_file_upload(context, upload_complete_url, upload_path):
     * allBytesLoaded - The total number of bytes uploaded
     * speed - The average speed of all uploaded files
     """
-    print "UPLOAD PATH:", upload_path
     return { 
         'upload_complete_url' : upload_complete_url,
         'uploadify_path' : settings.UPLOADIFY_PATH,

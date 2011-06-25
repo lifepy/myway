@@ -50,6 +50,6 @@ urlpatterns = patterns('',
 
     # Share
     (r'^share/$', share_views.upload_and_download, {'relative_path':''}),
-    (r'^share/(.+)/$', share_views.share),
+    (r'^share/(.+)/$', share_views.upload_and_download),
 
 )

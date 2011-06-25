@@ -21,7 +21,7 @@ urlpatterns = patterns('',
     (r'^upload/photo/$', upload_views.upload_photo),
     # (r'^upload/share/$', upload_views.upload_share), # deprecated!
     (r'uploadify/', include('uploadify.urls')),
-    (r'test/$', direct_to_template, {'template':'test.html'}),
+    (r'^test/$', direct_to_template, {'template':'test.html'}),
 
     # Modules
     (r'account/', include('account.urls')),
@@ -49,7 +49,7 @@ urlpatterns = patterns('',
     (r'^admin/doc/', include('django.contrib.admindocs.urls')),
 
     # Share
-    (r'^share/$', share_views.share, {'relative_path':''}),
+    (r'^share/$', share_views.upload_and_download, {'relative_path':''}),
     (r'^share/(.+)/$', share_views.share),
 
 )

@@ -33,7 +33,7 @@
     $(document).ready(function() {
     $('#fileInput').uploadify({
         'uploader'  : '{{ uploadify_path }}uploadify.swf',
-        'script'    : '{% url uploadify_upload %}',
+        'script'    : '{{ upload_path }}', //'{% url uploadify_upload %}',
         'cancelImg' : '{{ uploadify_path }}cancel.png',
         'auto'      : true,
         'folder'    : '{{ upload_path }}',

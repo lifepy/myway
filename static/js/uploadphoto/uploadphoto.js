@@ -54,7 +54,7 @@ _uploadphoto = new function() {
 	this.selZone = function(area_id) {
 		$.ajax({
 			type: "GET",
-			url: "/json/getspots/" + area_id + '/',
+			url: "/json/restraunts/in/" + area_id + '/',
 			dataType: "json",
 			data: {
 				area_id:area_id

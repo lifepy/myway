@@ -10,7 +10,7 @@
 		<script type="text/javascript" src="/static/jquery/DataTables-1.8.0/media/js/jquery.dataTables.min.js" ></script>
 		<script type="text/javascript" src="/static/jquery/DataTables-1.8.0/media/js/dataTables.fnReloadAjax.js" ></script>
         <script type="text/javascript">
-            var fileDataTable;
+            var oTable;
             function onUploadComplete(event, data){ updateFileList(); }
 
             function updateFileList(){
@@ -45,36 +45,36 @@
                     });
                 */
 
-                if (typeof fileDataTable == 'undefined'){
-                fileDataTable = $('#fileList').dataTable({
+                if (typeof oTable == 'undefined'){
+                oTable = $('#fileList').dataTable({
                         'bProcessing':true,
                         'sAjaxSource':'/json/aaData/files/in/'+ relative_path,
                         "bJQueryUI": true,
                         "sPaginationType": "full_numbers",
-                        'bSortClasses':false,
+                        'bSortClasses':false
                     });
                 } else {
-                    fileDataTable.fnReloadAjax();
+                    oTable.fnReloadAjax();
                 }
 
-                $('td', fileDataTable.fnGetNodes()).hover( function() {
+                $('td', oTable.fnGetNodes()).hover( function() {
                         alert('hover');
                     var iCol = $('td').index(this) % 5;
-                    var nTrs = fileDataTable.fnGetNodes();
+                    var nTrs = oTable.fnGetNodes();
                     $('td:nth-child('+(iCol+1)+')', nTrs).addClass( 'hld' );
                     }, function() {
-                    $('td.hld', fileDataTable.fnGetNodes()).removeClass('hld');
-                } );
+                    $('td.hld', oTable.fnGetNodes()).removeClass('hld');
+                });
             }
             $(document).ready(function(){
                 updateFileList();
-            });
+            } );
         </script>
     </head>
     <div id="fileDataTable">
 
     <div id='container'>
-        {% multi_file_upload 'complete_url' upload_path %} <h3>click to upload</h3>
+        {% multi_file_upload 'complete_url' upload_path %}
         <div id="demo">	
 	<h2>Shared Files </h2>
         <table id="fileList" cellpadding="0" cellspacing="0" border="0" class="display">

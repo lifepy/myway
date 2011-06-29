@@ -34,15 +34,12 @@ def get_area_list(request, parent_region_code):
     ret = simplejson.dumps(ret)
     return HttpResponse(ret)
 
-"""FIXME: this would be wrong after attrs_of been changed"""
-def get_restraunt_list(request, area_id):
-    area = attrs_of(area_id)
-    min_locality_tag = area['fname'].split(',')[-1]
-    print min_locality_tag
+def get_restraunt_list(request, region_code):
+    region = attrs_of(region_code)['name']
     
-    restraunts = Restraunt.objects(locality_tags=min_locality_tag).all()
+    restraunts = Restraunt.objects(locality_tags=region).all()
     for r in restraunts:
-        print r
+        print r.name
     ret = [r.name for r in restraunts]
 
     ret = simplejson.dumps(ret)

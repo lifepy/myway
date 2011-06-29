@@ -8,9 +8,9 @@ _uploadphoto = new function() {
 			type: "GET",
 			url: "/json/subareas/in/"+province_id+'/',
 			dataType: "json",
-			data: {
-				province:province_id
-			},
+			//data: {
+		    //		province:province_id
+			//},
 			success: function(cities) {
 				_uploadphoto.showCities(cities);
 			}

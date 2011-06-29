@@ -50,7 +50,7 @@ def upload_photo(request):
     if request.method == 'GET':
         c = {}
         c.update(csrf(request))
-        plist = [ (p['name'], p['id']) for p in province_list]
+        plist = [ (p['name'], p['region-code']) for p in province_list]
         c.update({"province_list" : plist})
         return render_to_response('upload.html', c)
     if request.method == 'POST':

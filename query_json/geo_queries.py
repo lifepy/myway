@@ -19,20 +19,22 @@ def get_city_list(request, province):
     return HttpResponse(ret)
 '''
 
-def get_area_list(request, parent_area_id):
-    children = children_of(parent_area_id) 
+def get_area_list(request, parent_region_code):
+    children = children_of(parent_region_code) 
+    print parent_region_code
+    print children
     ret = []
     for c in children:
         subarea = {
-            'id':c['id'],
+            'id':c['region-code'],
             'name': c['name'],
-            'ename':c['ename'],
         }
         ret.append(subarea)
 
     ret = simplejson.dumps(ret)
     return HttpResponse(ret)
 
+"""FIXME: this would be wrong after attrs_of been changed"""
 def get_restraunt_list(request, area_id):
     area = attrs_of(area_id)
     min_locality_tag = area['fname'].split(',')[-1]

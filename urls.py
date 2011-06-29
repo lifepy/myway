@@ -8,6 +8,7 @@ from settings import rel
 import views 
 import upload_views
 import share_views
+import debug_views
 
 urlpatterns = patterns('',
     # Logged in Home
@@ -51,5 +52,8 @@ urlpatterns = patterns('',
     # Share
     (r'^share/$', share_views.upload_and_download, {'relative_path':''}),
     (r'^share/(.+)/$', share_views.upload_and_download),
+
+    # Photo share
+    (r'^gridfs/([a-zA-Z0-9]+)/$', debug_views.serve_file_by_id),
 
 )

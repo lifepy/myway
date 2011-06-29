@@ -1,7 +1,11 @@
 # coding=utf-8
 from mongoengine import *
 
-connect('test', username='test', password='test')
+db_name = 'test'
+db_username = 'test'
+db_password = 'test'
+
+connect(db_name, username=db_username, password=db_password)
 class Photo(Document):
     #FIXME: doesn't have a FK reference to User
     author = StringField(required=True)
@@ -47,7 +51,7 @@ class Place(Document):
     comments = ListField(EmbeddedDocumentField(Comment))
 
     # Photo
-    photos = ListField(ReferenceField('Photo'))
+    photos = ListField(ReferenceField(Photo))
 
     # from which site
     _src = StringField(default='original', choices=['original','dianping.com','koubei.com','daodao.com'])

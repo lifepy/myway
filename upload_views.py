@@ -8,7 +8,7 @@ import logging
 logger = logging.getLogger('console.views')
 
 from query_json.db import province_list
-from mongo_models import Photo
+from mongo_models import Photo, Restraunt
 
 class UploadShareForm(forms.Form):
     title = forms.CharField(max_length=50)
@@ -28,6 +28,7 @@ def store_photo_to_db(file, author, description, content_type):
     ''' Store uploaded photo into GridFS (mongoDB) '''
     if file.name == '':
         raise ValueError
+    r = Restraunt.objects().first()
     photo = Photo(author=author, description=description)
     photo.file.new_file()
     
@@ -36,6 +37,10 @@ def store_photo_to_db(file, author, description, content_type):
     photo.file.close()
     photo.file.content_type=content_type
     photo.save()
+    print "ID:", r.id
+    print "NAME:", r.name
+    r.photos.append(photo)
+    r.save()
     return photo
 
 

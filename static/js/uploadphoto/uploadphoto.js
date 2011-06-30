@@ -67,8 +67,32 @@ _uploadphoto = new function() {
 		});
 	}
 	
+	this.showInfo = function(spot_name) {
+		$.ajax({
+			type: "GET",
+			url: "/json/photolist/in/" + spot_name + '/',
+			dataType: "json",
+			data: {
+				spot_name:spot_name
+			},
+			success: function(photolist) {
+				console.debug(photolist);
+				_uploadphoto.showPhotos(photolist);
+			}
+		});
+	}
+	
+	this.showPhotos = function(photos) {
+		$("#photos").empty();
+		for (var i = 0; i < photos.length; i++) {
+			var photo = photos[i];
+			var photoDiv = "<div><img src='/gridfs/" + photo['id'] + "'/></div>";
+			$("#photos").append(photoDiv);
+		}
+	}
+	
 	this.init = function() {
-		$("#province")[0].options[10].selected = true;
+		$("#province")[0].options[9].selected = true;
 		this.selProvince($("#province").val());
 	}
 }

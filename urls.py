@@ -9,10 +9,13 @@ import views
 import upload_views
 import share_views
 import debug_views
+import spot_views
 
 urlpatterns = patterns('',
     # Logged in Home
     (r'^home/$', views.home),
+    
+    (r'^spot/info/$', spot_views.get_info),
     # Log in/out
     (r'^login/$', auth_views.login, {"template_name":"account/login.html", "redirect_field_name":"/home"}),
     (r'^logout/$', auth_views.logout, {"template_name":'account/logged_out.html'}),

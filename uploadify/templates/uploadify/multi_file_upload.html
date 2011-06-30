@@ -1,9 +1,9 @@
-<script type="text/javascript" src="{{ uploadify_path }}swfobject.js"></script>
-<script type="text/javascript" src="{{ uploadify_path }}jquery.uploadify.js"></script>
+<link rel="stylesheet" type="text/css" href="{{ uploadify_path }}uploadify.css">
+<!--<script type="text/javascript" src="{{ uploadify_path }}swfobject.js"></script>-->
+<script type="text/javascript" src="{{ uploadify_path }}jquery.uploadify.min.js"></script>
 <div id='uploadify'>
     <input id="fileInput" name="fileInput" type="file" />
     <div id="uploaded-queue" class="uploadifyQueue"></div>
-    <div id="status-message"></div>
 
 <style type="text/css">
 #upload-queue { border:1px sold #FFFFFF}
@@ -28,45 +28,45 @@
 #uploadify .uploadifyQueue .completed {
   color: #555555;
 }
+
 </style>
-<script type="text/javascript">// <![CDATA[
+<script type="text/javascript">
     $(document).ready(function() {
+    // migrated from uploadify-2.1.4 to uploadify-v3.0.0, see http://www.uploadify.com/forums/discussion/7233/no-hand-cursor-cant-click-the-button.-v3.0-beta-please-update-the-documentation/p1
     $('#fileInput').uploadify({
-        'uploader'  : '{{ uploadify_path }}uploadify.swf',
-        'script'    : '{{ upload_path }}', //'{% url uploadify_upload %}',
-        'cancelImg' : '{{ uploadify_path }}cancel.png',
+        //'uploader'  : '{{ uploadify_path }}uploadify.swf',
+        'uploader'  : '{{ upload_path }}', // 'uploader' now is not "the path to the swf file", it is "path to uploadify.php"
+
+        //'script'    : '{{ upload_path }}', //'{% url uploadify_upload %}',
+        'swf'       : '{{ uploadify_path }}uploadify.swf', // 'swf' replaced 'script', "path to swf file"
+
+        'buttonText': '上 传 文 件',
+
+        //'cancelImg' : '{{ uploadify_path }}uploadify-cancel.png',
+        'cancelImage': '{{ uploadify_path }}uploadify-cancel.png', // 'cancelImg' is now 'cancelImage'
+        'checkScript': 'check',
         'auto'      : true,
-        'folder'    : '{{ upload_path }}',
+        //'folder'    : '{{ upload_path }}', no longer there
         'multi'     : true,
         'queueId'   : 'upload-queue',
         'queueSizeLimit'  : 3,
         'simUploadLimit'  : 3,
-        'removeCompleted' : false,
+        'removeCompleted' : true,
         'onSelectOnce'    : function(event,data) {
             $('#status-message').text(data.filesSelected + ' files have been added to the queue.');
         },
-        'onAllComplete'   : function(event,data) {
-            $('#status-message').text(data.filesUploaded + ' files uploaded, ' + data.errors + ' errors.');
-            onUploadComplete(event, data);
-        }
-        // Only for DEBUG
-        //'onError'         : function(event, ID, fileObj, errorObj) {
-        //    alert(errorObj.info);
+
+        // 'onAllComplete' is now called 'onUploadComplete'
+        //'onAllComplete'   : function(event,data) {
+        //    $('#status-message').text(data.filesUploaded + ' files uploaded, ' + data.errors + ' errors.');
+        //    onUploadComplete(event, data);
         //}
+        'onUploadComplete' : function(file){
+            $('#status-message').text("新增文件："+file.name );
+            updateFileList();
+        }
         });
     });
 
-    /*
-    function allComplete(event, data) {
-        $('#uploadify').load('{{ upload_complete_url }}', {
-            'filesUploaded': data.filesUploaded,
-            'errorCount': data.errors,
-            'allBytesLoaded': data.allBytesLoaded,
-            'speed': data.speed
-        });
-        // Raise custom event
-        $('#uploadify').trigger('allUploadsComplete', data);
-    }
-    */
-// ]]></script>
+</script>
 </div>

@@ -35,12 +35,14 @@ def store_photo_to_db(file, author, description, content_type):
     for chunk in file.chunks():
         photo.file.write(chunk)
     photo.file.close()
+    print "CONTENT_TYPE:", content_type
     photo.file.content_type=content_type
     photo.save()
     print "ID:", r.id
     print "NAME:", r.name
     r.photos.append(photo)
     r.save()
+    print "CT:", photo.file.content_type
     return photo
 
 

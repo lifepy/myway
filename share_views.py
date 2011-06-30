@@ -49,6 +49,11 @@ def upload_and_download(request, relative_path):
         return HttpResponse('True')
         #return HttpResponseRedirect('/share/'+relative_path)
 
-    return render_to_response(page_url, {'file_list':file_list, 'upload_path':'/share/'+relative_path+'/'})
+    upload_path = '/share/'
+    if relative_path:
+        upload_path += relative_path+'/'
+    return render_to_response(page_url, {'file_list':file_list, 'upload_path':upload_path})
 
-
+def check(request):
+    if request.method == 'POST':
+        return HttpResponse('ok')

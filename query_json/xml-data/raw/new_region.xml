@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<Region name="全国" type="国" region-code="0" desc="最新县及县以上行政区划代码（截止2005年12月31日）国家统计局　2006-01-13 10:50:18">
+<Region name="中国" type="国" region-code="0" desc="最新县及县以上行政区划代码（截止2005年12月31日）国家统计局　2006-01-13 10:50:18">
     <Region name="华北地区" type="地区" region-code="01">
         <Region name="北京" type="市" region-code="110000">
             <Region name="东城区" type="区" region-code="110101">

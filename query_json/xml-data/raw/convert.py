@@ -6,14 +6,25 @@ from xpinyin import xpinyin
 pinyin = xpinyin.Pinyin()
 xtree = etree.parse('new_region.xml')
 '''
-Add english name to each node
+Add full name to each node
 '''
+root = xtree.getroot()
 for node in xtree.iter():
     _name = node.get('name')
     _type = node.get('type')
-    if _name.endswith(_type):
-        index = _name.rfind(_type)
-        ename = pinyin.get_pinyin(_name[:index].encode('utf-8'))
-        node.attrib['ename'] = ename
+
+    #canonical name
+    if _name.rfind(_type)>0:
+        _cname = _name[:_name.rfind(_type)] 
+    else:
+        _cname = _name
+    parent = node.getparent()
+
+    # fullname
+    if parent is not None and 'fullname' in parent.attrib:
+        fullname = parent.get('fullname')+',' + _cname
+    else:
+        fullname = _name
+    node.attrib['fullname'] = fullname
 
 xtree.write('china_regions.xml',encoding='utf-8',pretty_print=True,xml_declaration=True)

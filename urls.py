@@ -55,8 +55,10 @@ urlpatterns = patterns('',
     # Share
     (r'^share/$', share_views.upload_and_download, {'relative_path':''}),
     (r'^share/(.+)/$', share_views.upload_and_download),
+    (r'^share/check/$', share_views.check),
 
     # Photo share
     (r'^gridfs/([a-zA-Z0-9]+)/$', debug_views.serve_file_by_id),
+    (r'^gridfs/photo/([a-zA-Z0-9]+)/$', debug_views.serve_photo_by_id),
 
 )

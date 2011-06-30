@@ -85,8 +85,8 @@ _uploadphoto = new function() {
 	this.showPhotos = function(photos) {
 		$("#photos").empty();
 		for (var i = 0; i < photos.length; i++) {
-			var photo = photos[i];
-			var photoDiv = "<div><img src='/gridfs/" + photo['id'] + "'/></div>";
+			var photoId = photos[i];
+			var photoDiv = "<div><img src='/gridfs/photo/" + photoId + "'/></div>";
 			$("#photos").append(photoDiv);
 		}
 	}

@@ -22,7 +22,7 @@ for node in xtree.iter():
 
     # fullname
     if parent is not None and 'fullname' in parent.attrib:
-        fullname = parent.get('fullname')+',' + _cname
+        fullname = parent.get('fullname')+',' + _name
     else:
         fullname = _name
     node.attrib['fullname'] = fullname

@@ -2,8 +2,8 @@
 <html>
     <head>
         <link rel="stylesheet" type="text/css" href="/static/jquery/DataTables-1.8.0/media/css/share_page.css">
-        <link rel="stylesheet" type="text/css" href="/static/jquery/DataTables-1.8.0/media/css/demo_table_jui.css">
         <link rel="stylesheet" type="text/css" href="/static/jquery/DataTables-1.8.0/examples/examples_support/themes/smoothness/jquery-ui-1.8.4.custom.css">
+        <link rel="stylesheet" type="text/css" href="/static/jquery/DataTables-1.8.0/media/css/demo_table_jui.css">
         <!--<link rel="stylesheet" type="text/css" href="/static/jquery/jquery-ui/css/hot-sneaks/jquery-ui.css">-->
 
 		<script type="text/javascript" src="/static/jquery/jquery-1.5.min.js" ></script>
@@ -50,20 +50,35 @@
                         'sAjaxSource':'/json/aaData/files/in/'+ relative_path,
                         "bJQueryUI": true,
                         "sPaginationType": "full_numbers",
-                        'bSortClasses':false
+                        'bSortClasses':false,
+                        'aaSorting': [[1,'asc']],
+                        'aoColumns':[
+                            {'sWidth':'45%','sClass':'sorting_1'},//,'sClass':'sorting_1'},
+                            {'sWidth':'20%','sClass':'center'},
+                            {'sWidth':'35%','sClass':'center'}
+                            ],
+                        'asStripClasses':['gradeA odd','gradeA even'],
+                        'oLanguage': {
+                            'sLengthMenu':'每页显示_MENU_个文件',
+                            'sZeroRecords':'暂无文件',
+                            'sInfo':'_START_-_END_ 共_TOTAL_个',
+                            'sInfoEmpty':'暂无文件',
+                            'sInfoFiltered':"共_MAX_个文件"
+                            }
                     });
                 } else {
                     oTable.fnReloadAjax();
                 }
 
+/*
                 $('td', oTable.fnGetNodes()).hover( function() {
-                        alert('hover');
                     var iCol = $('td').index(this) % 5;
                     var nTrs = oTable.fnGetNodes();
                     $('td:nth-child('+(iCol+1)+')', nTrs).addClass( 'hld' );
                     }, function() {
                     $('td.hld', oTable.fnGetNodes()).removeClass('hld');
                 });
+                */
             }
             $(document).ready(function(){
                 updateFileList();
@@ -78,12 +93,18 @@
         <div id="fileTable">	
     
         <div id="status-message" class="status"></div>
+        <style type="text/css" rel="stylesheet">
+            a{
+                color:#4E4E4E;
+                text-decoration:underline;
+            }
+        </style>
         <table id="fileList" cellpadding="0" cellspacing="0" border="0" class="display">
             <thead>
                 <tr>
-                    <th>File Name</th>
-                    <th>Size</th>
-                    <th>Creation Time</th>
+                    <th>文件名</th>
+                    <th>文件大小</th>
+                    <th>上传时间</th>
                 </tr>
             </thead>
             <tbody id="fileListBody">

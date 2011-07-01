@@ -234,16 +234,6 @@ table.display td.center {
 /* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
  * DataTables row classes
  */
-table.display tr.odd.gradeA {
-	background-color: #ddffdd;
-}
-
-table.display tr.even.gradeA {
-	background-color: #eeffee;
-}
-
-
-
 
 table.display tr.odd.gradeA {
 	background-color: #ddffdd;
@@ -512,10 +502,18 @@ tr.even.gradeU td.sorting_3 {
 /*
  * Row highlighting example
  */
-#fileList tbody tr.even:hover, #fileList tbody tr.even td.highlighted {
-	background-color: #ECFFB3;
+#fileList tbody tr.even:hover td, #fileList tbody tr.even td.highlighted {
+	background-color: #A2F244;
 }
 
-#fileList tbody tr.odd:hover, #fileList tbody tr.odd td.highlighted {
-	background-color: #E6FF99;
+#fileList tbody tr.odd:hover td, #fileList tbody tr.odd td.highlighted {
+	background-color: #A2F244;
+}
+#fileList {
+    font-family:Tahoma;
+    font-size:14px;
+}
+
+#fileList a{
+    color:#424242;
 }

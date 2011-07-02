@@ -55,7 +55,7 @@ def upload_photo(request):
         for fname in request.FILES:
             file = request.FILES[fname]
             # TODO: add field so that user could add description for picture
-            store_photo_to_db(file, 'simon', 'change me!', file.content_type)
+            store_photo_to_db(file, 'simon', request.POST['desc-' + file.name], file.content_type)
         return render_to_response('debug/success.html')
 
 def upload_file(request):

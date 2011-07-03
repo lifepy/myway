@@ -149,6 +149,7 @@
 		var alt = '';
 		if ($('#agileUploaderFileList li').size() % 2 == 0) { alt = 'alt'; } 
 		$('#agileUploaderFileList').append('<li id="id-'+file.uid+'" class="'+alt+'"><div class="agileUploaderFilePreview" style="display: none;"></div><div class="agileUploaderFileName" style="display: none;">'+file.fileName+'</div><div id="'+file.uid+'CurrentProgress" class="agileUploaderCurrentProgress"></div><div class="agileUploaderFileSize" style="display: none;"></div><div class="agileUploaderRemoveFile" style="display:none;"><a href="#" id="remove-'+file.uid+'" onClick="document.getElementById(\'agileUploaderSWF\').removeFile(\''+file.uid+'\'); return false;"><img class="agileUploaderRemoveIcon" src="'+opts.removeIcon+'" alt="remove" /></a></div></li>');
+		$('#agileUploaderFileList').append('<li id="desc-' + file.uid + '">description:<input type="text" name="desc-' + file.fileName + '"></input></li>');
 		// Check for IE, change css special for IE.
 		if(/msie/i.test(navigator.userAgent) && !/opera/i.test(navigator.userAgent) === true) {
 			$('#id-'+file.uid).css('height', opts.flashVars.preview_max_height+5);
@@ -202,6 +203,7 @@
 	*/
 	$.fn.agileUploaderDetachFile = function(file) {
 		$('#id-'+file.uid).remove();
+		$('#desc-'+file.uid).remove();
 		if($('#agileUploaderFileList li').length < 1) {
 			$('#agileUploaderRemoveAll').empty();
 		}

@@ -15,6 +15,7 @@ if project_dir not in sys.path:
 #if tags_dir not in sys.path:
 #    sys.path.append(tags_dir)
 
+sys.stdout = sys.stderr
 os.environ['DJANGO_SETTINGS_MODULE'] = 'settings'
 os.environ['SCRIPT_NAME'] = '/myway/'
 

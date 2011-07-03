@@ -1,0 +1,85 @@
+#dialog-form .text-box label.prompted {
+        overflow: hidden;
+        white-space: nowrap; }
+        
+.text-box label {
+color: #777;
+cursor: text;
+padding: 6px 0;
+position: absolute;
+z-index: 2;
+top: 1px;
+left: 1px;
+}
+
+#dialog-form .text-box {
+  margin-right: 5px;
+  cursor: text;
+  position: relative; }
+  #dialog-form .text-box.small {
+    float: left;
+    width: 140px !important; }
+    #dialog-form .text-box.small input, #dialog-form .text-box.small label {
+      width: 138px !important; }
+#dialog-form .text-box input, #dialog-form .text-box textarea {
+    padding: 6px 0;
+    position: relative;
+    margin: 0 !important;
+    background-color: white;
+    border: 1px solid #cccccc;
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px; }
+  #dialog-form .text-box label, #dialog-form .text-box input, #dialog-form .text-box textarea {
+    text-indent: 10px !important;
+    cursor: text;
+    width: 283px;
+    font-size: 15px;
+    line-height: 18px;
+    font-family: inherit; }
+  #dialog-form .text-box label {
+    color: #777777;
+    cursor: text;
+    padding: 6px 0;
+    position: absolute;
+    z-index: 2;
+    top: 1px;
+    left: 1px; }
+
+#dialog-form .check-row {
+  line-height: 22px; }
+#dialog-form .row {
+  float: left;
+  clear: left;
+  *display: inline-block;
+  margin-bottom: 10px; }
+  #dialog-form .row:after {
+    content: " ";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden; }
+  #dialog-form .row .note {
+    color: #777777;
+    font-size: 90%;
+    padding-top: 11px; }
+  #dialog-form .row.last {
+    margin-bottom: 0; }
+    
+#dialog-form { margin:20px 0 0; border: none; }
+
+#dialog-form h2, #dialog-form h3, #dialog-form h4, #dialog-form p, #dialog-form ul, #dialog-form code { margin:0; padding:0; }
+#dialog-form code { display:block; color:#444; font-size:.9em; margin:0 0 1em; }
+#dialog-form code strong { color:#000; }
+#dialog-form p { margin:0 3em 1.2em 0; }
+#dialog-form p.intro { font-size:13px; color:#666; line-height:1.3; }
+#dialog-form ul { list-style-type: none; }
+
+#dialog-form h2 { font-size:16px; margin:1.2em 0 .5em; }
+#dialog-form h3 { font-size:14px; color:#e6820E; margin:1.5em 0 .5em; }
+.normal #dialog-form h4 { font-size:12px; color:#000; border:0; margin:0 0 .5em; }
+
+#dialog-form .ui-widget-content a:link,
+#dialog-form .ui-widget-content a:visited { color:#1b75bb; text-decoration:none; }
+#dialog-form .ui-widget-content a:hover,
+#dialog-form .ui-widget-content a:active { color:#0b559b; }

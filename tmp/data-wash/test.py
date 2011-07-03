@@ -1,21 +1,24 @@
 # coding=utf-8
+import sys; sys.path.append('../')
 from pymongo import Connection
 
-from myway.mongo_models import *
-from myway.query_json.db import city_by_name, children_of
+from mongo_models import *
+from query_json.db import cities_in, subareas_in
+
 
 origin = Connection(host='204.62.14.55').dianping
 origin.authenticate('dianping','crawler')
 
-site_name = '无锡站'.decode('utf-8')
-cname = '无锡'.decode('utf-8')
+target_provinces = ['江苏省','浙江省','山东省','安徽省']
+char_shi='市'.decode('utf-8')
+
 districts = [d.decode('utf-8') for d in ['惠山区','锡山区','滨湖区','崇安区','南长区','北塘区', '江阴市','宜兴市','新区']]
 
-def null_handler(record): pass
+def null_handler(record, city_name): pass
 
-def hotel_handler(record): pass
+def hotel_handler(record, city_name): pass
 
-def restraunt_handler(record):
+def restraunt_handler(record, city_name):
     if Restraunt.objects(name=record['name']) \
        or record.get('rating',0) < 2 \
        or record.get('n_rating',0) < 2:
@@ -28,16 +31,14 @@ def restraunt_handler(record):
         if key in r.__dict__['_data'].keys() and key not in ['category']:
             r.__dict__['_data'][key] = record[key]
 
-    city = record['city']
-    city_attrs = city_by_name(city)
-    children = children_of(city_attrs['id'])
+    subareas = subareas_in(city_name)
 
     # find city in admin-division database and tag restraunt with locality
-    districts = dict([(c['name'],c) for c in children])
+    districts = dict([(s['name'],s) for s in subareas])
     bread_crumb = record['bread_crumb'].split(u'\xbb')
     for item in bread_crumb:
         if item in districts.keys():
-            for tag in districts[item]['fname'].split(','):
+            for tag in districts[item]['fullname'].split(','):
                 r.locality_tags.append(tag)
                 
     # recommended course
@@ -56,7 +57,7 @@ classification_dict = {
     '购物':null_handler,
     '丽人':null_handler
 }
-
+'''
 for record in origin.shops.find({'city':site_name}):
     bread_crumb = record['bread_crumb'].split(u'\xbb')
     c = bread_crumb[0].replace(cname, '')
@@ -69,3 +70,33 @@ for record in origin.shops.find({'city':site_name}):
 
     handle = classification_dict.get(c.encode('utf-8'), null_handler)
     handle(record)
+'''
+def clean_city(city_name):
+    print "cleanning" + city_name
+    if type(city_name) != unicode:
+        city_name = city_name.decode('utf-8')
+    # remove trailing '市'
+    if city_name.endswith(char_shi):
+        city_name = city_name.replace(char_shi, '')
+
+    site_name = city_name + '站'.decode('utf-8')
+
+    print 'site_name'+site_name
+    for record in origin.shops.find({'city':site_name}):
+        bread_crumb = record['bread_crumb']
+        if bread_crumb is None: 
+            continue
+        bread_crumb = bread_crumb.split(u'\xbb')
+        c = bread_crumb[0].replace(city_name, '')
+
+        record['city'] = city_name
+
+        handle = classification_dict.get(c.encode('utf-8'), null_handler)
+        handle(record, city_name)
+
+if __name__=="__main__":
+    for province in target_provinces:
+        cities = cities_in(province)
+        for city in cities:
+            clean_city(city['name'])
+

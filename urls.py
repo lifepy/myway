@@ -60,5 +60,4 @@ urlpatterns = patterns('',
     # Photo share
     (r'^gridfs/([a-zA-Z0-9]+)/$', debug_views.serve_file_by_id),
     (r'^gridfs/photo/([a-zA-Z0-9]+)/$', debug_views.serve_photo_by_id),
-
 )

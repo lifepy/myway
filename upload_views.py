@@ -4,6 +4,7 @@ from os.path import join
 from django import forms
 from django.core.context_processors import csrf
 from django.shortcuts import render_to_response
+from django.contrib.auth.decorators import login_required
 import logging
 logger = logging.getLogger('console.views')
 
@@ -44,6 +45,7 @@ def store_photo_to_db(file, author, description, content_type):
 
 # ------------------------------------------------------------------
 # Views
+@login_required
 def upload_photo(request):
     if request.method == 'GET':
         c = {}
@@ -52,10 +54,14 @@ def upload_photo(request):
         c.update({"province_list" : plist})
         return render_to_response('upload.html', c)
     if request.method == 'POST':
-        for fname in request.FILES:
-            file = request.FILES[fname]
+        print "post"
+        fnames = dict(request.POST)['Filename']
+        for i,fid in enumerate(request.FILES):
+            file = request.FILES[fid]
+            filename = fnames[i]
             # TODO: add field so that user could add description for picture
-            store_photo_to_db(file, 'simon', request.POST['desc-' + file.name], file.content_type)
+            store_photo_to_db(file, 'simon', request.POST['desc-' + filename.upper()], file.content_type)
+            print request.POST['spot']
         return render_to_response('debug/success.html')
 
 def upload_file(request):

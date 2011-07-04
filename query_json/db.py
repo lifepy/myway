@@ -55,5 +55,5 @@ def subareas_in(city_name):
     '''
     if type(city_name) != unicode:
         city_name = city_name.decode('utf-8')
-    subareas = china_regions.xpath('//*[(@name="%s") and (type="%s")]'%(city_name,CHAR_SHI))
+    subareas = china_regions.xpath('//*[(@name="%s") and (@type="%s")]/*'%(city_name,CHAR_SHI))
     return [ s.attrib for s in subareas ]

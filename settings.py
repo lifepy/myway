@@ -4,11 +4,7 @@ DEBUG = True
 TEMPLATE_DEBUG = DEBUG
 
 # ---------- ADDED by simon.zg ----------
-from os.path import dirname, join
-rel = lambda * x: join(dirname(__file__) , *x)
-AUTH_PROFILE_MODULE = 'account.UserProfile'
 from settings_local import *
-STATIC_URL = '/static/'
 
 TEMPLATE_CONTEXT_PROCESSORS = (
     'django.contrib.auth.context_processors.auth',
@@ -83,6 +79,7 @@ INSTALLED_APPS = (
     'django.contrib.sites',
     'django.contrib.messages',
     'django.contrib.admin',
+    'compressor',
     'uploadify',
     # my apps
     'account',
@@ -90,4 +87,3 @@ INSTALLED_APPS = (
     'todo',
 )
 
-STATIC_DOC_ROOT = rel('static')

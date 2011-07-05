@@ -12,6 +12,7 @@ urlpatterns = patterns('',
     (r'fail/', direct_to_template, {'template':'debug/fail.html'}),
     (r'^test/$', direct_to_template, {'template':'test.html'}),
     (r'^login/modal/$', direct_to_template, {'template':'login_modal.html'}),
+    (r'^jquery/test/$', direct_to_template, {'template':'debug/jquery_test.html'}),
 
     # Modules
     (r'^place/', include('place.urls')),     # place-related pages/queries

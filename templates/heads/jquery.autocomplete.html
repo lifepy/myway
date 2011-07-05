@@ -1,4 +1,9 @@
+{% load compress %}
 <!-- jquery.autocomplete -->
-<link type="text/css" rel="stylesheet" href="/static/jquery/autocomplete/jquery.autocomplete.css" />
+{% compress js %}
 <script type="text/javascript" src="/static/jquery/autocomplete/lib/jquery.bgiframe.min.js"></script>
 <script type="text/javascript" src="/static/jquery/autocomplete/jquery.autocomplete.js"></script>
+{% endcompress %}
+{% compress css %}
+<link type="text/css" rel="stylesheet" href="/static/jquery/autocomplete/jquery.autocomplete.css" />
+{% endcompress %}

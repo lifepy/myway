@@ -1,3 +1,5 @@
+from os.path import dirname, join
+rel = lambda * x: join(dirname(__file__) , *x)
 
 # Localization Settings
 
@@ -22,9 +24,16 @@ WWW_ROOT = '/opt/www'
 SHARE_DIR = WWW_ROOT+'/share'
 UPLOAD_DIR = WWW_ROOT+'/upload'
 
+AUTH_PROFILE_MODULE = 'account.UserProfile'
 LOGIN_REDIRECT_URL='/home'
 LOGIN_URL='/login'
 
-# Absolute filesystem path to the directory that will hold user-uploaded files.
-# Example: "/home/media/media.lawrence.com/"
+STATIC_URL = '/static/'
+STATIC_DOC_ROOT = rel('static')
+
 MEDIA_ROOT = '/opt/www/media'
+
+# Configurations for django-compressor
+COMPRESS = True
+COMPRESS_ROOT = STATIC_DOC_ROOT
+

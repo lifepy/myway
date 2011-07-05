@@ -1,6 +1,11 @@
+{% load compress %}
 <!-- jquery.datatables -->
-<script type="text/javascript" src="/static/jquery/datatables/jquery.datatables.min.js" ></script>
-<script type="text/javascript" src="/static/jquery/datatables/dataTables.fnReloadAjax.js" ></script>
-<link rel="stylesheet" type="text/css" href="/static/jquery/ui/css/smoothness/jquery-ui-1.8.13.custom.css">
-<link rel="stylesheet" type="text/css" href="/static/jquery/datatables/page.css">
-<link rel="stylesheet" type="text/css" href="/static/jquery/datatables/table_jui.css">
+{% compress js %}
+<script type="text/javascript" src="/static/jquery/DataTables-1.8.0/jquery.datatables.min.js" ></script>
+<script type="text/javascript" src="/static/jquery/DataTables-1.8.0/dataTables.fnReloadAjax.js" ></script>
+{% endcompress %}
+{% compress css %}
+<link rel="stylesheet" type="text/css" href="/static/jquery/ui-1.8.14/css/smoothness/jquery-ui-1.8.13.custom.css">
+<link rel="stylesheet" type="text/css" href="/static/jquery/DataTables-1.8.0/page.css">
+<link rel="stylesheet" type="text/css" href="/static/jquery/DataTables-1.8.0/table_jui.css">
+{% endcompress %}

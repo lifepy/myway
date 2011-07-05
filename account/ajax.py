@@ -1,6 +1,5 @@
 # coding=utf-8
-import simplejson
-
+from django.utils import simplejson
 from django.http import HttpResponse
 from django.contrib.auth import authenticate, login
 from django.views.decorators.csrf import csrf_protect, csrf_exempt

@@ -1,17 +1,8 @@
 {% load uploadify_tags %}
 <html>
     <head>
-        <link rel="stylesheet" type="text/css" href="/static/jquery/DataTables-1.8.0/media/css/share_page.css">
-        <link rel="stylesheet" type="text/css" href="/static/jquery/DataTables-1.8.0/examples/examples_support/themes/smoothness/jquery-ui-1.8.4.custom.css">
-        <!--<link rel="stylesheet" type="text/css" href="/static/jquery/jquery-ui/custom-theme/jquery-ui-1.8.14.custom.css">-->
-        <link rel="stylesheet" type="text/css" href="/static/jquery/DataTables-1.8.0/media/css/demo_table_jui.css">
-
-
-        <!--<link rel="stylesheet" type="text/css" href="/static/jquery/jquery-ui/css/hot-sneaks/jquery-ui.css">-->
-
-		<script type="text/javascript" src="/static/jquery/jquery-1.5.min.js" ></script>
-		<script type="text/javascript" src="/static/jquery/DataTables-1.8.0/media/js/jquery.dataTables.min.js" ></script>
-		<script type="text/javascript" src="/static/jquery/DataTables-1.8.0/media/js/dataTables.fnReloadAjax.js" ></script>
+        {% include "heads/jquery.html" %}
+        {% include "heads/jquery.datatables.html" %}
         <script type="text/javascript">
             var oTable;
 
@@ -91,7 +82,7 @@
     <div id="fileDataTable">
 
     <div id='container'>
-        {% multi_file_upload 'complete_url' upload_path %}
+        {% uploadify_multi_upload upload_path %}
         <hr style="border:dashed;border-width:1px 0 0 0;" color="#AFAFAF"/>
         <div id="fileTable">	
     

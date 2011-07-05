@@ -1,7 +1,22 @@
 {% load i18n %}
 
-<form action="/login/" method='post' id='login_form'>{% csrf_token %}
-    {{ form.as_p }}
-    <input type="submit"></input>
+<form action="/login/" method='post' id='login-form'>{% csrf_token %}
+    <p class="validateTips">All form fields are required.</p>
+
+	<ul>
+		
+		<li class="row">
+        	<div class ="text-box">   
+            <label class="prompted" for="name">用户名</label>
+			<input type="text" name="username" id="name"/>
+            </div>
+		</li>
+        <li class="row">
+        	<div class ="text-box">   
+                  <label class= "prompted" for= "password">密码</label>
+                  <input type="password" name="password" id="password" />
+            </div>  
+        </li>
+    </ul>
     <a href='/account/register'>{% trans "Register" %}</a>
 </form>

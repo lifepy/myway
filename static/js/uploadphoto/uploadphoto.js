@@ -54,15 +54,15 @@ _uploadphoto = new function() {
 	this.selZone = function(area_id) {
 		$.ajax({
 			type: "GET",
-			url: "/json/restraunts/in/" + area_id + '/',
+			url: "/place/restraunts/in/" + area_id + '/json/',
 			dataType: "json",
 			data: {
 				area_id:area_id
 			},
 			success: function(spotList) {
 				// spot input box auto complete using autocomplete plugin
-				$("#spot").flushCache();
-				$("#spot").autocomplete(spotList,{minChars: 0});
+				$("#place").flushCache();
+				$("#place").autocomplete(spotList,{minChars: 0});
 			}
 		});
 	}
@@ -70,7 +70,7 @@ _uploadphoto = new function() {
 	this.showInfo = function(spot_name) {
 		$.ajax({
 			type: "GET",
-			url: "/json/photolist/in/" + spot_name + '/',
+			url: "/place/photos/" + spot_name + '/json/',
 			dataType: "json",
 			data: {
 				spot_name:spot_name

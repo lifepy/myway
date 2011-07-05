@@ -1,0 +1,29 @@
+<html>
+	<head>
+	    {% include "heads/jquery.html" %}
+        {% include "heads/jquery.autocomplete.html" %}
+		<script src="/static/js/uploadphoto/uploadphoto.js" type="text/javascript"></script>
+		<title>Spot Info</title>
+	</head>
+	<body>
+		<label for="province">Province</label>
+		<select id="province" name="province" onchange="_uploadphoto.selProvince(this.value);">
+			{% for pname,pid in province_list %}
+			<option value="{{ pid }}">{{ pname }}</option>
+			{% endfor %}
+		</select>
+		<label for="city">City</label>
+		<select id="city" name="city" onchange="_uploadphoto.selCity(this.value);">
+		</select>
+		<label for="zone">Zone</label>
+		<select id="zone" name="zone" onchange="_uploadphoto.selZone(this.value);">
+		</select>
+		<br />
+		
+		<label>Place</label>
+		<input id="place" type="input" name="place"/>
+		<input type="button" value="Show" onclick="_uploadphoto.showInfo($('#place').val());"></input>
+		
+		<div id="photos"></div>
+	</body>
+</html>

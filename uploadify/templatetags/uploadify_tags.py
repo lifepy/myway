@@ -6,8 +6,8 @@ register = template.Library()
 # -----------------------------------------------------------------------------
 #   multi_file_upload
 # -----------------------------------------------------------------------------
-@register.inclusion_tag('uploadify/multi_file_upload.html', takes_context=True)
-def multi_file_upload(context, upload_complete_url, upload_path):
+@register.inclusion_tag('uploadify/uploadify_multi_upload.html', takes_context=True)
+def uploadify_multi_upload(context, upload_path):
     """
     Displays a Flash-based interface for uploading multiple files.
     When all files have been uploaded, the given URL is POSTed to.  The returned
@@ -19,7 +19,6 @@ def multi_file_upload(context, upload_complete_url, upload_path):
     * speed - The average speed of all uploaded files
     """
     return { 
-        'upload_complete_url' : upload_complete_url,
-        'uploadify_path' : settings.UPLOADIFY_PATH,
-        'upload_path' : upload_path#settings.UPLOADIFY_UPLOAD_PATH,
+        'uploadify_path' : settings.UPLOADIFY_ROOT,
+        'upload_path' : upload_path,
     }

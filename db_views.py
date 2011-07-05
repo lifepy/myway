@@ -1,2 +1,0 @@
-
-def dianping_list

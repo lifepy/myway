@@ -83,11 +83,11 @@ INSTALLED_APPS = (
     'django.contrib.sites',
     'django.contrib.messages',
     'django.contrib.admin',
+    'uploadify',
     # my apps
     'account',
-    'console',
     'tags',
-    'uploadify',
+    'todo',
 )
 
 STATIC_DOC_ROOT = rel('static')

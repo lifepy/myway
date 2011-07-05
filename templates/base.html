@@ -1,8 +1,23 @@
 {% extends "layout/basic.html" %}
 
 {% block htmlhead %}
-	{% include "htmlhead/all.html" %}
-{% endblock %}
+{% include "heads/jquery.html" %}
+{% include "heads/jquery.colorbox.html" %}
+{% include "heads/gmap.html" %}
+<link type="text/css" rel="stylesheet" href="/static/css/style.css"/>
+
+<script type="text/javascript">
+    $(document).ready(function(){
+		var myLatlng = new google.maps.LatLng(31.1577180, 120.6440470);
+		var myOptions = {
+			zoom : 8,
+			center : myLatlng,
+			mapTypeId : google.maps.MapTypeId.ROADMAP
+		};
+		 var map = new google.maps.Map(document.getElementById("map_canvas"), myOptions);
+         //$('#register').colorbox({height:"80%", width:"80%", iframe:true})
+	});
+</script>{% endblock %}
 
 {% block header %}
     {% include "header.html" %}

@@ -1,0 +1,58 @@
+<link rel="stylesheet" type="text/css" href="{{ uploadify_path }}uploadify.css">
+<script type="text/javascript" src="{{ uploadify_path }}jquery.uploadify.min.js"></script>
+
+<div id='uploadify'>
+<input id="fileInput" name="fileInput" type="file" />
+<div id="uploaded-queue" class="uploadifyQueue"></div>
+
+<style type="text/css">
+#upload-queue { border:1px sold #FFFFFF}
+#uploadify .uploadifyQueueItem {
+  background-color: #FFFFFF;
+  border: none;
+  border-bottom: 1px solid #E5E5E5;
+  font: 11px Verdana, Geneva, sans-serif;
+  height: 30px;
+  margin-top: 0;
+  padding: 10px;
+  width: 400px;
+}
+#uploadify .uploadifyError {
+  background-color: #FDE5DD !important;
+  border: none !important;
+  border-bottom: 1px solid #FBCBBC !important;
+}
+#uploadify .uploadifyQueueItem .cancel {
+  float: right;
+}
+#uploadify .uploadifyQueue .completed {
+  color: #555555;
+}
+
+</style>
+<script type="text/javascript">
+$(document).ready(function() {
+// supported uploadify version : v3.0.0
+$('#fileInput').uploadify({
+    'uploader'  : '{{ upload_path }}',
+    'swf'       : '{{ uploadify_path }}uploadify.swf',
+    'buttonText': '上 传 文 件',
+    'cancelImage': '{{ uploadify_path }}uploadify-cancel.png', 
+    'checkScript': 'check',
+    'auto'      : true,
+    'multi'     : true,
+    'queueId'   : 'upload-queue',
+    'queueSizeLimit'  : 3,
+    'simUploadLimit'  : 3,
+    'removeCompleted' : true,
+    'onSelectOnce'    : function(event,data) {
+        $('#status-message').text(data.filesSelected + ' files have been added to the queue.');
+    },
+    'onUploadComplete' : function(file){
+        $('#status-message').text("新增文件："+file.name );
+        updateFileList();
+    }
+    });
+});
+</script>
+</div>

@@ -7,5 +7,49 @@
 {% endblock %}
 
 {% block sidebar %}
-    {% include "account/login.html" %}</li>
+{% include "heads/jquery-ui.html" %}
+<script type="text/javascript">
+    function showLoginModal(){
+        $( "#login-form" ).dialog( "open" );
+    }
+    $(document).ready(function(){
+		$( "#login-form" ).dialog({
+			autoOpen: false,
+			height: 300,
+			width: 450,
+			modal: true,
+			resizable: false,
+			buttons: {
+				"Login": function() {
+					var bValid = true;
+					//allFields.removeClass( "ui-state-error" );
+
+					//bValid = bValid && checkLength( $( "#name" ), "username", 3, 16 );
+					//bValid = bValid && checkLength( $( "#password" ), "password", 5, 16 );
+					if ( bValid ) {
+						$( "#users tbody" ).append( "<tr>" +
+							"<td>" + $( "#name" ).val() + "</td>" + 
+							"<td>" + $( "#email" ).val() + "</td>" + 
+							"<td>" + $( "#password" ).val() + "</td>" +
+						"</tr>" ); 
+						//$( this ).dialog( "close" );
+
+					}
+                    $('#login-form').submit();
+                    alert('b');
+				},
+				Cancel: function() {
+					$( this ).dialog( "close" );
+				}
+			},
+			close: function() {
+				allFields.val( "" ).removeClass( "ui-state-error" );
+			}
+		});
+    });
+
+</script>
+
+    {% include "account/login.html" %}
+    <input type="button" id="loginButton" value="login" onClick="showLoginModal();">Login</input>
 {% endblock %}

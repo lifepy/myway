@@ -1,5 +1,6 @@
-<html>
-	<head>
+{% extends "base-no-banner.html" %}
+{% block content %}
+<head>
         <meta charset="utf-8">
         {% include "heads/jquery.html" %}
         {% include "heads/jquery.autocomplete.html" %}
@@ -14,9 +15,7 @@
 		<script src="/static/js/uploadphoto/uploadphoto.js" type="text/javascript"></script>
 		
 		<title>Upload Console</title>
-	</head>
-	<body>
-	
+</head>
 	<form id="multipleDemo" enctype="multipart/form-data" action="." method="post"> {% csrf_token %}
 	
 	<label for="province">Province</label>
@@ -54,6 +53,4 @@
 			}
 		});	
 	</script>
-	
-	</body>
-</html>
+{% endblock %}

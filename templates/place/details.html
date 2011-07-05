@@ -1,9 +1,9 @@
-<html>
-	<head>
+{% extends "base-no-banner.html" %}
+{% block content %}
 	    {% include "heads/jquery.html" %}
         {% include "heads/jquery.autocomplete.html" %}
 		<script src="/static/js/uploadphoto/uploadphoto.js" type="text/javascript"></script>
-		<title>Spot Info</title>
+		<title>Place Details</title>
 	</head>
 	<body>
 		<label for="province">Province</label>
@@ -25,5 +25,4 @@
 		<input type="button" value="Show" onclick="_uploadphoto.showInfo($('#place').val());"></input>
 		
 		<div id="photos"></div>
-	</body>
-</html>
+{% endblock %}

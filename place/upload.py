@@ -4,6 +4,7 @@ from os.path import splitext
 
 from django.core.context_processors import csrf
 from django.shortcuts import render_to_response
+from django.template import RequestContext
 
 from query_json.db import province_list
 from mongo_models import Photo, Restraunt
@@ -31,7 +32,7 @@ def upload_photo(request):
         c.update(csrf(request))
         plist = [ (p['name'], p['region-code']) for p in province_list]
         c.update({"province_list" : plist})
-        return render_to_response('place/upload.html', c)
+        return render_to_response('place/upload.html', c, context_instance=RequestContext(request))
     if request.method == 'POST':
         # remove file extension name
         filenames = [ splitext(fname)[0] for fname in dict(request.POST)['Filename'] ]

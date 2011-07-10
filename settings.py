@@ -1,6 +1,8 @@
 # Django settings for myway project.
 
-DEBUG = True
+#DEBUG = True
+DEBUG=True
+SCRIPT_NAME="/"
 TEMPLATE_DEBUG = DEBUG
 
 # ---------- ADDED by simon.zg ----------

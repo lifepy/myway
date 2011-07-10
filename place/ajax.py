@@ -10,9 +10,7 @@ def get_photolist_by_area(request, place_name):
     ''' Get uploaded photos from GridFS (mongoDB) '''
     r = Restraunt.objects(name=place_name).first()
 
-    for photo in r.photos:
-        print photo.id
-    ret = [str(photo.id) for photo in r.photos]
+    ret = [str(photo.file.grid_id) for photo in r.photos]
 
     ret = simplejson.dumps(ret)
     return HttpResponse(ret)

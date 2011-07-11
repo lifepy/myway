@@ -28,7 +28,7 @@ def list_dir(path):
                 'isdir': isdir(fullpath),
                 'path': fullpath,
                 'size': sizeof_fmt(os.stat(fullpath)[ST_SIZE]),
-                'creation_time': time.strftime('%Y-%m-%S  %H:%M:%S', time.localtime(os.stat(fullpath)[ST_CTIME])),
+                'creation_time': time.strftime('%Y-%m-%d  %H:%M:%S', time.localtime(os.stat(fullpath)[ST_CTIME])),
             }
             file_list.append( ret )
     return file_list

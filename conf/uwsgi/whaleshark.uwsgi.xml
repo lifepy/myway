@@ -5,4 +5,5 @@
     <env>DJANGO_SETTINGS_MODULE=settings</env>
     <env>PYTHONPATH=/home/simon/myway:$PYTHONPATH</env>
     <module>django.core.handlers.wsgi:WSGIHandler()</module>
+    <daemonize>/var/log/uwsgi.log</daemonize>
 </uwsgi>

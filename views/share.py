@@ -29,7 +29,6 @@ def upload_and_download(request, relative_path):
             response = HttpResponse(mimetype='application/force-download')
             filename = basename(relative_path)
             response['Content-Disposition'] = 'attachment; filename='+filename
-            print "RELATIVE_PATH:", relative_path
             response['X-Accel-Redirect'] = '/download/share/'+relative_path
             response['X-Sendfile-Encoding'] = 'url'
             response['X-Sendfile'] = urllib2.quote(cur_dir)
@@ -47,7 +46,6 @@ def upload_and_download(request, relative_path):
                 destination.close()
             except Exception as e:
                 print e
-        print "SUCCESS"
         return HttpResponse('True')
         #return HttpResponseRedirect('/share/'+relative_path)
 

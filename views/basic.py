@@ -6,6 +6,7 @@ from django.http import HttpResponseRedirect
 from django.contrib.auth.forms import AuthenticationForm
 
 def index(request):
+    raise IOError
     if request.user.is_authenticated():
         return HttpResponseRedirect('/home')
     

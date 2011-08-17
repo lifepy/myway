@@ -1,10 +1,11 @@
-from os.path import dirname, join
-rel = lambda * x: join(dirname(__file__) , *x)
+SITE_ID = 1
 
-# Localization Settings
+# Time/Language
+#TIME_ZONE = 'China/Beijing'
+LANGUAGE_CODE = 'en-us'
 
 ADMINS = (
-    # ('Your Name', 'your_email@domain.com'),
+    ('Han Zhang', 'zhanghan.simon@gmail.com'),
 )
 
 MANAGERS = ADMINS
@@ -20,20 +21,14 @@ DATABASES = {
     }
 }
 
+# Upload Folders
 WWW_ROOT = '/opt/www'
 SHARE_DIR = WWW_ROOT+'/share'
 UPLOAD_DIR = WWW_ROOT+'/upload'
 
-AUTH_PROFILE_MODULE = 'account.UserProfile'
+# Authentication
 LOGIN_REDIRECT_URL='/home'
 LOGIN_URL='/login'
 
-STATIC_URL = '/static/'
-STATIC_DOC_ROOT = rel('static')
-
-MEDIA_ROOT = '/opt/www/media'
-
-# Configurations for django-compressor
-COMPRESS = True
-COMPRESS_ROOT = STATIC_DOC_ROOT
-
+# Profile
+AUTH_PROFILE_MODULE = 'account.UserProfile'

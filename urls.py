@@ -4,7 +4,7 @@ from django.views.generic.simple import direct_to_template
 from django.contrib import admin
 admin.autodiscover()
 
-from settings import rel
+from settings import STATIC_DOC_ROOT
 import views 
 urlpatterns = patterns('',
     # For DEBUG Only
@@ -49,5 +49,5 @@ urlpatterns = patterns('',
     (r'^admin/doc/', include('django.contrib.admindocs.urls')),
     
     # Static
-    (r'static/(?P<path>.*)$', 'django.views.static.serve', {'document_root': rel('static')}),
+    (r'static/(?P<path>.*)$', 'django.views.static.serve', {'document_root': STATIC_DOC_ROOT}),
 )

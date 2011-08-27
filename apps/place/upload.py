@@ -27,6 +27,10 @@ def store_photo_to_db(file, author, description, content_type):
     return photo
 
 def upload_photo(request):
+    ''' 
+    Handles photo upload and stores uploaded photoes to mongodb 
+    '''
+    # TODO: use real user name
     if request.method == 'GET':
         c = {}
         c.update(csrf(request))

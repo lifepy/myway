@@ -1,5 +1,7 @@
 /*Distributed*/
 
+.wrapper {margin:0 auto; padding:0; text-align:left; width: 960px;}
+
 ul.messages li {
     color:green;
     font-weight:bold;
@@ -62,10 +64,6 @@ hr {
     color:#E5E5E5;
 }
 
-#slideToggle {
-    color:#4A8251;
-}
-
 .todo-break {
     margin-top: 30px;
     border-top: 1px dotted gray;
@@ -83,16 +81,16 @@ table#tasktable td, table#tasktable th {
 table#tasktable th {
     text-align: left;
 /*  background-color: #9BCAE4; */
-    background-color: #046380;
-    color: #fff;
+    background-color: #EBEDEB;
+    color: #000;
 }
 
 table#tasktable tr.row1 {
-    background-color: #AEF0BB;
+    background-color: #DAF7E5;
 }
 
 table#tasktable tr.row2 {
-    background-color: #B6F3D5;
+    background-color: #C5FCC2;
 }
 
 .minor {

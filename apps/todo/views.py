@@ -51,6 +51,14 @@ def list_lists(request):
     else:
         item_count = Item.objects.filter(completed=0).filter(list__group__in=request.user.groups.all()).count()
 
+    task_list = Item.objects.filter(assigned_to=request.user, completed=0)
+    completed_list = Item.objects.filter(assigned_to=request.user, completed=1)
+    list_slug = 'mine'
+    form = AddItemForm(list, initial={
+        'assigned_to':request.user.id,
+        'priority':999,
+    })
+
     return render_to_response('todo/list_lists.html', locals(), context_instance=RequestContext(request))  
     
 

@@ -1,6 +1,13 @@
 import sys
 from os.path import dirname, join, realpath
 
+'''
+import mongoengine
+mongoengine.connect('mywaydb', 'myway', 'sharemyway2u')
+AUTHENTICATION_BACKENDS = ('mongoengine.django.auth.MongoEngineBackend',)
+SESSION_ENGINE = 'mongoengine.django.sessions'
+'''
+
 PROJECT_ROOT = dirname(realpath(__file__))
 sys.path.append(join(PROJECT_ROOT, 'apps'))
 
@@ -31,7 +38,7 @@ USE_L10N = True
 # URL that handles the media served from MEDIA_ROOT. Make sure to use a
 # trailing slash if there is a path component (optional in other cases).
 MEDIA_URL = '/media/'
-MEDIA_ROOT = '/opt/www/media'
+MEDIA_ROOT = join(PROJECT_ROOT,'media')#'/opt/www/media'
 
 # URL prefix for admin media -- CSS, JavaScript and images. Make sure to use a
 # trailing slash.
@@ -77,9 +84,10 @@ INSTALLED_APPS = (
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
-    'django.contrib.sites',
+    #'django.contrib.sites',
     'django.contrib.messages',
     'django.contrib.admin',
+    'django_extensions',
     'compressor',
     'uploadify',
     # my apps

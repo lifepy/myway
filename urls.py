@@ -1,10 +1,11 @@
+from os.path import join
 from django.conf.urls.defaults import *
 from django.contrib.auth import views as auth_views
 from django.views.generic.simple import direct_to_template
 from django.contrib import admin
 admin.autodiscover()
 
-from settings import STATIC_DOC_ROOT
+from settings import STATIC_DOC_ROOT, PROJECT_ROOT
 import views 
 urlpatterns = patterns('',
     # For DEBUG Only
@@ -19,6 +20,7 @@ urlpatterns = patterns('',
     (r'^account/', include('account.urls')), # account management
     (r'^json/', include('query_json.urls')), # general json queries
     (r'^todo/', include('todo.urls')),       # Todo list (to be tuned)
+    (r'media/todo/(?P<path>.*)$', 'django.views.static.serve', {'document_root': join(PROJECT_ROOT, 'apps','todo','media','todo')}),
 
     # Upload
     (r'^upload/photo/fs/$', views.upload.upload_file), # store photo to file system

@@ -1,13 +1,14 @@
-{% extends "base.html" %}
-{% block page_heading %}GTD (Getting Things Done){% endblock %}
+<html>
+<head>
+<title>{% block html_title %}Todo{% endblock %}</title>
 {% block extrahead %}
 <!-- CSS and JavaScript for django-todo -->
 <link rel="stylesheet" type="text/css" href="/media/todo/css/styles.css" />   
 
-<script src="/static/jquery/jquery.min.js" type="text/javascript"></script>
-<script src="/static/jquery/jquery-ui/jquery-ui.custom.min.js" type="text/javascript"></script>
-<script src="/static/jquery/jquery.tablednd/jquery.tablednd.js" type="text/javascript"></script>
-<link type="text/css" href="/static/jquery/jquery-ui/custom-theme/jquery-ui-1.8.14.custom.css" rel="Stylesheet" />
+<script src="/static/jquery/jquery-1.5.min.js" type="text/javascript"></script>
+<script src="/static/jquery/ui-1.8.14/js/jquery-ui-1.8.14.custom.min.js" type="text/javascript"></script>
+<script src="/media/todo/js/jquery.tablednd_0_5.js" type="text/javascript"></script>
+<link type="text/css" href="/static/jquery/ui-1.8.14/css/south-street/jquery-ui-1.8.16.custom.css" rel="Stylesheet" />
 
 <script type="text/javascript" charset="utf-8">
     // thedate.x comes from the edit_task view. If this is a new entry, 
@@ -17,5 +18,12 @@
      });
 
 </script>
-
 {% endblock extrahead %}
+
+</head>
+
+<body>
+<div class="wrapper">
+{% block content %}{% endblock %}
+</div>
+</body>

@@ -1,5 +1,6 @@
 {% load i18n %}
 
+<!--
 <form action="/login/" method='post' id='login-form'>{% csrf_token %}
     <p class="validateTips">All form fields are required.</p>
 
@@ -20,4 +21,16 @@
     </ul>
     <input type="submit">Login</input>
     <a href='/account/register'>{% trans "Register" %}</a>
+</form>
+-->
+<h2>Log In</h2>
+<div class="clear"></div>
+<form action="" method="post">
+    {% csrf_token %}
+        <table>
+        {{ form }}
+        <tr>
+            <th></th><td><input type="submit" value="Log in" /></td>
+    </table>
+    <input type="hidden" id="next" name="next" value="{{ next }}" />
 </form>

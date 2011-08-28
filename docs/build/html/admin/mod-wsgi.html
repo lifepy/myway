@@ -1,0 +1,178 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>通过mod-wsgi连接Apache与Django &mdash; myway  v0.1 documentation</title>
+    <link rel="stylesheet" href="../_static/nature.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '0.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="top" title="myway  v0.1 documentation" href="../index.html" />
+    <link rel="next" title="API Details" href="../api/api.html" />
+    <link rel="prev" title="安装mod-xsendfile处理文件下载" href="mod-xsendfile.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="../api/api.html" title="API Details"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="mod-xsendfile.html" title="安装mod-xsendfile处理文件下载"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../index.html">myway  v0.1 documentation</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="mod-wsgiapachedjango">
+<h1>通过mod-wsgi连接Apache与Django<a class="headerlink" href="#mod-wsgiapachedjango" title="Permalink to this headline">¶</a></h1>
+<p>1.安装</p>
+<p><em>Ubuntu</em> : <cite>sudo apt-get install libapache2-mod-wsgi</cite></p>
+<p>2.配置</p>
+<p>在Django工程目录下，建立文件夹apache，并创立两个文件，其中django.wsgi是通用描述文件，apache_wsgi.conf中则保存了绝对路径，所以需要根据环境进行修改。文件内容如下：:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="c"># filename: django.wsgi</span>
+<span class="kn">import</span> <span class="nn">os</span><span class="o">,</span> <span class="nn">sys</span>
+<span class="kn">from</span> <span class="nn">os.path</span> <span class="kn">import</span> <span class="n">join</span><span class="p">,</span> <span class="n">pardir</span><span class="p">,</span> <span class="n">abspath</span><span class="p">,</span> <span class="n">dirname</span>
+
+<span class="c">#Calculate the path based on the location of the WSGI script.</span>
+<span class="n">apache_configuration</span><span class="o">=</span> <span class="n">dirname</span><span class="p">(</span><span class="n">__file__</span><span class="p">)</span>
+<span class="n">project_dir</span> <span class="o">=</span> <span class="n">join</span><span class="p">(</span><span class="n">apache_configuration</span><span class="p">,</span> <span class="n">pardir</span><span class="p">)</span>
+
+<span class="c">#tags_dir = os.path.join(src_dir, &#39;myway&#39;)</span>
+
+<span class="c"># append source dir</span>
+<span class="k">if</span> <span class="n">project_dir</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="p">:</span>
+    <span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">project_dir</span><span class="p">)</span>
+
+<span class="c"># append tag dir</span>
+<span class="c">#if tags_dir not in sys.path:</span>
+<span class="c">#    sys.path.append(tags_dir)</span>
+
+<span class="n">sys</span><span class="o">.</span><span class="n">stdout</span> <span class="o">=</span> <span class="n">sys</span><span class="o">.</span><span class="n">stderr</span>
+<span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s">&#39;DJANGO_SETTINGS_MODULE&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s">&#39;settings&#39;</span>
+<span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s">&#39;SCRIPT_NAME&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s">&#39;/myway/&#39;</span>
+
+<span class="kn">import</span> <span class="nn">django.core.handlers.wsgi</span>
+<span class="n">application</span> <span class="o">=</span> <span class="n">django</span><span class="o">.</span><span class="n">core</span><span class="o">.</span><span class="n">handlers</span><span class="o">.</span><span class="n">wsgi</span><span class="o">.</span><span class="n">WSGIHandler</span><span class="p">()</span>
+</pre></div>
+</div>
+<div class="highlight-python"><pre># filename: apache_wsgi.conf
+XSendFile On
+Alias /static "/workspace/myway/static"
+&lt;Directory "/workspace/myway/static"&gt;
+    Options Indexes
+    Order allow,deny
+    allow from all
+&lt;/Directory&gt;
+
+&lt;Directory "/opt/www/upload"&gt;
+    Options Indexes
+    Order allow,deny
+    allow from all
+&lt;/Directory&gt;
+
+&lt;Directory "/opt/www/share"&gt;
+    XSendFilePath /opt/www/share
+    Options Indexes
+    Order allow,deny
+    allow from all
+&lt;/Directory&gt;
+
+WSGIScriptAlias / "/workspace/myway/apache/django.wsgi"
+
+&lt;Directory "/workspace/myway/apache"&gt;
+Allow from all
+&lt;/Directory&gt;</pre>
+</div>
+<p>然后，在/etc/apache2/sites-enabled/000-default中加入:</p>
+<div class="highlight-python"><pre>Include "/path/to/apache_wsgi.conf"</pre>
+</div>
+<p>3.重启Apache:</p>
+<div class="highlight-python"><pre>sudo service apache2 restart</pre>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="mod-xsendfile.html"
+                        title="previous chapter">安装mod-xsendfile处理文件下载</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="../api/api.html"
+                        title="next chapter">API Details</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../_sources/admin/mod-wsgi.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" size="18" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="../api/api.html" title="API Details"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="mod-xsendfile.html" title="安装mod-xsendfile处理文件下载"
+             >previous</a> |</li>
+        <li><a href="../index.html">myway  v0.1 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2011, Han Zhang.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.0.7.
+    </div>
+  </body>
+</html>

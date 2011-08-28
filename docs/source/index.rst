@@ -7,12 +7,12 @@ myway开发文档
 =============
 
 
-开发环境配置
-------------   
+System Admin
+------------
 .. toctree::
    :maxdepth: 2
 
-   admin/mod-xsendfile.rst
+   admin/sysadmin.rst
 
 API
 ---

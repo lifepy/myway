@@ -97,7 +97,7 @@ INSTALLED_APPS = (
 )
 
 # Configurations for django-compressor
-COMPRESS = True
+COMPRESS = False
 COMPRESS_ROOT = STATIC_DOC_ROOT
 
 try:

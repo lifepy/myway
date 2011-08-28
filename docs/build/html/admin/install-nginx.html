@@ -1,0 +1,264 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>安装nginx：从源码开始 &mdash; myway  v0.1 documentation</title>
+    <link rel="stylesheet" href="../_static/nature.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '0.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="top" title="myway  v0.1 documentation" href="../index.html" />
+    <link rel="up" title="系统管理文档" href="sysadmin.html" />
+    <link rel="next" title="MongoDB设置" href="mongodb.html" />
+    <link rel="prev" title="myway环境配置[Win7篇]" href="env-conf.win.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="mongodb.html" title="MongoDB设置"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="env-conf.win.html" title="myway环境配置[Win7篇]"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../index.html">myway  v0.1 documentation</a> &raquo;</li>
+          <li><a href="sysadmin.html" accesskey="U">系统管理文档</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="nginx">
+<span id="install-nginx"></span><h1>安装nginx：从源码开始<a class="headerlink" href="#nginx" title="Permalink to this headline">¶</a></h1>
+<p>注：之所以要这么做，完全是因为nginx-gridfs需要从源码开始编译……</p>
+<p>gridfs是mongodb的内部文件存储系统，nginx+nginx-gridfs比nginx+ext3慢了10%左右，然而gridfs方案提供的优势远远大于这些性能损失。</p>
+<div class="section" id="id1">
+<h2>编译安装<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<ul>
+<li><p class="first">下载 <a class="reference external" href="http://nginx.org/en/download.html">nginx</a> 并解压</p>
+</li>
+<li><p class="first">下载 <a class="reference external" href="https://github.com/mdirolf/nginx-gridfs">nginx-gridfs</a> 并解压</p>
+</li>
+<li><p class="first">在nginx解压目录下，执行以下几句。注意，要把/path/to/nginx-gridfs换成实际路径:</p>
+<div class="highlight-python"><pre>.configure --with-http_ssl_module --sbin-path=/usr/sbin --add-module=/path/to/nginx-gridfs
+sudo make
+sudo make install</pre>
+</div>
+</li>
+</ul>
+</div>
+<div class="section" id="id3">
+<h2>配置<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id4">
+<h3>配置nginx-gridfs<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
+<dl class="docutils">
+<dt>参考 <a class="reference external" href="https://github.com/mdirolf/nginx-gridfs">nginx-gridfs doc</a> ，在nginx.conf中添加： ::</dt>
+<dd><dl class="first docutils">
+<dt>location /gridfs/ {</dt>
+<dd>gridfs &lt;db_name&gt; user=&lt;username&gt; pass=&lt;password&gt;</dd>
+</dl>
+<p class="last">}</p>
+</dd>
+</dl>
+<p>如果你是从源码开始安装nginx的，nginx.conf应该会在/usr/local/nginx/conf/nginx.conf。否则，看看/etc/nginx/nginx.conf吧。</p>
+</div>
+<div class="section" id="id5">
+<h3>开启/停止脚本<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h3>
+<p>从源代码安装的nginx是不会成为ubuntu的service的，我们只能手工写一个启动/停止脚本，存放在/etc/init.d/nginx，具体内容如下：</p>
+<div class="highlight-bash"><div class="highlight"><pre><span class="c">#! /bin/sh</span>
+
+<span class="c">### BEGIN INIT INFO</span>
+<span class="c"># Provides:          nginx</span>
+<span class="c"># Required-Start:    $local_fs $remote_fs $network $syslog</span>
+<span class="c"># Required-Stop:     $local_fs $remote_fs $network $syslog</span>
+<span class="c"># Default-Start:     2 3 4 5</span>
+<span class="c"># Default-Stop:      0 1 6</span>
+<span class="c"># Short-Description: starts the nginx web server</span>
+<span class="c"># Description:       starts nginx using start-stop-daemon</span>
+<span class="c">### END INIT INFO</span>
+
+<span class="nv">PATH</span><span class="o">=</span>/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin
+<span class="nv">DAEMON</span><span class="o">=</span>/usr/sbin/nginx
+<span class="nv">NAME</span><span class="o">=</span>nginx
+<span class="nv">DESC</span><span class="o">=</span>nginx
+
+<span class="nb">test</span> -x <span class="nv">$DAEMON</span> <span class="o">||</span> <span class="nb">exit </span>0
+
+<span class="c"># Include nginx defaults if available</span>
+<span class="k">if</span> <span class="o">[</span> -f /etc/default/nginx <span class="o">]</span> ; <span class="k">then</span>
+    . /etc/default/nginx
+<span class="k">fi</span>
+
+<span class="nb">set</span> -e
+
+. /lib/lsb/init-functions
+
+test_nginx_config<span class="o">()</span> <span class="o">{</span>
+  <span class="k">if</span> <span class="nv">$DAEMON</span> -t <span class="nv">$DAEMON_OPTS</span> &gt;/dev/null 2&gt;&amp;1
+  <span class="k">then</span>
+<span class="k">    return </span>0
+  <span class="k">else</span>
+    <span class="nv">$DAEMON</span> -t <span class="nv">$DAEMON_OPTS</span>
+    <span class="k">return</span> <span class="nv">$?</span>
+  <span class="k">fi</span>
+<span class="o">}</span>
+
+<span class="k">case</span> <span class="s2">&quot;$1&quot;</span> in
+  start<span class="o">)</span>
+    <span class="nb">echo</span> -n <span class="s2">&quot;Starting $DESC: &quot;</span>
+        test_nginx_config
+    start-stop-daemon --start --quiet --pidfile /usr/local/nginx/logs/<span class="nv">$NAME</span>.pid <span class="se">\</span>
+        --exec <span class="nv">$DAEMON</span> -- <span class="nv">$DAEMON_OPTS</span> <span class="o">||</span> <span class="nb">true</span>
+<span class="nb">    echo</span> <span class="s2">&quot;$NAME.&quot;</span>
+    ;;
+  stop<span class="o">)</span>
+    <span class="nb">echo</span> -n <span class="s2">&quot;Stopping $DESC: &quot;</span>
+    start-stop-daemon --stop --quiet --pidfile /usr/local/nginx/logs/<span class="nv">$NAME</span>.pid <span class="se">\</span>
+        --exec <span class="nv">$DAEMON</span> <span class="o">||</span> <span class="nb">true</span>
+<span class="nb">    echo</span> <span class="s2">&quot;$NAME.&quot;</span>
+    ;;
+  restart|force-reload<span class="o">)</span>
+    <span class="nb">echo</span> -n <span class="s2">&quot;Restarting $DESC: &quot;</span>
+    start-stop-daemon --stop --quiet --pidfile /usr/local/nginx/logs/<span class="nv">$NAME</span>.pid <span class="se">\</span>
+        --exec <span class="nv">$DAEMON</span> <span class="o">||</span> <span class="nb">true</span>
+<span class="nb">    </span>sleep 1
+        test_nginx_config
+    start-stop-daemon --start --quiet --pidfile /usr/local/nginx/logs/<span class="nv">$NAME</span>.pid <span class="se">\</span>
+        --exec <span class="nv">$DAEMON</span> -- <span class="nv">$DAEMON_OPTS</span> <span class="o">||</span> <span class="nb">true</span>
+<span class="nb">    echo</span> <span class="s2">&quot;$NAME.&quot;</span>
+    ;;
+  reload<span class="o">)</span>
+        <span class="nb">echo</span> -n <span class="s2">&quot;Reloading $DESC configuration: &quot;</span>
+        test_nginx_config
+        start-stop-daemon --stop --signal HUP --quiet --pidfile /usr/local/nginx/logs/<span class="nv">$NAME</span>.pid <span class="se">\</span>
+            --exec <span class="nv">$DAEMON</span> <span class="o">||</span> <span class="nb">true</span>
+<span class="nb">        echo</span> <span class="s2">&quot;$NAME.&quot;</span>
+        ;;
+  configtest<span class="o">)</span>
+        <span class="nb">echo</span> -n <span class="s2">&quot;Testing $DESC configuration: &quot;</span>
+        <span class="k">if </span>test_nginx_config
+        <span class="k">then</span>
+<span class="k">          </span><span class="nb">echo</span> <span class="s2">&quot;$NAME.&quot;</span>
+        <span class="k">else</span>
+<span class="k">          </span><span class="nb">exit</span> <span class="nv">$?</span>
+        <span class="k">fi</span>
+        ;;
+  status<span class="o">)</span>
+    status_of_proc -p /var/run/<span class="nv">$NAME</span>.pid <span class="s2">&quot;$DAEMON&quot;</span> nginx <span class="o">&amp;&amp;</span> <span class="nb">exit </span>0 <span class="o">||</span> <span class="nb">exit</span> <span class="nv">$?</span>
+    ;;
+  *<span class="o">)</span>
+    <span class="nb">echo</span> <span class="s2">&quot;Usage: $NAME {start|stop|restart|reload|force-reload|status|configtest}&quot;</span> &gt;&amp;2
+    <span class="nb">exit </span>1
+    ;;
+<span class="k">esac</span>
+
+<span class="nb">exit </span>0
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="id6">
+<h2>启动<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h2>
+<p>如果你用了我提供的脚本，键入`sudo service nginx start`即可。
+然后打开浏览器看看http://localhost吧，如果看到&#8217;Welcome to nginx!&#8217;，那恭喜啦，你成功鸟！不然的话，嘿嘿，再读一遍本文吧</p>
+<p>如果你已经有文件在mongodb内，可以访问 <tt class="docutils literal"><span class="pre">http://localhost/gridfs/&lt;object_id&gt;</span></tt> 来下载文件</p>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">安装nginx：从源码开始</a><ul>
+<li><a class="reference internal" href="#id1">编译安装</a></li>
+<li><a class="reference internal" href="#id3">配置</a><ul>
+<li><a class="reference internal" href="#id4">配置nginx-gridfs</a></li>
+<li><a class="reference internal" href="#id5">开启/停止脚本</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#id6">启动</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="env-conf.win.html"
+                        title="previous chapter">myway环境配置[Win7篇]</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="mongodb.html"
+                        title="next chapter">MongoDB设置</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../_sources/admin/install-nginx.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" size="18" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="mongodb.html" title="MongoDB设置"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="env-conf.win.html" title="myway环境配置[Win7篇]"
+             >previous</a> |</li>
+        <li><a href="../index.html">myway  v0.1 documentation</a> &raquo;</li>
+          <li><a href="sysadmin.html" >系统管理文档</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2011, Han Zhang.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.0.7.
+    </div>
+  </body>
+</html>

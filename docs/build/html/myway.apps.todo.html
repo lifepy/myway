@@ -1,0 +1,273 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>todo Package &mdash; myway  v0.1 documentation</title>
+    <link rel="stylesheet" href="_static/nature.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '',
+        VERSION:     '0.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="top" title="myway  v0.1 documentation" href="index.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li><a href="index.html">myway  v0.1 documentation</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="todo-package">
+<h1>todo Package<a class="headerlink" href="#todo-package" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="admin-module">
+<h2><tt class="xref py py-mod docutils literal"><span class="pre">admin</span></tt> Module<a class="headerlink" href="#admin-module" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-myway.apps.todo.forms">
+<span id="forms-module"></span><h2><tt class="xref py py-mod docutils literal"><span class="pre">forms</span></tt> Module<a class="headerlink" href="#module-myway.apps.todo.forms" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="myway.apps.todo.forms.AddExternalItemForm">
+<em class="property">class </em><tt class="descclassname">myway.apps.todo.forms.</tt><tt class="descname">AddExternalItemForm</tt><big>(</big><em>data=None</em>, <em>files=None</em>, <em>auto_id='id_%s'</em>, <em>prefix=None</em>, <em>initial=None</em>, <em>error_class=&lt;class 'django.forms.util.ErrorList'&gt;</em>, <em>label_suffix=':'</em>, <em>empty_permitted=False</em>, <em>instance=None</em><big>)</big><a class="headerlink" href="#myway.apps.todo.forms.AddExternalItemForm" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">django.forms.models.ModelForm</span></tt></p>
+<p>Form to allow users who are not part of the GTD system to file a ticket.</p>
+<dl class="class">
+<dt id="myway.apps.todo.forms.AddExternalItemForm.Meta">
+<em class="property">class </em><tt class="descname">Meta</tt><a class="headerlink" href="#myway.apps.todo.forms.AddExternalItemForm.Meta" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="attribute">
+<dt id="myway.apps.todo.forms.AddExternalItemForm.Meta.model">
+<tt class="descname">model</tt><a class="headerlink" href="#myway.apps.todo.forms.AddExternalItemForm.Meta.model" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <tt class="xref py py-class docutils literal"><span class="pre">Item</span></tt></p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="attribute">
+<dt id="myway.apps.todo.forms.AddExternalItemForm.media">
+<tt class="descclassname">AddExternalItemForm.</tt><tt class="descname">media</tt><a class="headerlink" href="#myway.apps.todo.forms.AddExternalItemForm.media" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="myway.apps.todo.forms.AddItemForm">
+<em class="property">class </em><tt class="descclassname">myway.apps.todo.forms.</tt><tt class="descname">AddItemForm</tt><big>(</big><em>task_list</em>, <em>*args</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#myway.apps.todo.forms.AddItemForm" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">django.forms.models.ModelForm</span></tt></p>
+<dl class="class">
+<dt id="myway.apps.todo.forms.AddItemForm.Meta">
+<em class="property">class </em><tt class="descname">Meta</tt><a class="headerlink" href="#myway.apps.todo.forms.AddItemForm.Meta" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="attribute">
+<dt id="myway.apps.todo.forms.AddItemForm.Meta.model">
+<tt class="descname">model</tt><a class="headerlink" href="#myway.apps.todo.forms.AddItemForm.Meta.model" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <tt class="xref py py-class docutils literal"><span class="pre">Item</span></tt></p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="attribute">
+<dt id="myway.apps.todo.forms.AddItemForm.media">
+<tt class="descclassname">AddItemForm.</tt><tt class="descname">media</tt><a class="headerlink" href="#myway.apps.todo.forms.AddItemForm.media" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="myway.apps.todo.forms.AddListForm">
+<em class="property">class </em><tt class="descclassname">myway.apps.todo.forms.</tt><tt class="descname">AddListForm</tt><big>(</big><em>user</em>, <em>*args</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#myway.apps.todo.forms.AddListForm" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">django.forms.models.ModelForm</span></tt></p>
+<dl class="class">
+<dt id="myway.apps.todo.forms.AddListForm.Meta">
+<em class="property">class </em><tt class="descname">Meta</tt><a class="headerlink" href="#myway.apps.todo.forms.AddListForm.Meta" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="attribute">
+<dt id="myway.apps.todo.forms.AddListForm.Meta.model">
+<tt class="descname">model</tt><a class="headerlink" href="#myway.apps.todo.forms.AddListForm.Meta.model" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <tt class="xref py py-class docutils literal"><span class="pre">List</span></tt></p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="attribute">
+<dt id="myway.apps.todo.forms.AddListForm.media">
+<tt class="descclassname">AddListForm.</tt><tt class="descname">media</tt><a class="headerlink" href="#myway.apps.todo.forms.AddListForm.media" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="myway.apps.todo.forms.EditItemForm">
+<em class="property">class </em><tt class="descclassname">myway.apps.todo.forms.</tt><tt class="descname">EditItemForm</tt><big>(</big><em>*args</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#myway.apps.todo.forms.EditItemForm" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">django.forms.models.ModelForm</span></tt></p>
+<dl class="class">
+<dt id="myway.apps.todo.forms.EditItemForm.Meta">
+<em class="property">class </em><tt class="descname">Meta</tt><a class="headerlink" href="#myway.apps.todo.forms.EditItemForm.Meta" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="attribute">
+<dt id="myway.apps.todo.forms.EditItemForm.Meta.model">
+<tt class="descname">model</tt><a class="headerlink" href="#myway.apps.todo.forms.EditItemForm.Meta.model" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <tt class="xref py py-class docutils literal"><span class="pre">Item</span></tt></p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="attribute">
+<dt id="myway.apps.todo.forms.EditItemForm.media">
+<tt class="descclassname">EditItemForm.</tt><tt class="descname">media</tt><a class="headerlink" href="#myway.apps.todo.forms.EditItemForm.media" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="myway.apps.todo.forms.SearchForm">
+<em class="property">class </em><tt class="descclassname">myway.apps.todo.forms.</tt><tt class="descname">SearchForm</tt><big>(</big><em>data=None</em>, <em>files=None</em>, <em>auto_id='id_%s'</em>, <em>prefix=None</em>, <em>initial=None</em>, <em>error_class=&lt;class 'django.forms.util.ErrorList'&gt;</em>, <em>label_suffix=':'</em>, <em>empty_permitted=False</em>, <em>instance=None</em><big>)</big><a class="headerlink" href="#myway.apps.todo.forms.SearchForm" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">django.forms.models.ModelForm</span></tt></p>
+<p>Search.</p>
+<dl class="attribute">
+<dt id="myway.apps.todo.forms.SearchForm.media">
+<tt class="descname">media</tt><a class="headerlink" href="#myway.apps.todo.forms.SearchForm.media" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-myway.apps.todo.models">
+<span id="models-module"></span><h2><tt class="xref py py-mod docutils literal"><span class="pre">models</span></tt> Module<a class="headerlink" href="#module-myway.apps.todo.models" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-myway.apps.todo.urls">
+<span id="urls-module"></span><h2><tt class="xref py py-mod docutils literal"><span class="pre">urls</span></tt> Module<a class="headerlink" href="#module-myway.apps.todo.urls" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-myway.apps.todo.views">
+<span id="views-module"></span><h2><tt class="xref py py-mod docutils literal"><span class="pre">views</span></tt> Module<a class="headerlink" href="#module-myway.apps.todo.views" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="myway.apps.todo.views.add_list">
+<tt class="descclassname">myway.apps.todo.views.</tt><tt class="descname">add_list</tt><big>(</big><em>request</em>, <em>*args</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#myway.apps.todo.views.add_list" title="Permalink to this definition">¶</a></dt>
+<dd><p>Allow users to add a new todo list to the group they&#8217;re in.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="myway.apps.todo.views.del_list">
+<tt class="descclassname">myway.apps.todo.views.</tt><tt class="descname">del_list</tt><big>(</big><em>request</em>, <em>*args</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#myway.apps.todo.views.del_list" title="Permalink to this definition">¶</a></dt>
+<dd><p>Delete an entire list. Danger Will Robinson! Only staff members should be allowed to access this view.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="myway.apps.todo.views.external_add">
+<tt class="descclassname">myway.apps.todo.views.</tt><tt class="descname">external_add</tt><big>(</big><em>request</em>, <em>*args</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#myway.apps.todo.views.external_add" title="Permalink to this definition">¶</a></dt>
+<dd><p>Allow users who don&#8217;t have access to the rest of the ticket system to file a ticket in a specific list.
+This is useful if, for example, a core web team are in a group that can file todos for each other,
+but you also want students to be able to post trouble tickets to a list just for the sysadmin. This
+way we don&#8217;t have to put all students into a group that gives them access to the whole ticket system.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="myway.apps.todo.views.list_lists">
+<tt class="descclassname">myway.apps.todo.views.</tt><tt class="descname">list_lists</tt><big>(</big><em>request</em>, <em>*args</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#myway.apps.todo.views.list_lists" title="Permalink to this definition">¶</a></dt>
+<dd><p>Homepage view - list of lists a user can view, and ability to add a list.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="myway.apps.todo.views.reorder_tasks">
+<tt class="descclassname">myway.apps.todo.views.</tt><tt class="descname">reorder_tasks</tt><big>(</big><em>request</em>, <em>*args</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#myway.apps.todo.views.reorder_tasks" title="Permalink to this definition">¶</a></dt>
+<dd><p>Handle task re-ordering (priorities) from JQuery drag/drop in view_list.html</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="myway.apps.todo.views.search">
+<tt class="descclassname">myway.apps.todo.views.</tt><tt class="descname">search</tt><big>(</big><em>request</em>, <em>*args</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#myway.apps.todo.views.search" title="Permalink to this definition">¶</a></dt>
+<dd><p>Search for tasks</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="myway.apps.todo.views.view_list">
+<tt class="descclassname">myway.apps.todo.views.</tt><tt class="descname">view_list</tt><big>(</big><em>request</em>, <em>*args</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#myway.apps.todo.views.view_list" title="Permalink to this definition">¶</a></dt>
+<dd><p>Display and manage items in a task list</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="myway.apps.todo.views.view_task">
+<tt class="descclassname">myway.apps.todo.views.</tt><tt class="descname">view_task</tt><big>(</big><em>request</em>, <em>*args</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#myway.apps.todo.views.view_task" title="Permalink to this definition">¶</a></dt>
+<dd><p>View task details. Allow task details to be edited.</p>
+</dd></dl>
+
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">todo Package</a><ul>
+<li><a class="reference internal" href="#admin-module"><tt class="docutils literal"><span class="pre">admin</span></tt> Module</a></li>
+<li><a class="reference internal" href="#module-myway.apps.todo.forms"><tt class="docutils literal"><span class="pre">forms</span></tt> Module</a></li>
+<li><a class="reference internal" href="#module-myway.apps.todo.models"><tt class="docutils literal"><span class="pre">models</span></tt> Module</a></li>
+<li><a class="reference internal" href="#module-myway.apps.todo.urls"><tt class="docutils literal"><span class="pre">urls</span></tt> Module</a></li>
+<li><a class="reference internal" href="#module-myway.apps.todo.views"><tt class="docutils literal"><span class="pre">views</span></tt> Module</a></li>
+</ul>
+</li>
+</ul>
+
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="_sources/myway.apps.todo.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" size="18" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li><a href="index.html">myway  v0.1 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2011, Han Zhang.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.0.7.
+    </div>
+  </body>
+</html>

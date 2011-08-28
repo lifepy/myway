@@ -1,0 +1,548 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>apps Package &mdash; myway  v0.1 documentation</title>
+    <link rel="stylesheet" href="_static/nature.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '',
+        VERSION:     '0.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="top" title="myway  v0.1 documentation" href="index.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li><a href="index.html">myway  v0.1 documentation</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="apps-package">
+<h1>apps Package<a class="headerlink" href="#apps-package" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="id1">
+<h2><tt class="xref py py-mod docutils literal"><span class="pre">apps</span></tt> Package<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<span class="target" id="module-myway.apps"></span></div>
+<div class="section" id="module-myway.apps.mongo_models">
+<span id="mongo-models-module"></span><h2><tt class="xref py py-mod docutils literal"><span class="pre">mongo_models</span></tt> Module<a class="headerlink" href="#module-myway.apps.mongo_models" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="myway.apps.mongo_models.Activity">
+<em class="property">class </em><tt class="descclassname">myway.apps.mongo_models.</tt><tt class="descname">Activity</tt><big>(</big><em>**values</em><big>)</big><a class="headerlink" href="#myway.apps.mongo_models.Activity" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#myway.apps.mongo_models.Tag" title="myway.apps.mongo_models.Tag"><tt class="xref py py-class docutils literal"><span class="pre">myway.apps.mongo_models.Tag</span></tt></a></p>
+<dl class="exception">
+<dt id="myway.apps.mongo_models.Activity.DoesNotExist">
+<em class="property">exception </em><tt class="descname">DoesNotExist</tt><a class="headerlink" href="#myway.apps.mongo_models.Activity.DoesNotExist" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">myway.apps.mongo_models.DoesNotExist</span></tt></p>
+</dd></dl>
+
+<dl class="exception">
+<dt id="myway.apps.mongo_models.Activity.MultipleObjectsReturned">
+<em class="property">exception </em><tt class="descclassname">Activity.</tt><tt class="descname">MultipleObjectsReturned</tt><a class="headerlink" href="#myway.apps.mongo_models.Activity.MultipleObjectsReturned" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">myway.apps.mongo_models.MultipleObjectsReturned</span></tt></p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="myway.apps.mongo_models.Attraction">
+<em class="property">class </em><tt class="descclassname">myway.apps.mongo_models.</tt><tt class="descname">Attraction</tt><big>(</big><em>**values</em><big>)</big><a class="headerlink" href="#myway.apps.mongo_models.Attraction" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#myway.apps.mongo_models.Place" title="myway.apps.mongo_models.Place"><tt class="xref py py-class docutils literal"><span class="pre">myway.apps.mongo_models.Place</span></tt></a></p>
+<dl class="exception">
+<dt id="myway.apps.mongo_models.Attraction.DoesNotExist">
+<em class="property">exception </em><tt class="descname">DoesNotExist</tt><a class="headerlink" href="#myway.apps.mongo_models.Attraction.DoesNotExist" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">myway.apps.mongo_models.DoesNotExist</span></tt></p>
+</dd></dl>
+
+<dl class="exception">
+<dt id="myway.apps.mongo_models.Attraction.MultipleObjectsReturned">
+<em class="property">exception </em><tt class="descclassname">Attraction.</tt><tt class="descname">MultipleObjectsReturned</tt><a class="headerlink" href="#myway.apps.mongo_models.Attraction.MultipleObjectsReturned" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">myway.apps.mongo_models.MultipleObjectsReturned</span></tt></p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="myway.apps.mongo_models.Attraction.category">
+<tt class="descclassname">Attraction.</tt><tt class="descname">category</tt><a class="headerlink" href="#myway.apps.mongo_models.Attraction.category" title="Permalink to this definition">¶</a></dt>
+<dd><p>A unicode string field.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="myway.apps.mongo_models.Comment">
+<em class="property">class </em><tt class="descclassname">myway.apps.mongo_models.</tt><tt class="descname">Comment</tt><big>(</big><em>**values</em><big>)</big><a class="headerlink" href="#myway.apps.mongo_models.Comment" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">mongoengine.document.EmbeddedDocument</span></tt></p>
+<dl class="exception">
+<dt id="myway.apps.mongo_models.Comment.DoesNotExist">
+<em class="property">exception </em><tt class="descname">DoesNotExist</tt><a class="headerlink" href="#myway.apps.mongo_models.Comment.DoesNotExist" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">mongoengine.queryset.DoesNotExist</span></tt></p>
+</dd></dl>
+
+<dl class="exception">
+<dt id="myway.apps.mongo_models.Comment.MultipleObjectsReturned">
+<em class="property">exception </em><tt class="descclassname">Comment.</tt><tt class="descname">MultipleObjectsReturned</tt><a class="headerlink" href="#myway.apps.mongo_models.Comment.MultipleObjectsReturned" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">mongoengine.queryset.MultipleObjectsReturned</span></tt></p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="myway.apps.mongo_models.Comment.author">
+<tt class="descclassname">Comment.</tt><tt class="descname">author</tt><a class="headerlink" href="#myway.apps.mongo_models.Comment.author" title="Permalink to this definition">¶</a></dt>
+<dd><p>A unicode string field.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="myway.apps.mongo_models.Comment.value">
+<tt class="descclassname">Comment.</tt><tt class="descname">value</tt><a class="headerlink" href="#myway.apps.mongo_models.Comment.value" title="Permalink to this definition">¶</a></dt>
+<dd><p>A unicode string field.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="myway.apps.mongo_models.Hotel">
+<em class="property">class </em><tt class="descclassname">myway.apps.mongo_models.</tt><tt class="descname">Hotel</tt><big>(</big><em>**values</em><big>)</big><a class="headerlink" href="#myway.apps.mongo_models.Hotel" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#myway.apps.mongo_models.Place" title="myway.apps.mongo_models.Place"><tt class="xref py py-class docutils literal"><span class="pre">myway.apps.mongo_models.Place</span></tt></a></p>
+<dl class="exception">
+<dt id="myway.apps.mongo_models.Hotel.DoesNotExist">
+<em class="property">exception </em><tt class="descname">DoesNotExist</tt><a class="headerlink" href="#myway.apps.mongo_models.Hotel.DoesNotExist" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">myway.apps.mongo_models.DoesNotExist</span></tt></p>
+</dd></dl>
+
+<dl class="exception">
+<dt id="myway.apps.mongo_models.Hotel.MultipleObjectsReturned">
+<em class="property">exception </em><tt class="descclassname">Hotel.</tt><tt class="descname">MultipleObjectsReturned</tt><a class="headerlink" href="#myway.apps.mongo_models.Hotel.MultipleObjectsReturned" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">myway.apps.mongo_models.MultipleObjectsReturned</span></tt></p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="myway.apps.mongo_models.Hotel.category">
+<tt class="descclassname">Hotel.</tt><tt class="descname">category</tt><a class="headerlink" href="#myway.apps.mongo_models.Hotel.category" title="Permalink to this definition">¶</a></dt>
+<dd><p>A unicode string field.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="attribute">
+<dt id="myway.apps.mongo_models.LocalityTag">
+<tt class="descclassname">myway.apps.mongo_models.</tt><tt class="descname">LocalityTag</tt><a class="headerlink" href="#myway.apps.mongo_models.LocalityTag" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="class">
+<dt id="myway.apps.mongo_models.Photo">
+<em class="property">class </em><tt class="descclassname">myway.apps.mongo_models.</tt><tt class="descname">Photo</tt><big>(</big><em>**values</em><big>)</big><a class="headerlink" href="#myway.apps.mongo_models.Photo" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">mongoengine.document.Document</span></tt></p>
+<dl class="exception">
+<dt id="myway.apps.mongo_models.Photo.DoesNotExist">
+<em class="property">exception </em><tt class="descname">DoesNotExist</tt><a class="headerlink" href="#myway.apps.mongo_models.Photo.DoesNotExist" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">mongoengine.queryset.DoesNotExist</span></tt></p>
+</dd></dl>
+
+<dl class="exception">
+<dt id="myway.apps.mongo_models.Photo.MultipleObjectsReturned">
+<em class="property">exception </em><tt class="descclassname">Photo.</tt><tt class="descname">MultipleObjectsReturned</tt><a class="headerlink" href="#myway.apps.mongo_models.Photo.MultipleObjectsReturned" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">mongoengine.queryset.MultipleObjectsReturned</span></tt></p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="myway.apps.mongo_models.Photo.author">
+<tt class="descclassname">Photo.</tt><tt class="descname">author</tt><a class="headerlink" href="#myway.apps.mongo_models.Photo.author" title="Permalink to this definition">¶</a></dt>
+<dd><p>A unicode string field.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="myway.apps.mongo_models.Photo.description">
+<tt class="descclassname">Photo.</tt><tt class="descname">description</tt><a class="headerlink" href="#myway.apps.mongo_models.Photo.description" title="Permalink to this definition">¶</a></dt>
+<dd><p>A unicode string field.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="myway.apps.mongo_models.Photo.file">
+<tt class="descclassname">Photo.</tt><tt class="descname">file</tt><a class="headerlink" href="#myway.apps.mongo_models.Photo.file" title="Permalink to this definition">¶</a></dt>
+<dd><p>A GridFS storage field.</p>
+<p class="versionadded">
+<span class="versionmodified">New in version 0.4.</span></p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="myway.apps.mongo_models.Photo.id">
+<tt class="descclassname">Photo.</tt><tt class="descname">id</tt><a class="headerlink" href="#myway.apps.mongo_models.Photo.id" title="Permalink to this definition">¶</a></dt>
+<dd><p>An field wrapper around MongoDB&#8217;s ObjectIds.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="myway.apps.mongo_models.Place">
+<em class="property">class </em><tt class="descclassname">myway.apps.mongo_models.</tt><tt class="descname">Place</tt><big>(</big><em>**values</em><big>)</big><a class="headerlink" href="#myway.apps.mongo_models.Place" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">mongoengine.document.Document</span></tt></p>
+<dl class="exception">
+<dt id="myway.apps.mongo_models.Place.DoesNotExist">
+<em class="property">exception </em><tt class="descname">DoesNotExist</tt><a class="headerlink" href="#myway.apps.mongo_models.Place.DoesNotExist" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">mongoengine.queryset.DoesNotExist</span></tt></p>
+</dd></dl>
+
+<dl class="exception">
+<dt id="myway.apps.mongo_models.Place.MultipleObjectsReturned">
+<em class="property">exception </em><tt class="descclassname">Place.</tt><tt class="descname">MultipleObjectsReturned</tt><a class="headerlink" href="#myway.apps.mongo_models.Place.MultipleObjectsReturned" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">mongoengine.queryset.MultipleObjectsReturned</span></tt></p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="myway.apps.mongo_models.Place.address">
+<tt class="descclassname">Place.</tt><tt class="descname">address</tt><a class="headerlink" href="#myway.apps.mongo_models.Place.address" title="Permalink to this definition">¶</a></dt>
+<dd><p>A unicode string field.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="myway.apps.mongo_models.Place.category">
+<tt class="descclassname">Place.</tt><tt class="descname">category</tt><a class="headerlink" href="#myway.apps.mongo_models.Place.category" title="Permalink to this definition">¶</a></dt>
+<dd><p>A unicode string field.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="myway.apps.mongo_models.Place.city">
+<tt class="descclassname">Place.</tt><tt class="descname">city</tt><a class="headerlink" href="#myway.apps.mongo_models.Place.city" title="Permalink to this definition">¶</a></dt>
+<dd><p>A unicode string field.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="myway.apps.mongo_models.Place.comments">
+<tt class="descclassname">Place.</tt><tt class="descname">comments</tt><a class="headerlink" href="#myway.apps.mongo_models.Place.comments" title="Permalink to this definition">¶</a></dt>
+<dd><p>A list field that wraps a standard field, allowing multiple instances
+of the field to be used as a list in the database.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="myway.apps.mongo_models.Place.description">
+<tt class="descclassname">Place.</tt><tt class="descname">description</tt><a class="headerlink" href="#myway.apps.mongo_models.Place.description" title="Permalink to this definition">¶</a></dt>
+<dd><p>A unicode string field.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="myway.apps.mongo_models.Place.direction">
+<tt class="descclassname">Place.</tt><tt class="descname">direction</tt><a class="headerlink" href="#myway.apps.mongo_models.Place.direction" title="Permalink to this definition">¶</a></dt>
+<dd><p>A unicode string field.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="myway.apps.mongo_models.Place.hours">
+<tt class="descclassname">Place.</tt><tt class="descname">hours</tt><a class="headerlink" href="#myway.apps.mongo_models.Place.hours" title="Permalink to this definition">¶</a></dt>
+<dd><p>A unicode string field.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="myway.apps.mongo_models.Place.id">
+<tt class="descclassname">Place.</tt><tt class="descname">id</tt><a class="headerlink" href="#myway.apps.mongo_models.Place.id" title="Permalink to this definition">¶</a></dt>
+<dd><p>An field wrapper around MongoDB&#8217;s ObjectIds.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="myway.apps.mongo_models.Place.locality_tags">
+<tt class="descclassname">Place.</tt><tt class="descname">locality_tags</tt><a class="headerlink" href="#myway.apps.mongo_models.Place.locality_tags" title="Permalink to this definition">¶</a></dt>
+<dd><p>A list field that wraps a standard field, allowing multiple instances
+of the field to be used as a list in the database.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="myway.apps.mongo_models.Place.n_rating">
+<tt class="descclassname">Place.</tt><tt class="descname">n_rating</tt><a class="headerlink" href="#myway.apps.mongo_models.Place.n_rating" title="Permalink to this definition">¶</a></dt>
+<dd><p>An integer field.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="myway.apps.mongo_models.Place.name">
+<tt class="descclassname">Place.</tt><tt class="descname">name</tt><a class="headerlink" href="#myway.apps.mongo_models.Place.name" title="Permalink to this definition">¶</a></dt>
+<dd><p>A unicode string field.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="myway.apps.mongo_models.Place.photos">
+<tt class="descclassname">Place.</tt><tt class="descname">photos</tt><a class="headerlink" href="#myway.apps.mongo_models.Place.photos" title="Permalink to this definition">¶</a></dt>
+<dd><p>A list field that wraps a standard field, allowing multiple instances
+of the field to be used as a list in the database.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="myway.apps.mongo_models.Place.rating">
+<tt class="descclassname">Place.</tt><tt class="descname">rating</tt><a class="headerlink" href="#myway.apps.mongo_models.Place.rating" title="Permalink to this definition">¶</a></dt>
+<dd><p>An floating point number field.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="myway.apps.mongo_models.Place.tags">
+<tt class="descclassname">Place.</tt><tt class="descname">tags</tt><a class="headerlink" href="#myway.apps.mongo_models.Place.tags" title="Permalink to this definition">¶</a></dt>
+<dd><p>A list field that wraps a standard field, allowing multiple instances
+of the field to be used as a list in the database.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="myway.apps.mongo_models.Place.tel">
+<tt class="descclassname">Place.</tt><tt class="descname">tel</tt><a class="headerlink" href="#myway.apps.mongo_models.Place.tel" title="Permalink to this definition">¶</a></dt>
+<dd><p>A unicode string field.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="myway.apps.mongo_models.Place.url">
+<tt class="descclassname">Place.</tt><tt class="descname">url</tt><a class="headerlink" href="#myway.apps.mongo_models.Place.url" title="Permalink to this definition">¶</a></dt>
+<dd><p>A field that validates input as an URL.</p>
+<p class="versionadded">
+<span class="versionmodified">New in version 0.3.</span></p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="myway.apps.mongo_models.Restraunt">
+<em class="property">class </em><tt class="descclassname">myway.apps.mongo_models.</tt><tt class="descname">Restraunt</tt><big>(</big><em>**values</em><big>)</big><a class="headerlink" href="#myway.apps.mongo_models.Restraunt" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#myway.apps.mongo_models.Place" title="myway.apps.mongo_models.Place"><tt class="xref py py-class docutils literal"><span class="pre">myway.apps.mongo_models.Place</span></tt></a></p>
+<dl class="exception">
+<dt id="myway.apps.mongo_models.Restraunt.DoesNotExist">
+<em class="property">exception </em><tt class="descname">DoesNotExist</tt><a class="headerlink" href="#myway.apps.mongo_models.Restraunt.DoesNotExist" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">myway.apps.mongo_models.DoesNotExist</span></tt></p>
+</dd></dl>
+
+<dl class="exception">
+<dt id="myway.apps.mongo_models.Restraunt.MultipleObjectsReturned">
+<em class="property">exception </em><tt class="descclassname">Restraunt.</tt><tt class="descname">MultipleObjectsReturned</tt><a class="headerlink" href="#myway.apps.mongo_models.Restraunt.MultipleObjectsReturned" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">myway.apps.mongo_models.MultipleObjectsReturned</span></tt></p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="myway.apps.mongo_models.Restraunt.avg_cost">
+<tt class="descclassname">Restraunt.</tt><tt class="descname">avg_cost</tt><a class="headerlink" href="#myway.apps.mongo_models.Restraunt.avg_cost" title="Permalink to this definition">¶</a></dt>
+<dd><p>An floating point number field.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="myway.apps.mongo_models.Restraunt.category">
+<tt class="descclassname">Restraunt.</tt><tt class="descname">category</tt><a class="headerlink" href="#myway.apps.mongo_models.Restraunt.category" title="Permalink to this definition">¶</a></dt>
+<dd><p>A unicode string field.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="myway.apps.mongo_models.Restraunt.specialties">
+<tt class="descclassname">Restraunt.</tt><tt class="descname">specialties</tt><a class="headerlink" href="#myway.apps.mongo_models.Restraunt.specialties" title="Permalink to this definition">¶</a></dt>
+<dd><p>A list field that wraps a standard field, allowing multiple instances
+of the field to be used as a list in the database.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="myway.apps.mongo_models.Shop">
+<em class="property">class </em><tt class="descclassname">myway.apps.mongo_models.</tt><tt class="descname">Shop</tt><big>(</big><em>**values</em><big>)</big><a class="headerlink" href="#myway.apps.mongo_models.Shop" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#myway.apps.mongo_models.Place" title="myway.apps.mongo_models.Place"><tt class="xref py py-class docutils literal"><span class="pre">myway.apps.mongo_models.Place</span></tt></a></p>
+<dl class="exception">
+<dt id="myway.apps.mongo_models.Shop.DoesNotExist">
+<em class="property">exception </em><tt class="descname">DoesNotExist</tt><a class="headerlink" href="#myway.apps.mongo_models.Shop.DoesNotExist" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">myway.apps.mongo_models.DoesNotExist</span></tt></p>
+</dd></dl>
+
+<dl class="exception">
+<dt id="myway.apps.mongo_models.Shop.MultipleObjectsReturned">
+<em class="property">exception </em><tt class="descclassname">Shop.</tt><tt class="descname">MultipleObjectsReturned</tt><a class="headerlink" href="#myway.apps.mongo_models.Shop.MultipleObjectsReturned" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">myway.apps.mongo_models.MultipleObjectsReturned</span></tt></p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="myway.apps.mongo_models.Shop.category">
+<tt class="descclassname">Shop.</tt><tt class="descname">category</tt><a class="headerlink" href="#myway.apps.mongo_models.Shop.category" title="Permalink to this definition">¶</a></dt>
+<dd><p>A unicode string field.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="myway.apps.mongo_models.Tag">
+<em class="property">class </em><tt class="descclassname">myway.apps.mongo_models.</tt><tt class="descname">Tag</tt><big>(</big><em>**values</em><big>)</big><a class="headerlink" href="#myway.apps.mongo_models.Tag" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">mongoengine.document.EmbeddedDocument</span></tt></p>
+<dl class="exception">
+<dt id="myway.apps.mongo_models.Tag.DoesNotExist">
+<em class="property">exception </em><tt class="descname">DoesNotExist</tt><a class="headerlink" href="#myway.apps.mongo_models.Tag.DoesNotExist" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">mongoengine.queryset.DoesNotExist</span></tt></p>
+</dd></dl>
+
+<dl class="exception">
+<dt id="myway.apps.mongo_models.Tag.MultipleObjectsReturned">
+<em class="property">exception </em><tt class="descclassname">Tag.</tt><tt class="descname">MultipleObjectsReturned</tt><a class="headerlink" href="#myway.apps.mongo_models.Tag.MultipleObjectsReturned" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">mongoengine.queryset.MultipleObjectsReturned</span></tt></p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="myway.apps.mongo_models.Tag.count">
+<tt class="descclassname">Tag.</tt><tt class="descname">count</tt><a class="headerlink" href="#myway.apps.mongo_models.Tag.count" title="Permalink to this definition">¶</a></dt>
+<dd><p>An integer field.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="myway.apps.mongo_models.Tag.value">
+<tt class="descclassname">Tag.</tt><tt class="descname">value</tt><a class="headerlink" href="#myway.apps.mongo_models.Tag.value" title="Permalink to this definition">¶</a></dt>
+<dd><p>A unicode string field.</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="subpackages">
+<h2>Subpackages<a class="headerlink" href="#subpackages" title="Permalink to this headline">¶</a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="myway.apps.account.html">account Package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="myway.apps.account.html#module-myway.apps.account.ajax"><tt class="docutils literal"><span class="pre">ajax</span></tt> Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="myway.apps.account.html#module-myway.apps.account.forms"><tt class="docutils literal"><span class="pre">forms</span></tt> Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="myway.apps.account.html#module-myway.apps.account.models"><tt class="docutils literal"><span class="pre">models</span></tt> Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="myway.apps.account.html#module-myway.apps.account.tests"><tt class="docutils literal"><span class="pre">tests</span></tt> Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="myway.apps.account.html#module-myway.apps.account.urls"><tt class="docutils literal"><span class="pre">urls</span></tt> Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="myway.apps.account.html#module-myway.apps.account.views"><tt class="docutils literal"><span class="pre">views</span></tt> Module</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="myway.apps.place.html">place Package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="myway.apps.place.html#module-myway.apps.place.ajax"><tt class="docutils literal"><span class="pre">ajax</span></tt> Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="myway.apps.place.html#module-myway.apps.place.models"><tt class="docutils literal"><span class="pre">models</span></tt> Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="myway.apps.place.html#module-myway.apps.place.tests"><tt class="docutils literal"><span class="pre">tests</span></tt> Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="myway.apps.place.html#module-myway.apps.place.upload"><tt class="docutils literal"><span class="pre">upload</span></tt> Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="myway.apps.place.html#module-myway.apps.place.urls"><tt class="docutils literal"><span class="pre">urls</span></tt> Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="myway.apps.place.html#module-myway.apps.place.views"><tt class="docutils literal"><span class="pre">views</span></tt> Module</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="myway.apps.planning.html">planning Package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="myway.apps.planning.html#module-myway.apps.planning.models"><tt class="docutils literal"><span class="pre">models</span></tt> Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="myway.apps.planning.html#module-myway.apps.planning.tests"><tt class="docutils literal"><span class="pre">tests</span></tt> Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="myway.apps.planning.html#module-myway.apps.planning.views"><tt class="docutils literal"><span class="pre">views</span></tt> Module</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="myway.apps.query_json.html">query_json Package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="myway.apps.query_json.html#module-myway.apps.query_json.db"><tt class="docutils literal"><span class="pre">db</span></tt> Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="myway.apps.query_json.html#module-myway.apps.query_json.file_queries"><tt class="docutils literal"><span class="pre">file_queries</span></tt> Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="myway.apps.query_json.html#module-myway.apps.query_json.geo_queries"><tt class="docutils literal"><span class="pre">geo_queries</span></tt> Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="myway.apps.query_json.html#module-myway.apps.query_json.urls"><tt class="docutils literal"><span class="pre">urls</span></tt> Module</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="myway.apps.tags.html">tags Package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="myway.apps.tags.html#module-myway.apps.tags.models"><tt class="docutils literal"><span class="pre">models</span></tt> Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="myway.apps.tags.html#module-myway.apps.tags.tests"><tt class="docutils literal"><span class="pre">tests</span></tt> Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="myway.apps.tags.html#subpackages">Subpackages</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="myway.apps.tags.templatetags.html">templatetags Package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="myway.apps.tags.templatetags.html#module-myway.apps.tags.templatetags.tags"><tt class="docutils literal"><span class="pre">tags</span></tt> Module</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="myway.apps.todo.html">todo Package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="myway.apps.todo.html#admin-module"><tt class="docutils literal"><span class="pre">admin</span></tt> Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="myway.apps.todo.html#module-myway.apps.todo.forms"><tt class="docutils literal"><span class="pre">forms</span></tt> Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="myway.apps.todo.html#module-myway.apps.todo.models"><tt class="docutils literal"><span class="pre">models</span></tt> Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="myway.apps.todo.html#module-myway.apps.todo.urls"><tt class="docutils literal"><span class="pre">urls</span></tt> Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="myway.apps.todo.html#module-myway.apps.todo.views"><tt class="docutils literal"><span class="pre">views</span></tt> Module</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="myway.apps.uploadify.html">uploadify Package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="myway.apps.uploadify.html#module-myway.apps.uploadify.settings"><tt class="docutils literal"><span class="pre">settings</span></tt> Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="myway.apps.uploadify.html#module-myway.apps.uploadify.urls"><tt class="docutils literal"><span class="pre">urls</span></tt> Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="myway.apps.uploadify.html#module-myway.apps.uploadify.views"><tt class="docutils literal"><span class="pre">views</span></tt> Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="myway.apps.uploadify.html#subpackages">Subpackages</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="myway.apps.uploadify.templatetags.html">templatetags Package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="myway.apps.uploadify.templatetags.html#id1"><tt class="docutils literal"><span class="pre">templatetags</span></tt> Package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="myway.apps.uploadify.templatetags.html#module-myway.apps.uploadify.templatetags.uploadify_tags"><tt class="docutils literal"><span class="pre">uploadify_tags</span></tt> Module</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="myway.apps.views.html">views Package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="myway.apps.views.html#id1"><tt class="docutils literal"><span class="pre">views</span></tt> Package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="myway.apps.views.html#module-myway.apps.views.basic"><tt class="docutils literal"><span class="pre">basic</span></tt> Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="myway.apps.views.html#module-myway.apps.views.grid_fs"><tt class="docutils literal"><span class="pre">grid_fs</span></tt> Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="myway.apps.views.html#module-myway.apps.views.share"><tt class="docutils literal"><span class="pre">share</span></tt> Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="myway.apps.views.html#module-myway.apps.views.upload"><tt class="docutils literal"><span class="pre">upload</span></tt> Module</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">apps Package</a><ul>
+<li><a class="reference internal" href="#id1"><tt class="docutils literal"><span class="pre">apps</span></tt> Package</a></li>
+<li><a class="reference internal" href="#module-myway.apps.mongo_models"><tt class="docutils literal"><span class="pre">mongo_models</span></tt> Module</a></li>
+<li><a class="reference internal" href="#subpackages">Subpackages</a><ul>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="_sources/myway.apps.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" size="18" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li><a href="index.html">myway  v0.1 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2011, Han Zhang.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.0.7.
+    </div>
+  </body>
+</html>

@@ -1,0 +1,178 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>query_json Package &mdash; myway  v0.1 documentation</title>
+    <link rel="stylesheet" href="../_static/nature.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '0.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="top" title="myway  v0.1 documentation" href="../index.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li><a href="../index.html">myway  v0.1 documentation</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="query-json-package">
+<h1>query_json Package<a class="headerlink" href="#query-json-package" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="module-myway.apps.query_json.db">
+<span id="db-module"></span><h2><tt class="xref py py-mod docutils literal"><span class="pre">db</span></tt> Module<a class="headerlink" href="#module-myway.apps.query_json.db" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="myway.apps.query_json.db.attrs_of">
+<tt class="descclassname">myway.apps.query_json.db.</tt><tt class="descname">attrs_of</tt><big>(</big><em>region_code</em><big>)</big><a class="headerlink" href="#myway.apps.query_json.db.attrs_of" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns attributes of the region with given region code.
+If region not found, returns None.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="myway.apps.query_json.db.children_of">
+<tt class="descclassname">myway.apps.query_json.db.</tt><tt class="descname">children_of</tt><big>(</big><em>region_code</em><big>)</big><a class="headerlink" href="#myway.apps.query_json.db.children_of" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns an attribute list of children of the region with given region code.
+If region not found, returns None</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="myway.apps.query_json.db.cities_in">
+<tt class="descclassname">myway.apps.query_json.db.</tt><tt class="descname">cities_in</tt><big>(</big><em>province_name</em><big>)</big><a class="headerlink" href="#myway.apps.query_json.db.cities_in" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns an attribute list of cities within the province.
+If province not found, return an empty list [].</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="myway.apps.query_json.db.node_of">
+<tt class="descclassname">myway.apps.query_json.db.</tt><tt class="descname">node_of</tt><big>(</big><em>region_code</em><big>)</big><a class="headerlink" href="#myway.apps.query_json.db.node_of" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns a node with given region code.
+If region not found, return None</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="myway.apps.query_json.db.subareas_in">
+<tt class="descclassname">myway.apps.query_json.db.</tt><tt class="descname">subareas_in</tt><big>(</big><em>city_name</em><big>)</big><a class="headerlink" href="#myway.apps.query_json.db.subareas_in" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns an attribute list of subareas within the city.
+If city not found, return an empty list []</p>
+</dd></dl>
+
+</div>
+<div class="section" id="module-myway.apps.query_json.file_queries">
+<span id="file-queries-module"></span><h2><tt class="xref py py-mod docutils literal"><span class="pre">file_queries</span></tt> Module<a class="headerlink" href="#module-myway.apps.query_json.file_queries" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="myway.apps.query_json.file_queries.get_file_list">
+<tt class="descclassname">myway.apps.query_json.file_queries.</tt><tt class="descname">get_file_list</tt><big>(</big><em>request</em>, <em>base_dir_alias</em>, <em>relative_path</em><big>)</big><a class="headerlink" href="#myway.apps.query_json.file_queries.get_file_list" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="myway.apps.query_json.file_queries.get_file_list_for_data_table">
+<tt class="descclassname">myway.apps.query_json.file_queries.</tt><tt class="descname">get_file_list_for_data_table</tt><big>(</big><em>request</em>, <em>base_dir_alias</em>, <em>relative_path</em><big>)</big><a class="headerlink" href="#myway.apps.query_json.file_queries.get_file_list_for_data_table" title="Permalink to this definition">¶</a></dt>
+<dd><p>To work with dataTable</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="myway.apps.query_json.file_queries.list_dir">
+<tt class="descclassname">myway.apps.query_json.file_queries.</tt><tt class="descname">list_dir</tt><big>(</big><em>path</em><big>)</big><a class="headerlink" href="#myway.apps.query_json.file_queries.list_dir" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="myway.apps.query_json.file_queries.sizeof_fmt">
+<tt class="descclassname">myway.apps.query_json.file_queries.</tt><tt class="descname">sizeof_fmt</tt><big>(</big><em>num</em><big>)</big><a class="headerlink" href="#myway.apps.query_json.file_queries.sizeof_fmt" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="module-myway.apps.query_json.geo_queries">
+<span id="geo-queries-module"></span><h2><tt class="xref py py-mod docutils literal"><span class="pre">geo_queries</span></tt> Module<a class="headerlink" href="#module-myway.apps.query_json.geo_queries" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="myway.apps.query_json.geo_queries.get_area_list">
+<tt class="descclassname">myway.apps.query_json.geo_queries.</tt><tt class="descname">get_area_list</tt><big>(</big><em>request</em>, <em>parent_region_code</em><big>)</big><a class="headerlink" href="#myway.apps.query_json.geo_queries.get_area_list" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="module-myway.apps.query_json.urls">
+<span id="urls-module"></span><h2><tt class="xref py py-mod docutils literal"><span class="pre">urls</span></tt> Module<a class="headerlink" href="#module-myway.apps.query_json.urls" title="Permalink to this headline">¶</a></h2>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">query_json Package</a><ul>
+<li><a class="reference internal" href="#module-myway.apps.query_json.db"><tt class="docutils literal"><span class="pre">db</span></tt> Module</a></li>
+<li><a class="reference internal" href="#module-myway.apps.query_json.file_queries"><tt class="docutils literal"><span class="pre">file_queries</span></tt> Module</a></li>
+<li><a class="reference internal" href="#module-myway.apps.query_json.geo_queries"><tt class="docutils literal"><span class="pre">geo_queries</span></tt> Module</a></li>
+<li><a class="reference internal" href="#module-myway.apps.query_json.urls"><tt class="docutils literal"><span class="pre">urls</span></tt> Module</a></li>
+</ul>
+</li>
+</ul>
+
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../_sources/api/myway.apps.query_json.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" size="18" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li><a href="../index.html">myway  v0.1 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2011, Han Zhang.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.0.7.
+    </div>
+  </body>
+</html>

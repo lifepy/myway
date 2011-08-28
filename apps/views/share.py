@@ -1,4 +1,7 @@
 # coding=utf-8
+'''
+Views that is used for /share page
+'''
 import os
 import urllib2
 from os.path import join, isdir, basename
@@ -11,6 +14,9 @@ from settings import SHARE_DIR
 
 @csrf_exempt
 def upload_and_download(request, relative_path):
+    '''
+    Takes care of upload and download for page /share
+    '''
     page_url = 'share.html'
     relative_path = relative_path.encode('utf-8')
     file_list = [ ]

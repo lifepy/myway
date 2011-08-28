@@ -1,0 +1,6 @@
+My Way Documentation
+====================
+
+.. automodule:: apps.views.share
+   :members: 
+

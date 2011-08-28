@@ -1,0 +1,168 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>place Package &mdash; myway  v0.1 documentation</title>
+    <link rel="stylesheet" href="../_static/nature.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '0.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="top" title="myway  v0.1 documentation" href="../index.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li><a href="../index.html">myway  v0.1 documentation</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="place-package">
+<h1>place Package<a class="headerlink" href="#place-package" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="module-myway.apps.place.ajax">
+<span id="ajax-module"></span><h2><tt class="xref py py-mod docutils literal"><span class="pre">ajax</span></tt> Module<a class="headerlink" href="#module-myway.apps.place.ajax" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="myway.apps.place.ajax.get_photolist_by_area">
+<tt class="descclassname">myway.apps.place.ajax.</tt><tt class="descname">get_photolist_by_area</tt><big>(</big><em>request</em>, <em>place_name</em><big>)</big><a class="headerlink" href="#myway.apps.place.ajax.get_photolist_by_area" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get uploaded photos from GridFS (mongoDB)</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="myway.apps.place.ajax.get_restraunt_list">
+<tt class="descclassname">myway.apps.place.ajax.</tt><tt class="descname">get_restraunt_list</tt><big>(</big><em>request</em>, <em>region_code</em><big>)</big><a class="headerlink" href="#myway.apps.place.ajax.get_restraunt_list" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="module-myway.apps.place.models">
+<span id="models-module"></span><h2><tt class="xref py py-mod docutils literal"><span class="pre">models</span></tt> Module<a class="headerlink" href="#module-myway.apps.place.models" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-myway.apps.place.tests">
+<span id="tests-module"></span><h2><tt class="xref py py-mod docutils literal"><span class="pre">tests</span></tt> Module<a class="headerlink" href="#module-myway.apps.place.tests" title="Permalink to this headline">¶</a></h2>
+<p>This file demonstrates two different styles of tests (one doctest and one
+unittest). These will both pass when you run &#8220;manage.py test&#8221;.</p>
+<p>Replace these with more appropriate tests for your application.</p>
+<dl class="class">
+<dt id="myway.apps.place.tests.SimpleTest">
+<em class="property">class </em><tt class="descclassname">myway.apps.place.tests.</tt><tt class="descname">SimpleTest</tt><big>(</big><em>methodName='runTest'</em><big>)</big><a class="headerlink" href="#myway.apps.place.tests.SimpleTest" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">django.test.testcases.TestCase</span></tt></p>
+<dl class="method">
+<dt id="myway.apps.place.tests.SimpleTest.test_basic_addition">
+<tt class="descname">test_basic_addition</tt><big>(</big><big>)</big><a class="headerlink" href="#myway.apps.place.tests.SimpleTest.test_basic_addition" title="Permalink to this definition">¶</a></dt>
+<dd><p>Tests that 1 + 1 always equals 2.</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-myway.apps.place.upload">
+<span id="upload-module"></span><h2><tt class="xref py py-mod docutils literal"><span class="pre">upload</span></tt> Module<a class="headerlink" href="#module-myway.apps.place.upload" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="myway.apps.place.upload.store_photo_to_db">
+<tt class="descclassname">myway.apps.place.upload.</tt><tt class="descname">store_photo_to_db</tt><big>(</big><em>file</em>, <em>author</em>, <em>description</em>, <em>content_type</em><big>)</big><a class="headerlink" href="#myway.apps.place.upload.store_photo_to_db" title="Permalink to this definition">¶</a></dt>
+<dd><p>Store uploaded photo into GridFS (mongoDB)</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="myway.apps.place.upload.upload_photo">
+<tt class="descclassname">myway.apps.place.upload.</tt><tt class="descname">upload_photo</tt><big>(</big><em>request</em><big>)</big><a class="headerlink" href="#myway.apps.place.upload.upload_photo" title="Permalink to this definition">¶</a></dt>
+<dd><p>Handles photo upload and stores uploaded photoes to mongodb</p>
+</dd></dl>
+
+</div>
+<div class="section" id="module-myway.apps.place.urls">
+<span id="urls-module"></span><h2><tt class="xref py py-mod docutils literal"><span class="pre">urls</span></tt> Module<a class="headerlink" href="#module-myway.apps.place.urls" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-myway.apps.place.views">
+<span id="views-module"></span><h2><tt class="xref py py-mod docutils literal"><span class="pre">views</span></tt> Module<a class="headerlink" href="#module-myway.apps.place.views" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="myway.apps.place.views.place_details">
+<tt class="descclassname">myway.apps.place.views.</tt><tt class="descname">place_details</tt><big>(</big><em>request</em><big>)</big><a class="headerlink" href="#myway.apps.place.views.place_details" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">place Package</a><ul>
+<li><a class="reference internal" href="#module-myway.apps.place.ajax"><tt class="docutils literal"><span class="pre">ajax</span></tt> Module</a></li>
+<li><a class="reference internal" href="#module-myway.apps.place.models"><tt class="docutils literal"><span class="pre">models</span></tt> Module</a></li>
+<li><a class="reference internal" href="#module-myway.apps.place.tests"><tt class="docutils literal"><span class="pre">tests</span></tt> Module</a></li>
+<li><a class="reference internal" href="#module-myway.apps.place.upload"><tt class="docutils literal"><span class="pre">upload</span></tt> Module</a></li>
+<li><a class="reference internal" href="#module-myway.apps.place.urls"><tt class="docutils literal"><span class="pre">urls</span></tt> Module</a></li>
+<li><a class="reference internal" href="#module-myway.apps.place.views"><tt class="docutils literal"><span class="pre">views</span></tt> Module</a></li>
+</ul>
+</li>
+</ul>
+
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../_sources/api/myway.apps.place.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" size="18" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li><a href="../index.html">myway  v0.1 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2011, Han Zhang.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.0.7.
+    </div>
+  </body>
+</html>

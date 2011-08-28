@@ -1,0 +1,211 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>安装mod-xsendfile处理文件下载 &mdash; myway  v0.1 documentation</title>
+    <link rel="stylesheet" href="../_static/nature.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '0.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="top" title="myway  v0.1 documentation" href="../index.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li><a href="../index.html">myway  v0.1 documentation</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="mod-xsendfile">
+<h1>安装mod-xsendfile处理文件下载<a class="headerlink" href="#mod-xsendfile" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="id1">
+<h2>安装<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<p>在Apache上安装mod-xsendfile，要下载源代码并修改编译。</p>
+<div class="section" id="id2">
+<h3>修改代码<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>下载 [mod-xsendfile.c](<a class="reference external" href="https://tn123.org/mod_xsendfile/">https://tn123.org/mod_xsendfile/</a>)</li>
+<li>参照以下diff，修改文件内容（增加中文文件名支持）</li>
+</ul>
+<div class="highlight-diff"><div class="highlight"><pre><span class="gd">--- mod_xsendfile.c.orig    2010-09-13 22:21:40.000000000 -0400</span>
+<span class="gi">+++ mod_xsendfile.c 2011-03-14 12:37:51.930341000 -0400</span>
+<span class="gu">@@ -55,6 +55,7 @@</span>
+ #include &quot;http_protocol.h&quot; /* ap_hook_insert_error_filter */
+
+ #define AP_XSENDFILE_HEADER &quot;X-SENDFILE&quot;
+<span class="gi">+#define AP_XSENDFILE_ENCODING_HEADER &quot;X-SENDFILE-ENCODING&quot;</span>
+
+ module AP_MODULE_DECLARE_DATA xsendfile_module;
+
+<span class="gu">@@ -218,7 +219,6 @@</span>
+   const char **paths;
+   int i;
+
+<span class="gd">-</span>
+ #ifdef _DEBUG
+   ap_log_error(APLOG_MARK, APLOG_DEBUG, 0, r-&gt;server, &quot;xsendfile: path is %s&quot;, root);
+ #endif
+<span class="gu">@@ -269,6 +269,7 @@</span>
+   apr_file_t *fd = NULL;
+   apr_finfo_t finfo;
+
+<span class="gi">+  const char *encoding = NULL;</span>
+   const char *file = NULL;
+   char *translated = NULL;
+
+<span class="gu">@@ -316,6 +317,23 @@</span>
+     return ap_pass_brigade(f-&gt;next, in);
+   }
+
+<span class="gi">+  /* should we decode the path? */</span>
+<span class="gi">+  encoding = apr_table_get(r-&gt;headers_out, AP_XSENDFILE_ENCODING_HEADER);</span>
+<span class="gi">+  apr_table_unset(r-&gt;headers_out, AP_XSENDFILE_ENCODING_HEADER);</span>
+<span class="gi">+</span>
+<span class="gi">+  /* cgi/fastcgi will put the stuff into err_headers_out */</span>
+<span class="gi">+  if (!encoding || !*encoding) {</span>
+<span class="gi">+    encoding = apr_table_get(r-&gt;err_headers_out, AP_XSENDFILE_ENCODING_HEADER);</span>
+<span class="gi">+    apr_table_unset(r-&gt;err_headers_out, AP_XSENDFILE_ENCODING_HEADER);</span>
+<span class="gi">+  }</span>
+<span class="gi">+</span>
+<span class="gi">+  if (encoding) {</span>
+<span class="gi">+    if (!strcasecmp(encoding, &quot;url&quot;)) {</span>
+<span class="gi">+        /* don&#39;t worry about the return value */</span>
+<span class="gi">+        ap_unescape_url(file);</span>
+<span class="gi">+    }</span>
+<span class="gi">+  }</span>
+<span class="gi">+</span>
+   /*
+     drop *everything*
+     might be pretty expensive to generate content first that goes straight to the bitbucket,
+</pre></div>
+</div>
+</div>
+<div class="section" id="id3">
+<h3>编译安装<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-python"><pre>sudo apt-get install apache2-prefork-dev
+sudo apxs2 -cia mod-xsendfile.c</pre>
+</div>
+<p>注意！Ubuntu源里的xsendfile版本不支持中文文件名，而且版本较老，不推荐使用，**不要使用以下命令**：:</p>
+<div class="highlight-python"><pre># don't use this
+sudo apt-get install libapache2-mod-xsendfile
+sudo a2enmod xsendfile</pre>
+</div>
+</div>
+</div>
+<div class="section" id="id4">
+<h2>配置<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
+<p>将以下几行酌情加入 Apache Virtual Host 配置文件中：:</p>
+<div class="highlight-python"><pre>XSendFile On
+&lt;Directory "/opt/www/share"&gt;
+    XSendFilePath /opt/www/share
+    Option Indexes
+    Order allow,deny
+    allow from all
+&lt;/Directory&gt;</pre>
+</div>
+<div class="section" id="id5">
+<h3>启用<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h3>
+<p>启用方式非常简单，重启Apache服务器即可</p>
+</div>
+</div>
+<div class="section" id="djangoxsendfile">
+<h2>Django中使用xsendfile<a class="headerlink" href="#djangoxsendfile" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">response</span> <span class="o">=</span> <span class="n">HttpResponse</span><span class="p">(</span><span class="n">mimetype</span><span class="o">=</span><span class="s">&#39;application/force-download&#39;</span><span class="p">)</span>
+<span class="n">response</span><span class="p">[</span><span class="s">&#39;Content-Disposition&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s">&#39;attachment; filename=</span><span class="si">%s</span><span class="s">&#39;</span> <span class="o">%</span><span class="n">basename</span><span class="p">(</span><span class="n">relative_path</span><span class="p">)</span>
+<span class="n">response</span><span class="p">[</span><span class="s">&#39;X-Sendfile&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">urllib2</span><span class="o">.</span><span class="n">quote</span><span class="p">(</span><span class="n">cur_dir</span><span class="p">)</span> <span class="c">#deal with chinese characters</span>
+<span class="n">response</span><span class="p">[</span><span class="s">&#39;X-SendFile-Encoding&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">url</span>
+<span class="k">return</span> <span class="n">response</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">安装mod-xsendfile处理文件下载</a><ul>
+<li><a class="reference internal" href="#id1">安装</a><ul>
+<li><a class="reference internal" href="#id2">修改代码</a></li>
+<li><a class="reference internal" href="#id3">编译安装</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#id4">配置</a><ul>
+<li><a class="reference internal" href="#id5">启用</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#djangoxsendfile">Django中使用xsendfile</a></li>
+</ul>
+</li>
+</ul>
+
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../_sources/admin/mod-xsendfile.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" size="18" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li><a href="../index.html">myway  v0.1 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2011, Han Zhang.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.0.7.
+    </div>
+  </body>
+</html>

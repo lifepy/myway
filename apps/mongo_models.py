@@ -21,6 +21,9 @@ class Tag(EmbeddedDocument):
     value = StringField()
     count = IntField(default=1)
 
+class Activity(Tag):
+    pass
+
 class LocalityTag(EmbeddedDocumentField):
     name = StringField()
     level = StringField()

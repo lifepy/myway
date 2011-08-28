@@ -1,0 +1,229 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>account Package &mdash; myway  v0.1 documentation</title>
+    <link rel="stylesheet" href="_static/nature.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '',
+        VERSION:     '0.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="top" title="myway  v0.1 documentation" href="index.html" />
+    <link rel="up" title="apps Package" href="myway.apps.html" />
+    <link rel="next" title="place Package" href="myway.apps.place.html" />
+    <link rel="prev" title="apps Package" href="myway.apps.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="myway.apps.place.html" title="place Package"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="myway.apps.html" title="apps Package"
+             accesskey="P">previous</a> |</li>
+        <li><a href="index.html">myway  v0.1 documentation</a> &raquo;</li>
+          <li><a href="myway.apps.html" accesskey="U">apps Package</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="account-package">
+<h1>account Package<a class="headerlink" href="#account-package" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="module-myway.apps.account.ajax">
+<span id="ajax-module"></span><h2><tt class="xref py py-mod docutils literal"><span class="pre">ajax</span></tt> Module<a class="headerlink" href="#module-myway.apps.account.ajax" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="myway.apps.account.ajax.ajax_login">
+<tt class="descclassname">myway.apps.account.ajax.</tt><tt class="descname">ajax_login</tt><big>(</big><em>*args</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#myway.apps.account.ajax.ajax_login" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="module-myway.apps.account.forms">
+<span id="forms-module"></span><h2><tt class="xref py py-mod docutils literal"><span class="pre">forms</span></tt> Module<a class="headerlink" href="#module-myway.apps.account.forms" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="myway.apps.account.forms.RegistrationForm">
+<em class="property">class </em><tt class="descclassname">myway.apps.account.forms.</tt><tt class="descname">RegistrationForm</tt><big>(</big><em>data=None</em>, <em>files=None</em>, <em>auto_id='id_%s'</em>, <em>prefix=None</em>, <em>initial=None</em>, <em>error_class=&lt;class 'django.forms.util.ErrorList'&gt;</em>, <em>label_suffix=':'</em>, <em>empty_permitted=False</em>, <em>instance=None</em><big>)</big><a class="headerlink" href="#myway.apps.account.forms.RegistrationForm" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">django.forms.models.ModelForm</span></tt></p>
+<p>Form for registering a new user account</p>
+<dl class="class">
+<dt id="myway.apps.account.forms.RegistrationForm.Meta">
+<em class="property">class </em><tt class="descname">Meta</tt><a class="headerlink" href="#myway.apps.account.forms.RegistrationForm.Meta" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="attribute">
+<dt id="myway.apps.account.forms.RegistrationForm.Meta.model">
+<tt class="descname">model</tt><a class="headerlink" href="#myway.apps.account.forms.RegistrationForm.Meta.model" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <tt class="xref py py-class docutils literal"><span class="pre">User</span></tt></p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="method">
+<dt id="myway.apps.account.forms.RegistrationForm.clean_password2">
+<tt class="descclassname">RegistrationForm.</tt><tt class="descname">clean_password2</tt><big>(</big><big>)</big><a class="headerlink" href="#myway.apps.account.forms.RegistrationForm.clean_password2" title="Permalink to this definition">¶</a></dt>
+<dd><p>Verify password2 is the same as password1</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="myway.apps.account.forms.RegistrationForm.clean_username">
+<tt class="descclassname">RegistrationForm.</tt><tt class="descname">clean_username</tt><big>(</big><big>)</big><a class="headerlink" href="#myway.apps.account.forms.RegistrationForm.clean_username" title="Permalink to this definition">¶</a></dt>
+<dd><p>Verify username not existed in database</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="myway.apps.account.forms.RegistrationForm.media">
+<tt class="descclassname">RegistrationForm.</tt><tt class="descname">media</tt><a class="headerlink" href="#myway.apps.account.forms.RegistrationForm.media" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="myway.apps.account.forms.RegistrationForm.save">
+<tt class="descclassname">RegistrationForm.</tt><tt class="descname">save</tt><big>(</big><em>commit=True</em><big>)</big><a class="headerlink" href="#myway.apps.account.forms.RegistrationForm.save" title="Permalink to this definition">¶</a></dt>
+<dd><p>Save User and related UserProfile object into database</p>
+<p>NOTICE: saved user has is_active set as False by default. A user account will be activated only
+if the user clicks confirmation link sent to his/her mailbox.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="function">
+<dt id="myway.apps.account.forms.validate_username_not_exist">
+<tt class="descclassname">myway.apps.account.forms.</tt><tt class="descname">validate_username_not_exist</tt><big>(</big><em>value</em><big>)</big><a class="headerlink" href="#myway.apps.account.forms.validate_username_not_exist" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="module-myway.apps.account.models">
+<span id="models-module"></span><h2><tt class="xref py py-mod docutils literal"><span class="pre">models</span></tt> Module<a class="headerlink" href="#module-myway.apps.account.models" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-myway.apps.account.tests">
+<span id="tests-module"></span><h2><tt class="xref py py-mod docutils literal"><span class="pre">tests</span></tt> Module<a class="headerlink" href="#module-myway.apps.account.tests" title="Permalink to this headline">¶</a></h2>
+<p>This file demonstrates two different styles of tests (one doctest and one
+unittest). These will both pass when you run &#8220;manage.py test&#8221;.</p>
+<p>Replace these with more appropriate tests for your application.</p>
+<dl class="class">
+<dt id="myway.apps.account.tests.SimpleTest">
+<em class="property">class </em><tt class="descclassname">myway.apps.account.tests.</tt><tt class="descname">SimpleTest</tt><big>(</big><em>methodName='runTest'</em><big>)</big><a class="headerlink" href="#myway.apps.account.tests.SimpleTest" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">django.test.testcases.TestCase</span></tt></p>
+<dl class="method">
+<dt id="myway.apps.account.tests.SimpleTest.test_basic_addition">
+<tt class="descname">test_basic_addition</tt><big>(</big><big>)</big><a class="headerlink" href="#myway.apps.account.tests.SimpleTest.test_basic_addition" title="Permalink to this definition">¶</a></dt>
+<dd><p>Tests that 1 + 1 always equals 2.</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-myway.apps.account.urls">
+<span id="urls-module"></span><h2><tt class="xref py py-mod docutils literal"><span class="pre">urls</span></tt> Module<a class="headerlink" href="#module-myway.apps.account.urls" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-myway.apps.account.views">
+<span id="views-module"></span><h2><tt class="xref py py-mod docutils literal"><span class="pre">views</span></tt> Module<a class="headerlink" href="#module-myway.apps.account.views" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="myway.apps.account.views.confirm">
+<tt class="descclassname">myway.apps.account.views.</tt><tt class="descname">confirm</tt><big>(</big><em>*args</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#myway.apps.account.views.confirm" title="Permalink to this definition">¶</a></dt>
+<dd><p>takes in a hash and activate corresponding user</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="myway.apps.account.views.register">
+<tt class="descclassname">myway.apps.account.views.</tt><tt class="descname">register</tt><big>(</big><em>request</em>, <em>*args</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#myway.apps.account.views.register" title="Permalink to this definition">¶</a></dt>
+<dd><p>present a registration form, once completed by user, the system will send email containing
+confirmation link. The registration completes only if the user confirms the link.</p>
+</dd></dl>
+
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">account Package</a><ul>
+<li><a class="reference internal" href="#module-myway.apps.account.ajax"><tt class="docutils literal"><span class="pre">ajax</span></tt> Module</a></li>
+<li><a class="reference internal" href="#module-myway.apps.account.forms"><tt class="docutils literal"><span class="pre">forms</span></tt> Module</a></li>
+<li><a class="reference internal" href="#module-myway.apps.account.models"><tt class="docutils literal"><span class="pre">models</span></tt> Module</a></li>
+<li><a class="reference internal" href="#module-myway.apps.account.tests"><tt class="docutils literal"><span class="pre">tests</span></tt> Module</a></li>
+<li><a class="reference internal" href="#module-myway.apps.account.urls"><tt class="docutils literal"><span class="pre">urls</span></tt> Module</a></li>
+<li><a class="reference internal" href="#module-myway.apps.account.views"><tt class="docutils literal"><span class="pre">views</span></tt> Module</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="myway.apps.html"
+                        title="previous chapter">apps Package</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="myway.apps.place.html"
+                        title="next chapter">place Package</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="_sources/myway.apps.account.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" size="18" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="myway.apps.place.html" title="place Package"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="myway.apps.html" title="apps Package"
+             >previous</a> |</li>
+        <li><a href="index.html">myway  v0.1 documentation</a> &raquo;</li>
+          <li><a href="myway.apps.html" >apps Package</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2011, Han Zhang.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.0.7.
+    </div>
+  </body>
+</html>
